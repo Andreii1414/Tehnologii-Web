@@ -37,13 +37,31 @@ body{
     display: flex;
 }
 
-.left-div__change{
+@mixin change(){
     font-size: 3vw;
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
     text-align: center;
+}
+
+.left-div__change{
+    @include change();
+}
+
+.left-div__changeEng{
+    @include change();
+}
+
+.left-div__changeEng:after{
+    content: "Log in";
+    animation: changeEng 2s linear infinite;
+}
+
+@keyframes changeEng {
+    50%{content: "or";}
+    90%{content: "Sing up";}
 }
 
 .left-div__change:after{
@@ -167,6 +185,30 @@ body{
     text-align: center;
 }
 
+.switch{
+    margin-top:0.2em;
+    position: absolute;
+    margin-left: 2em;
+    display: flex;
+    align-items: center;
+}
+
+.switch:hover{
+    cursor: pointer;
+}
+
+.switch__text{
+    font-size: 1vw;
+    font-weight: bold;
+    padding-left: 0.2em;
+    color: white;
+}
+
+.ro_img{
+    width: 1.5em;
+    height: 1em;
+}
+
 @mixin left-d(){
     height: 40%;
     width: 100%;
@@ -239,8 +281,8 @@ body{
     }
 
     .left-div__rot{
-        margin-bottom: 2em;
-        font-size: 2vw;
+        display: none;
+    
     }
 
     .form_cb_input{
@@ -250,6 +292,14 @@ body{
 
     .form_input{
         height: 2.5em;
+    }
+
+    .switch__text{
+        font-size: 1.8vw;
+    }
+
+    .left-div__image{
+        width: 55%;
     }
 }
 
@@ -304,8 +354,7 @@ body{
     }
 
     .left-div__rot{
-        margin-bottom: 2em;
-        font-size: 2.5vw;
+        display: none;
     }
 
     .form_cb_input{
@@ -315,6 +364,19 @@ body{
 
     .form_input{
         height: 3.5em;
+    }
+
+    .switch__text{
+        font-size: 1.8vw;
+    }
+
+    .ro_img{
+        width: 1.2em;
+        height: 0.7em;
+    }
+
+    .left-div__image{
+        width: 52%;
     }
 
 }

@@ -39,6 +39,28 @@ body {
   text-align: center;
 }
 
+.left-div__changeEng {
+  font-size: 3vw;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  text-align: center;
+}
+
+.left-div__changeEng:after {
+  content: "Log in";
+  animation: changeEng 2s linear infinite;
+}
+
+@keyframes changeEng {
+  50% {
+    content: "or";
+  }
+  90% {
+    content: "Sing up";
+  }
+}
 .left-div__change:after {
   content: "Logheaza-te";
   animation: change 2s linear infinite;
@@ -163,6 +185,30 @@ body {
   text-align: center;
 }
 
+.switch {
+  margin-top: 0.2em;
+  position: absolute;
+  margin-left: 2em;
+  display: flex;
+  align-items: center;
+}
+
+.switch:hover {
+  cursor: pointer;
+}
+
+.switch__text {
+  font-size: 1vw;
+  font-weight: bold;
+  padding-left: 0.2em;
+  color: white;
+}
+
+.ro_img {
+  width: 1.5em;
+  height: 1em;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .left-div {
     height: 40%;
@@ -210,8 +256,7 @@ body {
     font-size: 2.5vw;
   }
   .left-div__rot {
-    margin-bottom: 2em;
-    font-size: 2vw;
+    display: none;
   }
   .form_cb_input {
     width: 1.3em;
@@ -219,6 +264,12 @@ body {
   }
   .form_input {
     height: 2.5em;
+  }
+  .switch__text {
+    font-size: 1.8vw;
+  }
+  .left-div__image {
+    width: 55%;
   }
 }
 @media screen and (max-width: 767px) {
@@ -268,8 +319,7 @@ body {
     font-size: 5vw;
   }
   .left-div__rot {
-    margin-bottom: 2em;
-    font-size: 2.5vw;
+    display: none;
   }
   .form_cb_input {
     width: 1.3em;
@@ -277,5 +327,15 @@ body {
   }
   .form_input {
     height: 3.5em;
+  }
+  .switch__text {
+    font-size: 1.8vw;
+  }
+  .ro_img {
+    width: 1.2em;
+    height: 0.7em;
+  }
+  .left-div__image {
+    width: 52%;
   }
 }/*# sourceMappingURL=style.css.map */
