@@ -1,0 +1,320 @@
+$left-color: white;
+$right-color: black;
+$text-font: 'Franklin Gothic Medium';
+$btn-brightness: 70%;
+
+body{
+    margin: 0px;
+    background-color: $left-color;
+    height: 100%;
+}
+
+.split{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.left-div{
+    width: 40%; 
+    left:0;
+    padding: 1px;
+    height: 100%;
+    display: flex;
+  
+}
+
+.right-div
+{
+    background-color: $right-color;
+    border-top-left-radius: 3%;
+    width: 60%;
+    height: 100%;
+    padding: 1px;
+    right: 0;
+    display: flex;
+}
+
+.left-div__change{
+    font-size: 3vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.left-div__change:after{
+    content: "Logheaza-te";
+    animation: change 2s linear infinite;
+}
+
+@keyframes change {
+    50%{content: "sau";}
+    90%{content: "Inregistreaza-te";}
+}
+
+.left-div__toLearn{
+    font-size: 2vw;
+}
+
+.left-div__image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+.left-div__rot{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom:0;
+    margin-bottom: 1em;
+    font-size: 1vw;
+    }
+
+.textStyle{
+    text-align: center;
+    font-family: $text-font;
+}
+
+.form_login{
+    text-align: center;
+    color: $left-color;
+    justify-content: center;
+    display: block;
+}
+
+.form_input{
+    width: 20em;
+    height: 2em;
+    font-size: 0.9vw;
+    margin-bottom: 1em;
+}
+
+.form_button{
+    width: 10em;
+    height: 2.5em;
+    font-size: 1vw;
+    border-radius: 1em;
+    background-color: $left-color;
+    font-weight: 700;
+    margin-top: 1em;
+}
+
+.form_button:hover{
+    filter: brightness($btn-brightness);
+    cursor: pointer;
+}
+
+.icon{
+    width: 2em;
+    height: 1em;
+    text-align: center;
+}
+
+.form_text{
+    color: $left-color;
+    text-align: center;
+    font-size: 3vw;
+}
+
+.form_checkbox{
+    font-size: 1vw;
+    line-height: 1.5;
+    align-items: center;
+}
+
+.form_cb_input{
+    width: 1.5em;
+    height: 1.5em;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.sign_up_div{
+    right: 0;
+    margin-top:0.2em;
+    position: absolute;
+    margin-right: 1em;
+}
+
+.no_acc{
+    color: $left-color;
+    display: inline-block;
+    font-size: 1vw;
+}
+
+.sign_up_btn{
+    display: inline-block;
+    background-color: $left-color;
+    width: 7em;
+    font-size: 0.9vw;
+    height: 2em;  
+    border-radius: 1em;
+}
+
+.sign_up_btn:hover{
+    filter: brightness($btn-brightness);
+    cursor: pointer;
+}
+
+.centered-content{
+    margin: auto;
+    text-align: center;
+}
+
+@mixin left-d(){
+    height: 40%;
+    width: 100%;
+    top: 0;
+    right: auto;
+}
+
+@mixin right-d(){
+    height: 60%;
+    width: 100%;
+    bottom: 0;
+    right: auto;
+}
+
+@mixin sign_up-d(){
+    margin-top: 2em;
+    right: auto;
+    text-align: center;
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    .left-div{
+        @include left-d;
+    }
+
+    .right-div{
+        @include right-d;
+    }
+
+    .split{
+       top: auto;
+    }
+
+    .form_input{
+        font-size: 1.2vw;
+    }
+    
+    .form_button
+    {
+        font-size: 1.2vw;
+    }
+
+    .form_checkbox{
+        font-size: 1.8vw;
+    }
+
+    .form_text{
+        font-size: 4vw;
+    }
+
+    .sign_up_div{
+        @include sign_up-d();
+    }
+
+    .no_acc{
+        font-size: 1.9vw;
+    }
+
+    .sign_up_btn{
+        font-size: 1.8vw;
+    }
+
+    .left-div__toLearn{
+        font-size: 1.5vw;
+    }
+
+    .left-div__change{
+        font-size:2.5vw
+    }
+
+    .left-div__rot{
+        margin-bottom: 2em;
+        font-size: 2vw;
+    }
+
+    .form_cb_input{
+        width: 1.3em;
+        height: 1.3em;
+    }
+
+    .form_input{
+        height: 2.5em;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .left-div{
+        @include left-d;
+    }
+
+    .right-div{
+        @include right-d;
+    } 
+    
+    .split{
+        top: auto;
+     }
+
+     .form_input{
+        font-size: 1.4vw;
+    }
+    
+    .form_button
+    {
+        font-size: 1.4vw;
+    }
+
+    .form_checkbox{
+        font-size: 2vw;
+    }
+
+    .form_text{
+        font-size: 6vw;
+    }
+
+    .sign_up_div{
+        @include sign_up-d();
+    }
+
+    .no_acc{
+        font-size: 2.3vw;
+    }
+
+    .sign_up_btn{
+        font-size: 2.2vw;
+    }
+
+    .left-div__toLearn{
+        font-size: 4vw;
+    }
+
+    .left-div__change{
+        font-size:5vw
+    }
+
+    .left-div__rot{
+        margin-bottom: 2em;
+        font-size: 2.5vw;
+    }
+
+    .form_cb_input{
+        width: 1.3em;
+        height: 1.3em;
+    }
+
+    .form_input{
+        height: 3.5em;
+    }
+
+}
