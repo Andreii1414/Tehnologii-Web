@@ -1,6 +1,6 @@
 $left-color: white;
 $right-color: black;
-$text-font: 'Franklin Gothic Medium';
+$text-font: 'Comic Sans MS';
 $btn-brightness: 70%;
 
 body{
@@ -119,6 +119,7 @@ body{
     font-size: 1vw;
     border-radius: 1em;
     background-color: $left-color;
+    font-family: $text-font;
     font-weight: 700;
     margin-top: 1em;
 }
@@ -144,6 +145,7 @@ body{
     font-size: 1vw;
     line-height: 1.5;
     align-items: center;
+    font-family: $text-font;
 }
 
 .form_cb_input{
@@ -164,6 +166,7 @@ body{
     color: $left-color;
     display: inline-block;
     font-size: 1vw;
+    font-family: $text-font;
 }
 
 .sign_up_btn{
@@ -171,6 +174,7 @@ body{
     background-color: $left-color;
     width: 7em;
     font-size: 0.9vw;
+    font-family: $text-font;
     height: 2em;  
     border-radius: 1em;
 }
@@ -191,6 +195,7 @@ body{
     margin-left: 2em;
     display: flex;
     align-items: center;
+    font-family: $text-font;
 }
 
 .switch:hover{
