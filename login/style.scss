@@ -22,14 +22,16 @@ body{
     left:0;
     padding: 1px;
     height: 100%;
-    display: flex;
-  
+    display: flex; 
 }
 
 .right-div
 {
     background-color: $right-color;
-    border-top-left-radius: 3%;
+    background-image: url(bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-top-left-radius: 1%;
     width: 60%;
     height: 100%;
     padding: 1px;
@@ -100,6 +102,9 @@ body{
 }
 
 .form_login{
+    border-radius: 5%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 0em 1.2em 1.2em 1.2em;
     text-align: center;
     color: $left-color;
     justify-content: center;
@@ -107,6 +112,9 @@ body{
 }
 
 .form_input{
+    border-radius: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
     width: 20em;
     height: 2em;
     font-size: 0.9vw;
@@ -278,11 +286,15 @@ body{
     }
 
     .left-div__toLearn{
-        font-size: 1.5vw;
+        font-size: 2vw;
     }
 
     .left-div__change{
-        font-size:2.5vw
+        font-size:3vw
+    }
+
+    .left-div__changeEng{
+        font-size:3vw
     }
 
     .left-div__rot{
@@ -355,6 +367,10 @@ body{
     }
 
     .left-div__change{
+        font-size:5vw
+    }
+
+    .left-div__changeEng{
         font-size:5vw
     }
 
