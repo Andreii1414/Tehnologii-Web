@@ -1,0 +1,176 @@
+body{
+    margin: 0px; 
+    width: 100%;  
+     
+}
+
+.logo{
+    width: 100%;
+    height: 20%;
+}
+
+.navigation{
+   overflow: hidden;
+   margin-top: 1%;
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   border-style: groove;
+   border-color: black;
+   border-left: transparent;
+   border-right: transparent;
+}
+
+.logo__image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+
+.navigation__link{
+    float: left;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    color: black;
+    font-size: 1.5vw;
+    font-family: "Comic Sans MS";
+}
+
+.navigation__link:hover{
+    color: gray;
+}
+
+.content{
+    padding: 1px 0px 1px 0px;
+    
+    
+    width: 100%;
+    font-size: 1.5vw;
+    font-family: "Comic Sans MS";
+    text-align: center;
+}
+
+
+
+.b1{
+  display:none;
+}
+.b1.active1{
+  display:block;
+}
+.b1 h1{
+  font-size: 1.5vw;
+}
+/*  */
+.b2
+{
+  display: none;
+}
+.b2.active2
+{
+  display:block;
+}
+
+.b2 h2
+ {
+  font-size: 1.5vw;
+}
+
+.b3
+{
+  display: none;
+}
+.b3.active3
+{
+  display:block;
+}
+.b3 h3
+ {
+  font-size: 1.5vw;
+}
+
+
+p {
+    opacity: 0;
+    animation-name: slide;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }
+  
+
+  p:hover
+  {
+    color: gray;
+  }
+
+  #p1 {
+    opacity: 0;
+    animation-name: slide-first;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+  }
+  
+  #p1:hover {
+    color: gray;
+  }
+  h1
+  {
+    text-align: left;
+  }
+  h2
+  {
+    text-align: left;
+  }
+  h3
+  {
+    text-align: left;
+  }
+  .intrebari
+  {
+    color:rgb(0, 0, 0)
+  }
+  .raspunsuri
+  {
+    color:rgb(170, 0, 0)
+  }
+  a{
+    color:red;
+  }
+  a:visited{
+    color:red;
+  }
+  a:hover{
+    color:darkred;
+  }
+  @keyframes slide {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slide-first {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  }
+
+  
+
+
+
+.footer{
+    width: 100%;
+    height: auto;
+    background-color: black;
+    color: white;
+    padding: 1px 0px 1px 0px;
+}
