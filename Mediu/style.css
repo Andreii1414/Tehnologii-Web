@@ -1,0 +1,195 @@
+body{
+    margin: 0px; 
+    width: 100%;   
+}
+
+.logo{
+    width: 100%;
+    height: 20%;
+}
+
+.navigation{
+   overflow: hidden;
+   margin-top: 1%;
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   border-style: groove;
+   border-color: black;
+   border-left: transparent;
+   border-right: transparent;
+}
+
+.logo__image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+
+.navigation__link{
+    float: left;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    color: black;
+    font-size: 1.5vw;
+    font-family: "Comic Sans MS";
+}
+
+.navigation__link:hover{
+    color: gray;
+}
+
+/* .content{
+    padding: 1px 0px 1px 0px;
+    background-color: #edfbfc;
+    width: 100%;
+    height: auto;
+} */
+img
+{
+    width: 100%;
+}
+.overlay
+{
+    width: 100%;
+    height:auto;
+    background-color: dimgrey;
+    opacity: 50%;
+    position: relative;
+    
+    
+}
+
+h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: #000000; /* Set the color you want for the text */
+    font-size: 6vw; /* Set the font size you want for the text */
+    text-align: center; /* Center the text horizontally */
+    font-style: italic;
+    opacity:1;
+   
+}
+h2{
+    font-size:2rem;
+    font-family: "Comic Sans MS";
+    width: 100%;
+    height: auto;
+}
+.line1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .line1 img {
+    /* display: flex; */
+  justify-content: space-between;
+  align-items: center;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  
+  .wrapper img {
+    width: 70%;
+    height: auto;
+  }
+  #photo-9
+  {
+    
+    width: 25vw ;
+    height:14.688 vw;
+  }
+  #photo-10
+  {
+    height: 15.625vw;
+    
+  }
+  
+  #photo-13
+  {
+    height: 15.625vw;
+    width: 25vw ;
+  }
+  #photo-14
+  {
+    height: auto;
+    width: 25vw ;
+  }
+  #photo-15
+  {
+    height:  14vw;
+    width: 25vw ;
+  }
+  #photo-17
+  {
+    height: 15.625vw;
+    width: 25vw;
+  }
+  #photo-18
+  {
+    height: 15.625vw;
+    width: 25vw ;
+  }
+  #photo-20
+  {
+    height: 15.625vw;
+    width: 25vw ;
+  }
+  .photo-caption {
+    margin-top: 0.5cm;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  
+    text-align: center;
+    font-family: "Comic Sans MS";
+    font-size: 2rem;
+    background-color: #121110;
+    border: 2px solid #ff0000;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+  }
+  #text10
+  {
+    font-size: 1.5vw;
+  }
+  #text12
+  {
+    font-size: 1.5vw;
+  }
+  #text13
+  {
+    font-size: 1.25vw;
+  }
+  #text19
+  {
+    font-size: 1.5vw;
+  }
+  #text20
+  {
+    font-size: 1.5vw;
+  }
+  .photo-caption:hover{
+    color:rgb(210, 22, 22)
+  }
+.footer{
+    width: 100%;
+    height: auto;
+    background-color: black;
+    color: white;
+    padding: 1px 0px 1px 0px;
+}
