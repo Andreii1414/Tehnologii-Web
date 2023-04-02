@@ -1,0 +1,105 @@
+body{
+    margin: 0px; 
+    width: 100%;   
+}
+
+.logo{
+    width: 100%;
+    height: 20%;
+}
+
+.navigation{
+   overflow: hidden;
+   margin-top: 1%;
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   border-style: groove;
+   border-color: black;
+   border-left: transparent;
+   border-right: transparent;
+}
+
+.logo__image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+
+.navigation__link{
+    float: left;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    color: black;
+    font-size: 1.5vw;
+    font-family: "Comic Sans MS";
+}
+
+.navigation__link:hover{
+    color: gray;
+}
+
+.content{
+    padding-left: 0.5em;
+    background-color: #edfbfc;
+    width: 100%;
+    height: auto;
+    border-style: groove;
+    border-color: black;
+    border-left: transparent;
+    border-right: transparent;
+    width: 100%;
+}
+
+.content-centrat
+{
+    padding: 1px 0px 1px 0px;
+    background-color: #edfbfc;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.footer{
+    width: 100%;
+    height: auto;
+    background-color: black;
+    color: white;
+    padding: 1px 0px 1px 0px;
+}
+
+.intrebari
+{
+    padding: 0.5em 0.5em 0em 0.5em;
+    color: black;
+    font-size: 1.2vw;
+    font-family: "Comic Sans MS";
+}
+
+.drepturi
+{
+    padding-left: 0.5em;
+    background-color: white;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin-top: 25px;
+    font-family: "Comic Sans MS";
+    font-size: 1.2vw;
+    color: black;
+}
+
+.email
+{
+    padding-left: 0.5em;
+    background-color: white;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin-top: 25px;
+    font-family: "Comic Sans MS";
+    font-size: 1.2vw;
+    color: black;
+}
