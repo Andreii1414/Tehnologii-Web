@@ -73,6 +73,10 @@ body{
     padding: 1px 0px 1px 0px;
 }
 
+.content p{
+    font-family: "Comic Sans MS";
+}
+
 .intrebari
 {
     padding: 0.5em 0.5em 0em 0.5em;
