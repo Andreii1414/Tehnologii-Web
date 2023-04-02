@@ -224,6 +224,7 @@ body{
 .box:hover{
     transition: transform .5s ease;
     transform: scale(1.2);
+    cursor: pointer;
 }
 
 .about-page{
