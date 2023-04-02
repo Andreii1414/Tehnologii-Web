@@ -1,0 +1,238 @@
+$text-font: "Comic Sans MS";
+$bg-color: #edfbfc;
+$text-hover: gray;
+body{
+    margin: 0px; 
+    width: 100%;   
+    
+}
+
+.logo{
+    width: 100%;
+    height: 20%;
+}
+
+.navigation{
+   align-items: center;
+   justify-content: space-between;
+   overflow: hidden;
+   margin-top: 1%;
+   display: flex;
+   width: 100%;
+   border-style: groove;
+   border-color: black;
+   border-left: transparent;
+   border-right: transparent;
+   top: 0;
+   position: sticky;
+   background-color: rgba(255, 255, 255, 0.7);
+   z-index: 5;
+}
+
+.logo__image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+
+.navigation__link{
+    text-decoration: none;
+    text-align: center;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    color: black;
+    font-size: 1.5vw;
+    font-family: $text-font;
+}
+
+.navigation__link:hover{
+    color: $text-hover;
+    cursor: pointer;
+}
+
+.content{
+    font-family: $text-font;
+    text-align: center;
+    padding: 1px 0px 1px 0px;
+    background-color: #edfbfc;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+}
+
+.ranking{
+    width: 3%;
+    margin-left: 1%;
+}
+
+.profile{
+    width: 3%;
+    margin-right: 1%;
+}
+
+.footer{
+    width: 100%;
+    height: auto;
+    background-color: black;
+    color: white;
+    padding: 1px 0px 1px 0px;
+    justify-content: center;
+    text-align: center;
+    bottom: 0;
+}
+
+.footer__nav{
+    padding-top: 2%;
+    align-items: center;
+    overflow: hidden;
+    padding-bottom: 1%;
+}
+
+.nav_link{
+    font-size: 0.9vw;
+    text-decoration: none;
+    color:$text-hover;
+    font-family: $text-font;
+    display: grid;
+    padding: 0.2em;
+}
+
+.nav_link:hover{
+    color: white;
+}
+
+.img_nav{
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+}
+
+.icon{
+    padding: 0.5em;
+    width: 2.2%;
+    height: 2.2%;
+}
+
+.icon:hover{
+    cursor: pointer;
+}
+
+.rot{
+    font-family: $text-font;
+    font-size: 0.7vw;
+}
+
+.welcome-text{
+    -webkit-text-stroke: 0.05em black;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 3.3vw;
+    font-family: $text-font;
+    color: white;
+}
+
+.welcome-text{
+    animation: text-animation 4s steps(46, end) 1s 1 normal both;
+}
+
+@keyframes text-animation{
+    from{width: 0;}
+    to{
+        width: 100%;
+    }
+}
+
+.content__home{
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: 100%;
+    padding: 1px 0px 1px 0px;
+    overflow: hidden;
+    height: 30%;
+    width: 100%;
+    background-image: url(img_home.jpg);
+    background-repeat: no-repeat;
+    opacity: 95%;
+    z-index: 10;
+}
+
+.link{
+    text-decoration:underline;
+    color: black
+}
+
+.text-info{
+    font-size: 1.3vw;
+    padding: 4% 8% 4% 8%;
+}
+
+
+.box{
+    background-color: white;
+    width: 70%;
+    height: auto;
+    display: flex;
+    margin: 0 auto;
+    border-style: groove;
+    border-color: white;
+    margin-bottom: 5%;
+}   
+
+.box__left{
+    height: auto;
+    width: 40%;
+    border-right-style: groove;
+    border-right-color: white;
+}
+
+.box__right{
+    font-size: 1vw;
+    height: 100%;
+    width: 60%;
+}
+
+.box__right h2{
+    text-decoration: underline;
+    padding-top: 2%;
+}
+
+.box__right p{
+    font-size: 1vw;
+    padding: 1% 2% 0% 2%;
+}
+
+.help-page{
+    background-image: url(help.PNG);
+}   
+
+.inv{
+    visibility: hidden;
+    font-size: 8vw;
+}
+
+.inv2{
+    visibility: hidden;
+    font-size: 4vw;
+}
+
+.mediu-page{
+    background-image: url(mediu.PNG);
+}
+
+.box:hover{
+    transition: transform .5s ease;
+    transform: scale(1.2);
+}
+
+.about-page{
+    background-image: url(about.PNG);
+}
+
+.mediu-page, .about-page, .help-page{
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
