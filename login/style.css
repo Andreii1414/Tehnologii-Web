@@ -42,28 +42,6 @@ body {
   text-align: center;
 }
 
-.left-div__changeEng {
-  font-size: 3vw;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  text-align: center;
-}
-
-.left-div__changeEng:after {
-  content: "Log in";
-  animation: changeEng 2s linear infinite;
-}
-
-@keyframes changeEng {
-  50% {
-    content: "or";
-  }
-  90% {
-    content: "Sing up";
-  }
-}
 .left-div__change:after {
   content: "Logheaza-te";
   animation: change 2s linear infinite;
@@ -166,7 +144,6 @@ body {
 
 .sign_up_div {
   right: 0;
-  margin-top: 0.2em;
   position: absolute;
   margin-right: 1em;
 }
@@ -199,6 +176,8 @@ body {
 }
 
 .switch {
+  -webkit-text-decoration: underline white 1%;
+          text-decoration: underline white 1%;
   margin-top: 0.2em;
   position: absolute;
   margin-left: 2em;
@@ -251,12 +230,6 @@ body {
   .form_text {
     font-size: 4vw;
   }
-  .sign_up_div {
-    margin-top: 2em;
-    right: auto;
-    text-align: center;
-    width: 100%;
-  }
   .no_acc {
     font-size: 1.9vw;
   }
@@ -267,9 +240,6 @@ body {
     font-size: 2vw;
   }
   .left-div__change {
-    font-size: 3vw;
-  }
-  .left-div__changeEng {
     font-size: 3vw;
   }
   .left-div__rot {
@@ -317,12 +287,6 @@ body {
   .form_text {
     font-size: 6vw;
   }
-  .sign_up_div {
-    margin-top: 2em;
-    right: auto;
-    text-align: center;
-    width: 100%;
-  }
   .no_acc {
     font-size: 2.3vw;
   }
@@ -333,9 +297,6 @@ body {
     font-size: 4vw;
   }
   .left-div__change {
-    font-size: 5vw;
-  }
-  .left-div__changeEng {
     font-size: 5vw;
   }
   .left-div__rot {

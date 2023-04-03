@@ -52,20 +52,6 @@ body{
     @include change();
 }
 
-.left-div__changeEng{
-    @include change();
-}
-
-.left-div__changeEng:after{
-    content: "Log in";
-    animation: changeEng 2s linear infinite;
-}
-
-@keyframes changeEng {
-    50%{content: "or";}
-    90%{content: "Sing up";}
-}
-
 .left-div__change:after{
     content: "Logheaza-te";
     animation: change 2s linear infinite;
@@ -165,7 +151,6 @@ body{
 
 .sign_up_div{
     right: 0;
-    margin-top:0.2em;
     position: absolute;
     margin-right: 1em;
 }
@@ -198,6 +183,7 @@ body{
 }
 
 .switch{
+    text-decoration: underline white 1%;
     margin-top:0.2em;
     position: absolute;
     margin-left: 2em;
@@ -236,13 +222,6 @@ body{
     right: auto;
 }
 
-@mixin sign_up-d(){
-    margin-top: 2em;
-    right: auto;
-    text-align: center;
-    width: 100%;
-}
-
 @media screen and (min-width: 768px) and (max-width: 1023px){
     .left-div{
         @include left-d;
@@ -273,10 +252,6 @@ body{
         font-size: 4vw;
     }
 
-    .sign_up_div{
-        @include sign_up-d();
-    }
-
     .no_acc{
         font-size: 1.9vw;
     }
@@ -290,10 +265,6 @@ body{
     }
 
     .left-div__change{
-        font-size:3vw
-    }
-
-    .left-div__changeEng{
         font-size:3vw
     }
 
@@ -350,10 +321,6 @@ body{
         font-size: 6vw;
     }
 
-    .sign_up_div{
-        @include sign_up-d();
-    }
-
     .no_acc{
         font-size: 2.3vw;
     }
@@ -367,10 +334,6 @@ body{
     }
 
     .left-div__change{
-        font-size:5vw
-    }
-
-    .left-div__changeEng{
         font-size:5vw
     }
 
