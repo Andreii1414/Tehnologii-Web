@@ -23,7 +23,7 @@ body{
   position: sticky;
   background-color: rgba(255, 255, 255, 0.7);
   opacity: 100%;
-  z-index: 2;
+  z-index: 3;
 }
 
 .logo__image{
@@ -61,7 +61,7 @@ img
 }
 
 .car-img{
-  opacity: 50%;
+  opacity: 60%;
 }
 .overlay
 {
@@ -70,18 +70,31 @@ img
     display: flex;
     position: relative; 
     align-items: center;
+    justify-content: center;
 }
 
 h1{
+  -webkit-text-stroke: 0.05em white;
     font-family: "Comic Sans MS";
     position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    overflow: hidden;
     z-index: 2;
     font-size: 5vw; 
     text-align: center; 
-   
+    white-space: nowrap;
 }
+
+h1{
+animation: text-animation 4s steps(46, end) 1s 1 normal both;
+}
+
+@keyframes text-animation{
+  from{width: 0;}
+  to{
+      width: 100%;
+  }
+}
+
 h2{
     font-size:3vw;
     text-align: center;
