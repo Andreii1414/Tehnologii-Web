@@ -32,6 +32,7 @@ body {
 }
 
 .navigation__link {
+  float: left;
   text-decoration: none;
   text-align: center;
   padding: 0.5em 0.5em 0.5em 0.5em;
