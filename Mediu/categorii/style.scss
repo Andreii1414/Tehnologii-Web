@@ -131,7 +131,7 @@ body{
     position: relative;
     margin: auto;
     width: 90%;
-    height: 27em;
+    height: 30em;
     justify-content: center;
     margin-top: 2%;
     margin-bottom: 5%;
@@ -177,19 +177,24 @@ body{
     top: 0;
     left: 0;
     width: 40%;
-    height: auto;
+    height: 6em;
     background-color: white;
     border: 2px solid black;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 .right{
     top: 0;
     right: 0;
     width: 60%;
-    height: auto;
+    height: 6em;
     background-color: white;
     border: 2px solid black;
-    padding: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
+    overflow-y: scroll;
 }
 
 .right__title{
@@ -198,7 +203,7 @@ body{
 
 .image{
     width: 90%;
-    height: 100%;
+    height: auto;
 }
 
 .right__text{
@@ -262,6 +267,7 @@ body{
         align-items: center;
         justify-content: center;
         display: flex;
+        height: 13.5em;
     }
 
     .image{
@@ -270,8 +276,10 @@ body{
     }
 
     .right{
-        padding: 0%;
-       width: 60%;   
+      overflow-y: scroll;
+      padding: 0%;
+       width: 60%;  
+       height: 13.5em; 
     }
 
 
@@ -285,11 +293,11 @@ body{
     }
     .right__text{
         padding-top: 2%;
-        font-size: 3vw;
+        font-size: 2.9vw;
     }
 }
 
-@media screen and (max-width: 767px){
+@media screen and (max-width: 519px){
     .logo {
         height: 40%;
     }
@@ -340,12 +348,14 @@ body{
     }
 
     .image{
-        width: 50%;
+        width: 40%;
         height: 100%;
     }
 
     .right{
+        overflow-y: scroll;
         width: 100%;
+        height: 15em;
     }
 
     .title{
@@ -360,4 +370,78 @@ body{
         font-size: 3.5vw;
     }
 
+}
+
+@media screen and (min-width: 519px) and (max-width: 767px){
+    .logo {
+        height: 40%;
+    }
+    .logo__image{
+        width: 40%;
+    }
+    .navigation__link{
+        font-size: 2.5vw;
+    }
+    .nav_link{
+        font-size: 2vw;
+    }
+    .icon{
+        padding: 0.2em;
+        width: 5%;
+        height: 5%;
+    }
+
+    .ranking, .profile{
+        width: 5%;
+    }
+
+    .rot{
+        font-size: 1.7vw;
+    }
+
+    .rectangle:hover{
+        transition: none;
+        transform: none;
+    }
+
+    .slideshow{
+        height: 40em;
+    }
+
+    .rectangle{
+        width: 90%;
+        height: auto;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .left{
+        margin-top: 5%;
+        width: 102%;
+    }
+
+    .image{
+        width: 40%;
+        height: 100%;
+    }
+
+    .right{
+        overflow-y: scroll;
+        width: 100%;
+        height: 10em;
+    }
+
+    .title{
+        margin-top: 7%;
+    }
+
+    .right__title{
+        font-size: 5vw;
+    }
+    .right__text{
+        padding-top: 2%;
+        font-size: 3.5vw;
+    }
 }
