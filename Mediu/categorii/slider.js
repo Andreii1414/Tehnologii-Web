@@ -1,4 +1,4 @@
-let index = 1;
+        let index = 1;
         showSlide(index);
 
         function prev(){
@@ -37,3 +37,31 @@ let index = 1;
         
         document.querySelector(".prev").addEventListener("click", prev);
         document.querySelector(".next").addEventListener("click", next);
+
+        const bar = document.querySelector('.progress');
+        const slideList = document.querySelectorAll('.slide');
+
+        let index2 = 0;
+
+        function updateProgressBar(){
+            const percent = ((index2 + 1)/slideList.length)*100;
+            bar.style.width = percent + '%';
+        }
+
+        updateProgressBar();
+
+        document.querySelector('.prev').addEventListener('click', () => {
+            index2--;
+            if(index2 < 0){
+                index2 = 0;
+            } 
+            updateProgressBar();
+        });
+
+        document.querySelector('.next').addEventListener('click', () => {
+            index2++;
+            if(index2 > slideList.length - 1){
+                index2 = slideList.length - 1;
+            } 
+            updateProgressBar();
+        });

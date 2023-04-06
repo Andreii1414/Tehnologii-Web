@@ -214,6 +214,21 @@ body {
   transform: scale(1.1);
 }
 
+.progress-bar {
+  width: 90%;
+  height: 10px;
+  margin: 10px auto;
+  background-color: lightgray;
+  border-radius: 5px;
+}
+
+.progress {
+  height: 100%;
+  background-color: #24b529;
+  border-radius: 5px;
+  transition: width 0.3s ease-in-out;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .logo {
     height: 40%;
