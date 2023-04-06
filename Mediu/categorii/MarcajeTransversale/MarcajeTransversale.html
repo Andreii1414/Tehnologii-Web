@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Marcaje transversale</title>
+</head>
+<body>
+    <div class="logo">
+        <img src="logo.png" alt="RoT" class="logo__image">
+    </div>
+
+    <div class="navigation">
+        <img src="rank.png" class="ranking navigation__link" alt="Clasament">
+        <div class="center">
+            <a class = "navigation__link" href="#">Pagina principala</a>
+            <a class = "navigation__link" href="#">Mediu de invatare</a>
+            <a class = "navigation__link" href="#">About</a>
+            <a class = "navigation__link" href="#">Help</a>
+        </div>
+        <img src="profile.png" class="profile navigation__link" alt="Profil">
+    </div>
+
+    <div class="content">
+        <h1 class="title">Marcaje transversale</h1>
+        <div class="slideshow">
+            <div class="slide">
+                <div class="rectangle">
+                    <div class="left">
+                        <img src="semne/marcaj_oprire.png" alt="marcaj_oprire" class="image">
+                    </div>
+                    <div class="right">
+                           <p class="right__title">1: Marcaj de oprire</p>
+                           <p class="right__text">Inaintea marcajului ce insoteste indicatorul "Oprire" se poate aplica pe partea carosabila inscriptia "STOP". Se opreste fara a depasi linia transversala. </p>
+                    </div>
+                </div>
+            </div>     
+            <div class="slide">
+                <div class="rectangle">
+                    <div class="left">
+                        <img src="semne/marcaj_cedeaza_trecerea.png" alt="marcaj_cedeaza_trecerea" class="image">
+                    </div>
+                    <div class="right">
+                           <p class="right__title">2: Marcaj de cedarea trecerii</p>
+                           <p class="right__text">Inaintea unei asemenea linii se poate aplica pe partea carosabila un marcaj sub forma de triunghi, avand o latura paralela cu linia discontinua, iar varful indreptat spre vehiculul care se apropie. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="rectangle">
+                    <div class="left">
+                        <img src="semne/benzi_rezonatoare.png" alt="benzi_rezonatoare" class="image">
+                    </div>
+                    <div class="right">
+                           <p class="right__title">3: Benzi rezonatoare din marcaj rutier</p>
+                           <p class="right__text">Pe autostrazi, pe drumurile expres si pe drumuri nationale deschise traficului international (E), la extremitatile partii carosabile, se aplica marcaje rezonatoare (la calcarea acestor benzi rotile fac zgomot), pentru avertizarea conducatorilor de autovehicule la iesirea de pe partea carosabila. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="rectangle">
+                    <div class="left">
+                        <img src="semne/marcaj_traversare_pietoni.png" alt="marcaj_traversare_pietoni" class="image">
+                    </div>
+                    <div class="right">
+                           <p class="right__title">4: Marcaje de traversare pentru pietoni</p>
+                           <p class="right__text">Marcajul transversal constand din linii paralele cu axul drumului indica locul pe unde pietonii trebuie sa traverseze drumul. Aceste linii au latimea mai mare decat a oricaror altor marcaje. </p>
+                    </div>
+                </div>
+            </div>
+        
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="footer__nav">
+            <a class = "nav_link" href="#">Confidentialitate</a>
+            <a class = "nav_link" href="#">Info contact</a>
+            <a class = "nav_link" href="#">Intrebari frecvente</a>
+            <a class = "nav_link" href="#">Termeni si conditii</a>
+        </div>
+
+        <div class="img_nav">
+            <img src="facebook.png" alt="facebook" class="icon">
+            <img src="twitter.png" alt="twitter" class="icon">
+            <img src="instagram.png" alt="instagram" class="icon">
+            <img src="reddit.png" alt="reddit" class="icon">
+        </div>
+
+        <p class="rot">Romanian Traffic Signs Tutor</p>
+        <p class="rot">@RoT</p>
+    </div>
+
+
+    <script>
+        let index = 1;
+        showSlide(index);
+
+        function prev(){
+            showSlide(index -= 1);
+        }
+
+        function next(){
+            showSlide(index += 1);
+        }
+
+        function showSlide(n){
+            const slideList = document.getElementsByClassName("slide");
+
+            if(n > slideList.length)
+                index = 1;
+
+            if(n < 1)
+                index = slideList.length;
+
+            for(let i = 0; i < slideList.length; i++)
+                slideList[i].style.display = "none";
+
+            slideList[index - 1].style.display = "block";
+
+            const prevBtn = document.querySelector(".prev");
+            if(index == 1)
+                prevBtn.style.display = "none";
+            else prevBtn.style.display = "block";
+
+        }
+        
+        document.querySelector(".prev").addEventListener("click", prev);
+        document.querySelector(".next").addEventListener("click", next);
+    </script>
+
+</body>
+</html>
