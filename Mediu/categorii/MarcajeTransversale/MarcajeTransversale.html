@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <title>Marcaje transversale</title>
 </head>
 <body>
@@ -14,18 +14,21 @@
     </div>
 
     <div class="navigation">
-        <img src="rank.png" class="ranking navigation__link" alt="Clasament">
+        <img src="rank.png" onclick="window.location.href='../../../Clasament/clasament.html'" class="ranking navigation__link" alt="Clasament">
         <div class="center">
-            <a class = "navigation__link" href="#">Pagina principala</a>
-            <a class = "navigation__link" href="#">Mediu de invatare</a>
-            <a class = "navigation__link" href="#">About</a>
-            <a class = "navigation__link" href="#">Help</a>
+            <a class = "navigation__link" onclick="window.location.href='../../../home/home.html'">Pagina principala</a>
+            <a class = "navigation__link" onclick="window.location.href='../../mediu.html'">Mediu de invatare</a>
+            <a class = "navigation__link" onclick="window.location.href='../../../about/about.html'">About</a>
+            <a class = "navigation__link" onclick="window.location.href='../../../help/help.html'">Help</a>
         </div>
-        <img src="profile.png" class="profile navigation__link" alt="Profil">
+        <img src="profile.png" onclick="window.location.href='../../../login/login.html'" class="profile navigation__link" alt="Profil">
     </div>
 
     <div class="content">
         <h1 class="title">Marcaje transversale</h1>
+        <div class="progress-bar">
+            <div class="progress"></div>
+          </div>
         <div class="slideshow">
             <div class="slide">
                 <div class="rectangle">
@@ -97,41 +100,7 @@
     </div>
 
 
-    <script>
-        let index = 1;
-        showSlide(index);
-
-        function prev(){
-            showSlide(index -= 1);
-        }
-
-        function next(){
-            showSlide(index += 1);
-        }
-
-        function showSlide(n){
-            const slideList = document.getElementsByClassName("slide");
-
-            if(n > slideList.length)
-                index = 1;
-
-            if(n < 1)
-                index = slideList.length;
-
-            for(let i = 0; i < slideList.length; i++)
-                slideList[i].style.display = "none";
-
-            slideList[index - 1].style.display = "block";
-
-            const prevBtn = document.querySelector(".prev");
-            if(index == 1)
-                prevBtn.style.display = "none";
-            else prevBtn.style.display = "block";
-
-        }
-        
-        document.querySelector(".prev").addEventListener("click", prev);
-        document.querySelector(".next").addEventListener("click", next);
+    <script src="../slider.js">
     </script>
 
 </body>
