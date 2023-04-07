@@ -1,0 +1,39 @@
+.imagine{
+    width: 60%;
+}
+
+body{
+    font-family: "Comic Sans MS";
+    background-color: black;
+    color: white;
+}
+
+header{
+    font-size: 3vw;
+}
+
+dt{
+    font-size: 2vw;
+}
+
+dd{font-size: 1.3vw;}
+
+a{text-decoration: underline lightblue;
+color: white;}
+
+section{
+    text-align: center;
+}
+
+h1{
+    font-size: 4vw;
+}
+
+li{
+    list-style-type: none;
+    font-size: 1.3vw;
+}
+
+ul{
+    margin-bottom: 5%;
+}
