@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,8 +10,8 @@
 </head>
 <body prefix="schema: http://schema.org">
     <header>Documentatie RoT</header>
-    <div>
-        <d1 role="contentinfo">
+    <div role="contentinfo">
+        <dl>
             <dt>Dezvoltatori</dt>
             <dd typeof="sa:ContributorRole" property="schema:author">
                 <span typeof="schema: Person">
@@ -38,10 +38,10 @@
                       <a href="https://github.com/AlexRobert11"><span property="schema:name">Cenusa Alexandru Robert</span></a>
                 </span>
             </dd>
-        </d1>
+        </dl>
     </div>
     <section typeof="sa:Abstract" role="doc-abstract">
-        <span><h1>1. Cerinta</h1></span>
+        <h1><span>1. </span>Cerinta</h1>
         <p>Sa se dezvolte o aplicatie Web care pe baza unui API Web REST/GraphQL ofera suport pentru invatarea semnelor rutiere si a regulilor de circulatie 
             din tara noastra si altele europene. Pentru fiecare (categorie de) semne, se vor pune la dispozitie informatii precum 
             semnificatia, tipul, regulamentele in vigoare, relatii cu alte semne de interes, sfaturi practice, contextul de utilizare, 
@@ -52,7 +52,7 @@
     </section>
 
     <section>
-        <span><h1>2. Introducere</h1></span>
+        <h1><span>2. </span>Introducere</h1>
         <p>
             Invatarea semnelor si regulilor de circulatie este importanta nu numai pentru obtinerea permisului de conducere, ci chiar si 
             pentru oamenii care nu planuiesc sustinerea acestui examen in viitorul apropiat. Prin invatarea indicatoarelor si regulilor rutiere,
@@ -63,46 +63,46 @@
     </section>
 
     <section>
-        <span><h1>3. Structura aplicatiei</h1></span>
+        <h1><span>3. </span>Structura aplicatiei</h1>
         <p>
             Aplicatia web este structurata in 7 pagini principale: Clasament, Pagina Principala, Mediu de invatare, About, Help, Login, Sign up
             si contine cate o alta pagina pentru fiecare categorie de semne. 
         </p>
-            <span><h2>3.1. Pagina principala</h2></span>
+             <h2><span>3.1</span> Pagina principala</h2>
             <p>Aici se gasesc principalele informatii despre aplicatie, precum si o scurta descriere a aplicatiei, a tuturor paginilor, 
                 detalii despre cum poti face parte din Clasament, etc.
             </p>
-            <span><h2>3.2. Mediu de invatare</h2></span>
+            <h2><span>3.2</span> Mediu de invatare</h2>
             <p>Aici se gasesc toate categoriile de semne de circulatie. Fiecare categorie contine un anumit numar de semne rutiere.
                 Utilizatorul poate vedea progresul sau in acea categorie prin intermediul progress bar-ului.
             </p>
             <img src="Capture.PNG" alt="img" class="imagine">
-            <span><h2>3.3. Help</h2></span>
+            <h2><span>3.3</span> Help</h2>
             <p>
                 In aceasta sectiune se vor putea gasi informatii care sa ajute utilizatorul in cazul in care intampina o problema si nu numai.
                 In sectiunea Help poate fi gasita subsectiunea Intrebaru Frecvente unde sunt raspunsuri la unele intrebari care ar putea aparea mai des.
             </p>
 
-            <span><h2>3.3. About</h2></span>
+            <h2><span>3.4</span> About</h2>
             <p>
                 In aceasta sectiune se vor putea gasi informatii legate de tehnologiile utilizate in realizarea aplicatiei. De asemenea, aici vor fi 
                 adaugate si update-urile si, de asemenea, aici sunt si informatiile de contact.
             </p>
 
-            <span><h2>3.4. Clasament</h2></span>
+            <h2><span>3.5</span> Clasament</h2>
             <p>
                 Pe aceasta sectiune se gaseste clasamentul celor mai sarguinciosi utilizatori (bazat pe progres si punctaje la chestionare). Un 
                 demo mai jos: 
             </p>
             <img src="clasament.PNG" alt="img" class="imagine">
 
-            <span><h2>3.5. Log in si Sign up</h2></span>
+            <h2><span>3.6</span> Log in si sign up</h2>
             <p>
                 Paginile destinate autentificarii sau inregistrarii. Autentificarea sau inregistrarea este necesara pentru a putea face 
                 parte din clasament.
             </p>
 
-            <span><h2>3.6. Diagrama use case</h2></span>
+            <h2><span>3.7</span> Diagrama use-case</h2>
             <p>
                 <img src="usecase.png" alt="usecase" class="imagine">
             </p>
@@ -110,20 +110,20 @@
     </section>
 
     <section>
-        <span><h1>4. Tehnologiile folosite</h1></span>
+        <h1><span>4. </span>Tehnologii utilizate</h1>
 
-        <span><h2>4.1. HTML (HyperText Markup Language)</h2></span>
+            <h2><span>4.1</span> HTML (HyperText Markup Language)</h2>
         <p>Este utilizat pentru a crea structura si continutul paginii web.
             HTML este folosit pentru a crea elementele de bază ale paginii, cum ar fi butoane, 
             casete de selectare, imagini si text.
         </p>
 
-        <span><h2>4.2. CSS (Cascading Style Sheets)</h2></span>
+        <h2><span>4.2 </span> CSS(Cascading Style Sheets)</h2>
         <p>Este utilizat pentru a stiliza și formata aspectul paginii web. CSS permite utilizarea de culori, 
             dimensiuni, fonturi si alte proprietăți pentru elementele HTML afișate pe pagină. 
         </p>
 
-        <span><h2>4.2. JavaScript</h2></span>
+        <h2><span>4.3</span> JavaScript</h2>
         <p>
             Este utilizat pentru interactivitate. JavaScript permite crearea de functionalitati interactive, animatii, validari, etc. 
             Mai multe detalii de implementare mai jos.
@@ -131,28 +131,28 @@
     </section>
 
     <section>
-        <span><h1>5. Cateva detalii de implementare</h1></span>
+        <h1><span>5. </span>Cateva detalii de implementare</h1>
 
-        <span><h2>5.1. Butoanele next & previous</h2></span>
+            <h2><span>5.1</span> Butoane next & previous</h2>
         <p>Codul folosit pentru actiunea butoanelor next si previous prezente in fiecare categorie de semne pentru a trece la 
             semnul urmator sau la cel anterior: 
         </p>
-        <img src="code1.PNG" class="imagine">
+        <img src="code1.PNG" alt= "code1" class="imagine">
 
-        <span><h2>5.2. Progress bar</h2></span>
+        <h2><span>5.2</span> Progress bar</h2>
         <p>Codul folosit pentru progress bar, pentru actualizarea sa in momentul in care sunt actionate butoanele next si previous: 
         </p>
-        <img src="code2.PNG" class="imagine">
+        <img src="code2.PNG" alt= "code2" class="imagine">
 
-        <span><h2>5.3. Animatie welcome</h2></span>
+        <h2><span>5.3</span> Animatie welcome</h2>
         <p>
             Codul folosit pentru a anima textul care intampina utilizatorul pe pagina princiapala.
         </p>
-        <img src="anim.PNG" class="imagine">
+        <img src="anim.PNG" alt= "anim" class="imagine">
     </section>
 
     <section>
-        <span><h1>6. Bibliografie</h1></span>
+        <h1><span>6. </span>Bibliografie</h1>
         <ul>
             <li property="schema:citation" typeof="scehma:WebSite" resource="https://www.w3schools.com/">
                 <cite property="schema:name">
