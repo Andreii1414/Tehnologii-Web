@@ -59,6 +59,7 @@ body{
     background-color: cyan;
     padding: 8px 15px;
     border-radius: 15px;
+    font-size: 1.3vw;
 }
 
 .answer:hover span{
@@ -71,6 +72,10 @@ body{
 
 .answer input[valid]:checked + span{
     background-color: green;
+}
+
+h3{
+    font-size: 1.3vw;
 }
 
 .footer{
@@ -86,6 +91,7 @@ body{
     padding-left: 3%;
     padding-right: 3%;
     border-radius: 15px;
+    font-size: 1.1vw;
 }
 
 .b1:hover{
@@ -96,7 +102,58 @@ body{
 a{
     text-decoration: underline;
     color: black;
+    font-size: 1.3vw;
 }
 a:hover{
     cursor: pointer;
 }
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    h3{
+        font-size: 4vw;
+    }
+    .b1{
+        font-size: 3vw
+    }
+
+    .answer span{
+        font-size: 3vw;
+        padding: 6px 11px;
+    }
+
+    .box{
+        width: 80%;
+    }
+
+    .header{
+        font-size: 3vw;
+    }
+    a{
+        font-size: 3vw;
+    }
+
+  }
+  @media screen and (max-width: 767px) {
+    h3{
+        font-size: 5vw;
+    }
+    .b1{
+        font-size: 4vw
+    }
+
+    .answer span{
+        font-size: 4vw;
+        padding: 4px 9px;
+    }
+
+    .box{
+        width: 80%;
+    }
+
+    .header{
+        font-size: 4vw;
+    }
+    a{
+        font-size: 4vw;
+    }
+  }
