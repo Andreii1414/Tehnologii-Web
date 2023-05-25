@@ -56,9 +56,15 @@ body {
   justify-content: center;
 }
 
-.ranking {
+.ranking  {
   width: 3%;
   margin-left: 1%;
+}
+
+.quiz 
+{
+  width: 3%; 
+  margin-left: -23%;
 }
 
 .profile {
@@ -251,9 +257,10 @@ body {
     width: 5%;
     height: 5%;
   }
-  .ranking, .profile {
+  .ranking, .profile .quiz {
     width: 5%;
   }
+ 
   .rot {
     font-size: 1.7vw;
   }
@@ -292,9 +299,10 @@ body {
     width: 5%;
     height: 5%;
   }
-  .ranking, .profile {
+  .ranking, .profile .quiz {
     width: 5%;
   }
+  
   .rot {
     font-size: 1.7vw;
   }

@@ -1,0 +1,463 @@
+body{
+    margin: 0px; 
+    width: 100%;   
+}
+
+.logo{
+    width: 100%;
+    height: 20%;
+}
+
+.navigation{
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    margin-top: 1%;
+    display: flex;
+    width: 100%;
+    border-style: groove;
+    border-color: black;
+    border-left: transparent;
+    border-right: transparent;
+    top: 0;
+    position: sticky;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+.navigation__link{
+    float: left;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    color: black;
+    font-size: 1.5vw;
+    font-family: "Comic Sans MS";
+}
+
+.logo__image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+
+.navigation__link{
+    float: left;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    color: black;
+    font-size: 1.5vw;
+    font-family: "Comic Sans MS";
+}
+
+.navigation__link:hover{
+    color: gray;
+    cursor: pointer;
+}
+
+.content{
+    background-color: #edfbfc;
+    width: 100%;
+    height: auto;
+    border-style: groove;
+    border-color: black;
+    border-left: transparent;
+    border-right: transparent;
+}
+
+.content-centrat
+{
+    padding: 1px 0px 1px 0px;
+    background-color: #edfbfc;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.footer{
+    width: 100%;
+    height: auto;
+    background-color: black;
+    color: white;
+    padding: 1px 0px 1px 0px;
+}
+
+.content p{
+    font-family: "Comic Sans MS";
+}
+
+
+.email
+{
+    background-color: white;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin-top: 2%;
+    font-family: "Comic Sans MS";
+    font-size: 1.2vw;
+    color: black;
+    padding-bottom: 2%;
+}
+
+.ranking{
+    width: 3%;
+    margin-left: 1%;
+}
+
+.profile{
+    width: 3%;
+    margin-right: 1%;
+}
+.overlay
+{
+    width: 100%;
+    height:auto;
+    display: flex;
+    position: relative; 
+    align-items: center;
+    justify-content: center;
+}
+
+  h1{
+    -webkit-text-stroke: 2px;
+    font-size: 6vw;
+  }  
+  h1{
+    -webkit-text-stroke: 0.05em white;
+      font-family: "Comic Sans MS";
+      position: absolute;
+      overflow: hidden;
+      z-index: 2;
+      font-size: 5vw; 
+      text-align: center; 
+      white-space: nowrap;
+  }
+  
+  h1{
+  animation: text-animation 4s steps(46, end) 1s 1 normal both;
+  }
+  
+  @keyframes text-animation{
+    from{width: 0;}
+    to{
+        width: 100%;
+    }
+  }
+  
+  .text {
+    font-size:1.5vw;
+    text-align: center;
+    font-family: "Comic Sans MS";
+    width: 100%;
+    height: auto;
+    -webkit-text-stroke: 0.25px #0d07ac;
+}
+h7{
+    color:#000000;
+    font-size:4vw;
+    text-align: left;
+    font-family: "Comic Sans MS";
+    width: 100%;
+    height: auto;
+    -webkit-text-stroke: 0.5px  #0d07ac;
+}
+
+
+
+.incepe {
+    font-size: 3vw;
+    font-family: "Comic Sans MS";
+    width: 100%;
+    height: auto;
+    
+    margin-left:40%;
+    margin-bottom:1%;
+   
+}
+a2{
+    border-radius: 5%;
+    
+    border-color: rgba(5, 4, 4, 0.614);
+    border-style: outset; 
+    border-width: 0.25cm;
+}
+
+
+a1{
+    text-decoration:underline ;
+}
+a1:hover{
+    cursor: pointer;
+    color: #0d07ac;
+}
+
+.car-img{
+    opacity: 60%;
+  }
+  img{
+    width: 100%;
+  }
+
+.footer{
+    width: 100%;
+    height: auto;
+    background-color: black;
+    color: white;
+    padding: 1px 0px 1px 0px;
+    justify-content: center;
+    text-align: center;
+    bottom: 0;
+}
+
+.footer__nav{
+    padding-top: 2%;
+    align-items: center;
+    overflow: hidden;
+    padding-bottom: 1%;
+}
+
+.nav_link{
+    font-size: 0.9vw;
+    text-decoration: none;
+    color:gray;
+    font-family: "Comic Sans MS";
+    display: grid;
+    padding: 0.2em;
+}
+
+.nav_link:hover{
+    color: white;
+}
+
+.img_nav{
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+}
+
+.icon{
+    padding: 0.5em;
+    width: 2.2%;
+    height: 2.2%;
+}
+
+.icon:hover{
+    cursor: pointer;
+}
+.wrapper:hover{
+    cursor: pointer;
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 33%;
+  }
+  .wrapper img {
+    width: 70%;
+    height: auto;
+  }
+  #photo-9
+  {
+    
+    width: 25vw ;
+    height:14.688vw;
+  }
+  #photo-10
+  {
+    height: 15.625vw;
+    
+  }
+  
+  #photo-13
+  {
+    height: 15.625vw;
+    width: 25vw ;
+  }
+  #photo-14
+  {
+    height: auto;
+    width: 25vw ;
+  }
+  #photo-15
+  {
+    height:  14vw;
+    width: 25vw ;
+  }
+  #photo-17
+  {
+    height: 15.625vw;
+    width: 25vw;
+  }
+  #photo-18
+  {
+    height: 15.625vw;
+    width: 25vw ;
+  }
+  #photo-20
+  {
+    height: 15.625vw;
+    width: 25vw ;
+  }
+  .photo-caption {
+    margin-top: 0.5cm;
+    /* color: #fff; */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  
+    text-align: center;
+    font-family: "Comic Sans MS";
+    font-size: 2vw;
+    background-color: rgba(255, 255, 255, 0.614); 
+    border: 4px solid #140987;
+    border-radius: 10px;
+    padding: 2%;
+    text-align: center;
+  }
+  .photo-caption:hover{
+    cursor: pointer;
+    color: #140987; 
+  }
+  .photo-caption{
+    font-size: 2.5vw;
+  }
+  .photo-caption{
+    font-size: 2.5vw;
+  }
+  p {
+   
+    display: block;
+    text-align: center;
+    margin: 80px 100px;
+    text-shadow:
+        1px 1px 0 #aaa,
+        2px 2px 0 #bbb,
+        3px 3px 0 #bbb,
+        4px 4px 0 #bbb,
+        4px 4px 15px #888,
+        4px 4px 5px #444;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;}
+
+p:hover {
+    margin: 70px 110px 80px 90px;
+    text-shadow:
+        1px 1px 0 #aaa,
+        2px 2px 0 #bbb,
+        3px 3px 0 #bbb,
+        4px 4px 0 #bbb,
+        13px 13px 35px #888,
+        13px 13px 20px #444;}
+  #text2
+  {
+    font-size: 2.2vw;
+  }
+  #text10
+  {
+    font-size: 1.5vw;
+  }
+  #text12
+  {
+    font-size: 1.5vw;
+  }
+  #text13
+  {
+    font-size: 1.25vw;
+  }
+  #text19
+  {
+    font-size: 1.5vw;
+  }
+  #text20
+  {
+    font-size: 1.5vw;
+  }
+  .line1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .line1 img {
+    /* display: flex; */
+  justify-content: space-between;
+  align-items: center;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  }
+.rot{
+    font-family: "Comic Sans MS";
+    font-size: 0.7vw;
+}
+
+
+
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    .logo {
+        height: 40%;
+    }
+    .logo__image{
+        width: 40%;
+    }
+    .navigation__link{
+        font-size: 2.5vw;
+    }
+    .nav_link{
+        font-size: 2vw;
+    }
+    .icon{
+        padding: 0.2em;
+        width: 5%;
+        height: 5%;
+    }
+
+    .ranking, .profile{
+        width: 5%;
+    }
+
+    .rot{
+        font-size: 1.7vw;
+    }
+    
+    .intrebari p, .content p{
+        font-size: 4vw;
+    }
+    
+    .drepturi, .email{
+        font-size: 3vw;
+    }
+
+}
+
+@media screen and (max-width: 767px){
+    .logo {
+        height: 40%;
+    }
+    .logo__image{
+        width: 40%;
+    }
+    .navigation__link{
+        font-size: 2.5vw;
+    }
+    .nav_link{
+        font-size: 2vw;
+    }
+    .icon{
+        padding: 0.2em;
+        width: 5%;
+        height: 5%;
+    }
+
+    .ranking, .profile{
+        width: 5%;
+    }
+
+    .rot{
+        font-size: 1.7vw;
+    }
+
+}
