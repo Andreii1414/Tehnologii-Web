@@ -56,6 +56,7 @@ body{
 }
 
 .content{
+  text-align: center;
     background-color: #edfbfc;
     width: 100%;
     height: auto;
@@ -99,7 +100,6 @@ body{
     color: black;
     padding-bottom: 2%;
 }
-
 .ranking{
     width: 3%;
     margin-left: 1%;
@@ -119,6 +119,7 @@ body{
     justify-content: center;
 }
 
+
   h1{
     -webkit-text-stroke: 2px;
     font-size: 6vw;
@@ -137,6 +138,7 @@ body{
   h1{
   animation: text-animation 4s steps(46, end) 1s 1 normal both;
   }
+
   
   @keyframes text-animation{
     from{width: 0;}
@@ -144,7 +146,7 @@ body{
         width: 100%;
     }
   }
-  
+
   .text {
     font-size:1.5vw;
     text-align: center;
