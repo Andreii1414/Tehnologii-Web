@@ -4,161 +4,91 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://kit.fontawesome.com/30c0cebaef.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
-    <title>Take A Quiz</title>
+    <title>Quiz</title>
 </head>
 <body>
-    <div class="logo">
-        <img src="../images/logo.png" alt="RoT" class="logo__image">
+    
+    <div class="box">
+        <div class="header">
+            <span>Raspunsuri corecte: <span id="scor">0</span></span>
+            <span>Timp: <span id="countdown">0</span>/15</span>
+        </div>
+        <hr>
+        <div class="body">
+            <div class="question active">
+                <h3>Intrebarea 1</h3>
+                <div class="answer">
+                    <input type="radio" name="a1">
+                    <span>a</span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a1" valid = "valid">
+                    <span>b</span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a1">
+                    <span>c</span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a1">
+                    <span>d</span>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>Intrebarea 2</h3>
+                <div class="answer">
+                    <input type="radio" name="a2">
+                    <span>e</span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a2">
+                    <span>f</span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a2">
+                    <span>g</span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a2"  valid = "valid">
+                    <span>h</span>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>Intrebarea 3:</h3>
+                <div class="answer">
+                    <input type="radio" name="a3" valid = "valid">
+                    <span>i</span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a3">
+                    <span>j</span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a3">
+                    <span>k</span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a3">
+                    <span>l</span>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>La acest quiz ai obtinut: <span id="totalScore">0</span> puncte</h3>
+                <a>Apasa aici pentru a merge la lista cu quiz-uri</a>
+            </div>
+
+        </div>
+        
+        <div class="footer">
+            <span class="b1" id="skip">Skip</span>
+        </div>
+
     </div>
 
-    <div class="navigation">
-        <img src="../images/rank.png" class="ranking navigation__link" alt="Clasament" onclick="window.location.href='../clasament/clasament.html'">
-        <div class="center">
-            <a class = "navigation__link" onclick="window.location.href='../home/home.html'">Pagina principala</a>
-            <a class = "navigation__link" onclick="window.location.href='../Mediu/mediu.html'">Mediu de invatare</a>
-            <a class = "navigation__link" onclick="window.location.href='../quiz/quiz.html'">Quiz</a>
-            <a class = "navigation__link" onclick="window.location.href='../about/about.html'">About</a>
-            <a class = "navigation__link" onclick="window.location.href='../help/help.html'">Help</a>
-        </div>
-        <img src="../images/profile.png" class="profile navigation__link" alt="Profil" onclick="window.location.href='../login/login.html'">
-    </div>
-
-    <div class="content">
-        <div class="overlay">
-            <h1>Take a Quiz</h1>     
-            <img src="quiz2.jpeg" alt="bgimage" class="car-img">
-        </div>
-     
-        <h2 class="text">•Bine ai venit la sectiunea "Take a Quiz". Daca nu ai trecut prin mediul de invatare , te recomandam sa o faci <a1 class="text" onclick="window.location.href='../Mediu/mediu.html'">aici.</a1> </h2>
-        <h3 class="text">•Quiz-ul contine 26 de intrebari si iti este permis sa gresesti la maxim 4 intrebari.</h3>>
-        <h4 class="text">•Fiecare intrebare are 3 variante de raspuns.</h4>
-        <h5 class="text">•Pot fi corecte una , doua sau toate trei variantele. Timpul alocat este de 30 de minute.</h5>
-        <h6 class="text">•La finalul quiz-ului vei fi trimis la toate intrebarile la care ai gresit si vei primi o recomandare in legatura cu ce ar trebui sa repeti.</h6>
-        <h7>Selecteaza categoria</h7>
-        <div class="line1">
-            <div class="wrapper" onclick="window.location.href='categorii/avertizare/avertizare.html'">
-            <img src="avertizare.jpeg" alt="Photo 1">
-            <p class="photo-caption">De avertizare</p>
-        </div>
-        <div class="wrapper" onclick="window.location.href='categorii/interzicererestrictie/interzicererestrictie.html'">
-            <img src="interzicere.jpeg" alt="Photo 2">
-            <p id="text2" class="photo-caption">
-            De interzicere sau restrictie</p>
-        </div>
-        <div class="wrapper" onclick="window.location.href='categorii/prioritate/prioritate.html'">
-            <img src="prioritate.jpeg" alt="Photo 3">
-            <p class="photo-caption">De prioritate</p>
-        </div>
-          </div>
-    
-    
-          <div class="line1">
-            <div class="wrapper" onclick="window.location.href='categorii/Obligare/obligare.html'">
-            <img src="obligatorie.jpeg" alt="Photo 4">
-            <p class="photo-caption">De obligare</p>
-        </div>
-        <div class="wrapper" onclick="window.location.href='categorii/DeInformare/informare.html'">
-            <img src="deInformare.jpeg" alt="Photo 5">
-            <p class="photo-caption">De informare</p>
-        </div>
-        <div class="wrapper" onclick="window.location.href='categorii/DeOrientare/orientare.html'">
-            <img src="deOrientare.jpeg" alt="Photo 6">
-            <p class="photo-caption">De orientare</p>
-            </div>
-          </div>
-    
-    
-          <div class="line1">
-            <div class="wrapper" 
-            onclick="window.location.href='categorii/informareturistica/informareturistica.html'">
-            <img src="deInformareTuristica.jpeg" alt="Photo 7">
-            <p class="photo-caption">De informare turistica</p>
-        </div>
-        <div class="wrapper" onclick="window.location.href='categorii/panouriaditionale/panouriaditionale.html'">
-            <img src="panouriAditionale.jpeg" alt="Photo 8">
-            <p class="photo-caption">Panouri aditionale</p>
-        </div>
-        <div class="wrapper" onclick="window.location.href='categorii/semnaleluminoase/semnaleluminoase.html'">
-            <img  id="photo-9" src="semnaleLuminoase.png" alt="Photo 9">
-            <p class="photo-caption">Semnale luminoase</p>
-            </div>
-          </div>
-    
-    
-          <div class="line1">
-            <div class="wrapper" onclick="window.location.href='categorii/IndicatoareCaleFerata/IndicatoareCaleFerata.html'">
-            <img  src="caleFerata.png" alt="Photo 10">
-            <p id="text10" class="photo-caption">Indicatoare instalate la<br> trecerea cu calea ferata</p>
-        </div>
-        <div class="wrapper" onclick="window.location.href='categorii/IndicatoareKilometrice/IndicatoareKilometrice.html'">
-            <img id="photo-10" src="indicatoareKm.png" alt="Photo 11">
-            <p class="photo-caption">Indicatoare kilometrice</p>
-        </div>
-        <div class="wrapper" onclick="window.location.href='categorii/MijloaceSemnalizareLucrari/MijloaceSemnalizareLucrari.html'">
-            <img  src="lucratori.png" alt="Photo 12">
-            <p id="text12" class="photo-caption">Mijloace auxiliare de <br>semnalizare a lucratorilor</p>
-            </div>
-          </div>
-    
-    
-          <div class="line1" >
-            <div class="wrapper" onclick="window.location.href='categorii/BenziReversibile/BenziReversibile.html'">
-            <img id="photo-13" src="benzireversibile.png" alt="Photo 13">
-            <p id="text13" class="photo-caption">Dispozitive luminoase pentru<br>dirijarea circulatiei pe<br>benzi reversibile</p>
-        </div>
-        <div class="wrapper" onclick="window.location.href='categorii/MarcajeLongitudinale/MarcajeLongitudinale.html'">
-            <img id="photo-14" src="marcajeLong.png" alt="Photo 14">
-            <p class="photo-caption">Marcaje Longitudinale</p>
-        </div>
-        <div class="wrapper" onclick="window.location.href='categorii/MarcajeTransversale/MarcajeTransversale.html'">
-            <img id="photo-15" src="marcajeTrans.png" alt="Photo 15">
-            <p class="photo-caption">Marcaje Transversale</p>
-            </div>
-          </div>
-    
-    
-          <div class="line1">
-            <div class="wrapper" onclick="window.location.href='categorii/marcajediverse/marcajediverse.html'">
-            <img  src="marcajeDiv.jpeg" alt="Photo 16">
-            <p class="photo-caption">Marcaje Diverse</p>
-        </div>
-        <div class="wrapper" onclick="window.location.href='categorii/marcajelaterale/marcajelaterale.html'">
-            <img id="photo-17" src="marcajeLat.jpeg" alt="Photo 17">
-            <p class="photo-caption">Marcaje Laterale</p>
-        </div>
-        <div class="wrapper" onclick="window.location.href='categorii/indicatoaretemporare/temporare.html'">
-            <img src="indicatoaretemp.jpeg" alt="Photo 19">
-            <p id="text19" class="photo-caption">Indicatoare rutiere<br>temporare</p>
-        </div>
-    
-        </div>
-        
-      
-          
-        
-        
-    <div class="footer">
-        <div class="footer__nav">
-          <a class = "nav_link" href="#">Confidentialitate</a>
-          <a class = "nav_link" href="#">Info contact</a>
-          <a class = "nav_link" href="#freq">Intrebari frecvente</a>
-          <a class = "nav_link" href="#">Termeni si conditii</a>
-      </div>
-  
-      <div class="img_nav">
-          <img src="../images/facebook.png" alt="facebook" class="icon">
-          <img src="../images/twitter.png" alt="twitter" class="icon">
-          <img src="../images/instagram.png" alt="instagram" class="icon">
-          <img src="../images/reddit.png" alt="reddit" class="icon">
-      </div>
-  
-      <p class="rot">Romanian Traffic Signs Tutor</p>
-      <p class="rot">@RoT</p>
-  
-      </div>
-      <script src="../slider.js">
-    </script>
+   <script src="script.js"></script>
 </body>
 </html>
