@@ -1,0 +1,37 @@
+{
+"Questions": [
+    {
+        "Quiz": "1) I1",
+        "option1": "a",
+        "option2": "b",
+        "option3": "c",
+        "option4": "d",
+        "answer": "a"
+    },
+    {
+        "Quiz": "2) I2",
+        "option1": "a",
+        "option2": "b",
+        "option3": "c",
+        "option4": "d",
+        "answer": "b"
+    },
+    {
+        "Quiz": "3) I3",
+        "option1": "a",
+        "option2": "b",
+        "option3": "c",
+        "option4": "d",
+        "answer": "c"
+    },
+    {
+        "Quiz": "4) I4",
+        "option1": "a",
+        "option2": "b",
+        "option3": "c",
+        "option4": "d",
+        "answer": "d"
+    }
+]
+
+}
