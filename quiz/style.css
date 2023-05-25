@@ -95,6 +95,7 @@ body{
 
 a{
     text-decoration: underline;
+    color: black;
 }
 a:hover{
     cursor: pointer;
