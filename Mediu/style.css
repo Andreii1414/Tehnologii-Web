@@ -178,17 +178,55 @@ h2{
   }
   .photo-caption {
     margin-top: 0.5cm;
-    color: #fff;
+    /* color: #fff; */
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
   
     text-align: center;
     font-family: "Comic Sans MS";
     font-size: 2vw;
-    background-color: #121110;
-    border: 2px solid #ff0000;
+    background-color: rgba(255, 255, 255, 0.614); 
+    border: 4px solid #140987;
     border-radius: 10px;
     padding: 2%;
     text-align: center;
+  }
+  .photo-caption:hover{
+    cursor: pointer;
+    color: #140987; 
+  }
+  .photo-caption{
+    font-size: 2.5vw;
+  }
+
+  p {
+   
+    display: block;
+    text-align: center;
+    margin: 80px 100px;
+    text-shadow:
+        1px 1px 0 #aaa,
+        2px 2px 0 #bbb,
+        3px 3px 0 #bbb,
+        4px 4px 0 #bbb,
+        4px 4px 15px #888,
+        4px 4px 5px #444;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;}
+
+p:hover {
+    margin: 70px 110px 80px 90px;
+    text-shadow:
+        1px 1px 0 #aaa,
+        2px 2px 0 #bbb,
+        3px 3px 0 #bbb,
+        4px 4px 0 #bbb,
+        13px 13px 35px #888,
+        13px 13px 20px #444;}
+  #text2
+  {
+    font-size: 2.2vw;
   }
   #text10
   {
@@ -210,10 +248,7 @@ h2{
   {
     font-size: 1.5vw;
   }
-  .photo-caption:hover{
-    cursor: pointer;
-    color:rgb(210, 22, 22)
-  }
+ 
 .footer{
     width: 100%;
     height: auto;
