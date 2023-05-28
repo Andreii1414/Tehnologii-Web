@@ -10,7 +10,7 @@ var answer = document.querySelectorAll('.question .answer input');
 
 skip.addEventListener('click', function(){
     nextQuestion();
-    time = 15;
+    time = 20;
 })
 
 answer.forEach(function(sng){
@@ -18,7 +18,7 @@ answer.forEach(function(sng){
     sng.addEventListener('click', function(){
         setTimeout(function(){
             nextQuestion();
-            time = 15;
+            time = 20;
         }, 500)
 
     var valid = this.getAttribute("valid");
@@ -53,7 +53,7 @@ function nextQuestion(){
 }
 
 var timeR = setInterval(function(){
-    if(time == 15)
+    if(time == 20)
     {
         time = 0;
     }
@@ -61,7 +61,7 @@ var timeR = setInterval(function(){
     
     countdown.innerHTML = time;
 
-    if(countdown.innerHTML == "15")
+    if(countdown.innerHTML == "20")
     {
         nextQuestion()
     }

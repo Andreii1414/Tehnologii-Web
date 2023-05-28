@@ -315,8 +315,21 @@ p:hover {
 }
 
 .rot {
-  font-family: "Comic Sans MS";
-  font-size: 0.7vw;
+   
+    display: block;
+    text-align: center;
+    margin: 0.5%;
+    text-shadow: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+    font-family: "Comic Sans MS";
+   font-size: 0.7vw;}
+
+.rot:hover {
+    margin: 0.5%;
+    text-shadow: none;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px){
