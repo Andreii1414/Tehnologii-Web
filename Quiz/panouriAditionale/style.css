@@ -1,0 +1,165 @@
+html,body{
+    height: 100%;
+    font-family: "Comic Sans MS";
+}
+
+body{
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+.imagine{
+    width: 180px;
+    height: 150px;
+}
+.question h3{   
+    text-align: center;
+}
+.box{
+    padding: 3%;
+    position: relative;
+    margin: -10px auto;
+    width: 50%;
+    height: auto;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 2%;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 3%;
+    font-size: 1.5vw;
+}
+
+.countdown{
+    right: 0;
+}
+
+.question{
+    display: none;
+}
+
+.question.active{
+    display: block;
+}
+
+.answer{
+    position: relative;
+    margin-bottom: 1%;
+}
+
+.answer input{
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.answer span{
+    display: block;
+    background-color: #EBC8B2;
+    padding: 8px 15px;
+    border-radius: 15px;
+    font-size: 1.3vw;
+}
+
+.answer:hover span{
+    background-color: #e3bc9a;
+}
+
+.answer input:checked + span{
+    background-color: red;
+}
+
+.answer input[valid]:checked + span{
+    background-color: green;
+}
+
+h3{
+    font-size: 1.3vw;
+}
+
+.footer{
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.b1{
+    background-color: #EBC8B2;
+    padding: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
+    border-radius: 15px;
+    font-size: 1.1vw;
+}
+
+.b1:hover{
+    cursor: pointer;
+    background-color: #e3bc9a;
+}
+
+a{
+    text-decoration: underline;
+    color: black;
+    font-size: 1.3vw;
+}
+a:hover{
+    cursor: pointer;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    h3{
+        font-size: 4vw;
+    }
+    .b1{
+        font-size: 3vw
+    }
+
+    .answer span{
+        font-size: 3vw;
+        padding: 6px 11px;
+    }
+
+    .box{
+        width: 80%;
+    }
+
+    .header{
+        font-size: 3vw;
+    }
+    a{
+        font-size: 3vw;
+    }
+
+  }
+  @media screen and (max-width: 767px) {
+    h3{
+        font-size: 5vw;
+    }
+    .b1{
+        font-size: 4vw
+    }
+
+    .answer span{
+        font-size: 4vw;
+        padding: 4px 9px;
+    }
+
+    .box{
+        width: 80%;
+    }
+
+    .header{
+        font-size: 4vw;
+    }
+    a{
+        font-size: 4vw;
+    }
+  }
