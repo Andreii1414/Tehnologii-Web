@@ -37,6 +37,7 @@ function loginHandler(){
 
                     $_SESSION['nume'] = $user['nume'];
                     $_SESSION['email'] = $user['email'];
+                    $_SESSION['id'] = $user['id'];
 
                     if($connected == 1){
                         session_set_cookie_params(30 * 365 * 24 * 60 * 60); //30 ani
@@ -48,13 +49,13 @@ function loginHandler(){
                         }
                     }
                     else {
-                        session_set_cookie_params(10);
-                        $expirationTime = time() + 10; 
+                        session_set_cookie_params(10800);
+                        $expirationTime = time() + 10800; 
                         $_SESSION['expiration_time'] = $expirationTime;
 
                         
                         if (isset($_COOKIE[session_name()])) {
-                            setcookie(session_name(), $_COOKIE[session_name()], time() + 10, "/");
+                            setcookie(session_name(), $_COOKIE[session_name()], time() + 10800, "/");
                         }
                     }
 

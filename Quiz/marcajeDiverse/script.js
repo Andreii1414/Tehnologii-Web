@@ -26,7 +26,7 @@ answer.forEach(function(sng){
     {
         scoreCount++;
         scor.innerHTML = scoreCount;
-        totalScore.innerHTML = scoreCount * 5;
+        totalScore.innerHTML = scoreCount * 5 + 1;
     }
 
     })
@@ -48,6 +48,23 @@ function nextQuestion(){
         skip.style.display = 'none';
         clearInterval(timeR);
         countdown.innerHTML = 0;
+        
+        (async () => {
+            try {
+              const punctaj = await getDataFromDb();
+
+              console.log('Returned punctajQuiz:', punctaj);
+
+              //daca are 0 inseamna ca nu a facut inca quiz-ul
+              if(punctaj == 0)
+                  postRequestToDb();
+
+            } catch (error) {
+              console.error('Error:', error);
+            }
+          })();
+
+
     }
 
 }
@@ -66,4 +83,54 @@ var timeR = setInterval(function(){
         nextQuestion()
     }
 
-}, 1000)
+}, 1000);
+
+//request pt a vedea cate puncte are utilizatorul la quiz
+async function getDataFromDb()
+{
+    const categorie = 'MarcajeDiverse'
+    const headers = new Headers();
+    headers.append('Category', categorie);
+
+    try{
+        const response = await fetch('/api/getPoints',
+        {
+            method: 'GET',
+            headers: headers
+        });
+
+        const data = await response.json();
+
+        const punctajQuiz = data.punctaj;
+        console.log('Punctaj Quiz:', punctajQuiz);
+
+        return punctajQuiz;
+    }
+    catch(error) {
+        console.error('Error:', error);
+        throw error;
+    };
+}
+
+//Request POST pentru a adauga puncte in baza de date daca nu a facut inca quiz-ul
+function postRequestToDb(){
+    const puncte = scoreCount * 5 + 1;
+    const categorie = 'MarcajeDiverse'
+    const headers = new Headers();
+    headers.append('Puncte', puncte);
+    headers.append('Category', categorie);
+
+    fetch('/api/addPoints',
+    {
+        method: 'POST',
+        headers: headers
+    })
+
+    .then(response => response.json())
+    .then(data=>{
+        console.log('Data:', data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
