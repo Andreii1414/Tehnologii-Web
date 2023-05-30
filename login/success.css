@@ -1,0 +1,87 @@
+html, body {
+    height: 100%;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-family: "Comic Sans MS";
+    position: relative;
+}
+
+img{
+    width: 17%;
+    height: auto;
+}
+
+.box{
+    font-family: "Comic Sans MS";
+    width: 40%;
+    height: auto;
+    background-color: #8bd399;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.box p{
+    color: green;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+button{
+    margin-top: 2%;
+    padding: 1.2%;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.2vw;
+    font-family: "Comic Sans MS";
+}
+
+button:hover{
+    background-color: gainsboro;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    h1{
+        font-size: 5.5vw;
+    }
+
+    .box p{
+        font-size: 2.5vw;
+    }
+    button{
+        margin-top: 4%;
+        font-size: 3vw;
+    }
+    .box{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    h1{
+        font-size: 5vw;
+    }
+    .box p{
+        font-size: 3.5vw;
+    }
+
+    button{
+        margin-top: 5%;
+        font-size: 4vw;
+    }
+    .box{
+        width: 60%;
+    }
+}

@@ -17,12 +17,22 @@ body{
     padding-top: 20px;
 }
 
+#erori{
+    color:red;
+    padding: 2px;
+    font-family: $text-font;
+}
+
 .left-div{
     width: 40%; 
     left:0;
     padding: 1px;
     height: 100%;
     display: flex; 
+}
+
+#erori{
+    color:red;
 }
 
 .right-div
@@ -73,6 +83,7 @@ body{
     width: 60%;
 }
 
+
 .left-div__rot{
     position: absolute;
     text-align: center;
@@ -95,6 +106,10 @@ body{
     color: $left-color;
     justify-content: center;
     display: block;
+}
+.form_err{
+    box-shadow: 0 0 10px red;
+    border-color: red;
 }
 
 .form_input{
@@ -289,6 +304,9 @@ body{
     .left-div__image{
         width: 55%;
     }
+    #erori{
+        font-size: 1.5vw;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -362,5 +380,7 @@ body{
     .left-div__image{
         width: 52%;
     }
-
+    #erori{
+        font-size: 2vw;
+    }
 }

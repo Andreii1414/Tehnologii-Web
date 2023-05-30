@@ -1,3 +1,17 @@
+<?php 
+    include("../php/verifyConnection.php");
+
+    if($conectat == 1){
+        $link = "'../login/changePassOrLogout.php'";
+        $profileImg = '"../images/profile_green.png"';
+    }
+    else {
+        $link = "'../login/login.php'";
+        $profileImg = '"../images/profile_red.png"';
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -14,15 +28,17 @@
     </div>
 
     <div class="navigation">
-      <img src="../images/rank.png" class="ranking navigation__link" alt="Clasament" onclick="window.location.href='../clasament/clasament.html'">
+      <img src="../images/rank.png" class="ranking navigation__link" alt="Clasament" onclick="window.location.href='../clasament/clasament.php'">
       <div class="center">
-        <a class = "navigation__link" onclick="window.location.href='../home/home.html'">Pagina principala</a>
-        <a class = "navigation__link" onclick="window.location.href='../Mediu/mediu.html'">Mediu de invatare</a>
-        <a class = "navigation__link" onclick="window.location.href='../quiz/quiz.html'">Quiz</a>
-        <a class = "navigation__link" onclick="window.location.href='../about/about.html'">About</a>
-        <a class = "navigation__link" onclick="window.location.href='help.html'">Help</a>
+        <a class = "navigation__link" onclick="window.location.href='../home/home.php'">Pagina principala</a>
+        <a class = "navigation__link" onclick="window.location.href='../Mediu/mediu.php'">Mediu de invatare</a>
+        <a class = "navigation__link" onclick="window.location.href='../quiz/quiz.php'">Quiz</a>
+        <a class = "navigation__link" onclick="window.location.href='../about/about.php'">About</a>
+        <a class = "navigation__link" onclick="window.location.href='help.php'">Help</a>
       </div>
-      <img src="../images/profile.png" class="profile navigation__link" alt="Profil" onclick="window.location.href='../login/login.html'">  
+      <img src=<?php echo $profileImg;?>
+         class="profile navigation__link" alt="Profil"
+         onclick="window.location.href=<?php echo $link;?>">
     </div>
     
     <div class="content">
