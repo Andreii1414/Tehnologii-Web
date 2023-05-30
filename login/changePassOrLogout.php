@@ -19,7 +19,7 @@
             <p class="textStyle left-div__rot"><b>Romanian Traffic Signs Tutor</b></p>
     </div>
     <div class="split right-div">
-        <div class="switch" onclick="window.location.href='../home/home.html'">
+        <div class="switch" onclick="window.location.href='../home/home.php'">
             <p class="switch__text">Catre Pagina Principala</p>         
         </div>
         <div class="sign_up_div">
