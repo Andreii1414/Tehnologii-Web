@@ -46,115 +46,32 @@
             <div class="first">
                 <img src="gold.png" alt="First" class="cup">
                 <p>Locul 1</p>
-                <p>Nume: John Doe</p>
-                <p>Puncte: x</p>
+                <p id="firstName">Nume: John Doe</p>
+                <p id="firstPoints">Puncte: x</p>
             </div>
             <div class="second">
                 <img src="silver.png" alt="Second" class="cup">
                 <p>Locul 2</p>
-                <p>Nume: John Doe</p>
-                <p>Puncte: x</p>
+                <p id="secondName">Nume: John Doe</p>
+                <p id="secondPoints">Puncte: x</p>
             </div>
             <div class="third">
                 <img src="bronze.png" alt="Second" class="cup">
                 <p>Locul 3</p>
-                <p>Nume: John Doe</p>
-                <p>Puncte: x</p>
+                <p id="thirdName">Nume: John Doe</p>
+                <p id = "thirdPoints">Puncte: x</p>
             </div>
         </div>
 
-        <table class="table-ranking">
+        <table class="table-ranking" id="tabel">
             <tr>
                 <th>Loc</th>
                 <th>Nume</th>
                 <th>Numar de puncte</th>
             </tr>
-            <tr>
-                <td>#4</td>
-                <td>John Doe</td>
-                <td>x</td>
-              </tr>
-              <tr>
-                <td>#5</td>
-                <td>John Doe</td>
-                <td>x</td>
-              </tr>
-              <tr>
-                <td>#6</td>
-                <td>John Doe</td>
-                <td>x</td>
-              </tr>
-              <tr>
-                <td>#7</td>
-                <td>John Doe</td>
-                <td>x</td>
-              </tr>
-              <tr>
-                <td>#8</td>
-                <td>John Doe</td>
-                <td>x</td>
-              </tr>
-              <tr>
-                <td>#9</td>
-                <td>John Doe</td>
-                <td>x</td>
-              </tr>
-              <tr>
-                <td>#10</td>
-                <td>John Doe</td>
-                <td>x</td>
-              </tr>
-              <tr>
-                <td>#11</td>
-                <td>John Doe</td>
-                <td>x</td>
-              </tr>
-              <tr>
-                <td>#12</td>
-                <td>John Doe</td>
-                <td>x</td>
-              </tr>
-              <tr>
-                <td>#13</td>
-                <td>John Doe</td>
-                <td>x</td>
-              </tr>
-              <tr>
-                <td>#14</td>
-                <td>John Doe</td>
-                <td>x</td>
-              </tr>
-              <tr>
-                <td>#15</td>
-                <td>John Doe</td>
-                <td>x</td>
-              </tr>
-              <tr>
-                <td>#16</td>
-                <td>John Doe</td>
-                <td>x</td>
-              </tr>
-              <tr>
-                <td>#17</td>
-                <td>John Doe</td>
-                <td>x</td>
-              </tr>
-              <tr>
-                <td>#18</td>
-                <td>John Doe</td>
-                <td>x</td>
-              </tr>
-              <tr>
-                <td>#19</td>
-                <td>John Doe</td>
-                <td>x</td>
-              </tr>
-              <tr>
-                <td>#20</td>
-                <td>John Doe</td>
-                <td>x</td>
-              </tr>
+            
         </table>
+        <p id="puncteleTale" class ="puncte"></p>
  
 
     </div>
@@ -177,5 +94,70 @@
         <p class="rot">Romanian Traffic Signs Tutor</p>
         <p class="rot">@RoT</p>
     </div>
+
+    <script>
+      window.onload = function(){
+
+        fetch("/api/clasament")
+        .then(response => response.json())
+        .then(data =>{
+          console.log(data);
+          const users = data.map(item => item.nume);
+          const punctaj = data.map(item => item.punctaj);
+
+          const firstName = document.getElementById('firstName');
+          const firstPoints = document.getElementById('firstPoints');
+          firstName.innerHTML = "Nume: " + users[0];
+          firstPoints.innerHTML = "Puncte: " + punctaj[0];  
+          const secondName = document.getElementById('secondName');
+          const secondPoints = document.getElementById('secondPoints');
+          secondName.innerHTML = "Nume: " + users[1];
+          secondPoints.innerHTML = "Puncte: " + punctaj[1];  
+          const thirdName = document.getElementById('thirdName');
+          const thirdPoints = document.getElementById('thirdPoints');
+          thirdName.innerHTML = "Nume: " + users[2];
+          thirdPoints.innerHTML = "Puncte: " + punctaj[2];  
+          
+          const tabel = document.getElementById('tabel');
+          const body = tabel.querySelector('tbody');
+
+          for(let i = 3; i < 20; i++)
+          {
+            const j = i + 1;
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+            <td>#${j}</td>
+            <td>${users[i]}</td>
+            <td>${punctaj[i]}</td>`
+
+            body.appendChild(tr);
+          }
+
+        })
+        .catch(error => {
+          console.error('Error: ', error);
+        });
+
+        if("<?php echo $conectat; ?>" == 0)
+        {
+            const puncteleTale = document.getElementById('puncteleTale');
+            puncteleTale.innerHTML = "Punctele tale: Nu esti conectat <br> Locul tau in clasament: Nu esti conectat";  
+        }
+        else{
+            fetch("/api/clasament/puncteleTale")
+            .then(response => response.json())
+            .then(data =>{
+                console.log(data);
+                const puncteleTale = document.getElementById('puncteleTale');
+                puncteleTale.innerHTML = "Punctele tale: " + data.punctaj + '<br>' + "Locul tau in clasament: " + data.loc;
+            })
+            .catch(error => {
+            console.error('Error: ', error);
+            })
+        }
+      }
+
+    </script>
+
 </body>
 </html>
