@@ -46,16 +46,16 @@
     <h2>Semne de circulatie pe categorii</h2>
     
     <div class="line1">
-        <div class="wrapper" onclick="window.location.href='categorii/avertizare/avertizare.html'">
+        <div class="wrapper" onclick="window.location.href='categorii/avertizare/avertizare.php'">
         <img src="avertizare.jpeg" alt="Photo 1">
         <p class="photo-caption">De avertizare</p>
     </div>
-    <div class="wrapper" onclick="window.location.href='categorii/interzicererestrictie/interzicererestrictie.html'">
+    <div class="wrapper" onclick="window.location.href='categorii/interzicererestrictie/interzicererestrictie.php'">
         <img src="interzicere.jpeg" alt="Photo 2">
         <p class="photo-caption">
         De interzicere sau restrictie</p>
     </div>
-    <div class="wrapper" onclick="window.location.href='categorii/prioritate/prioritate.html'">
+    <div class="wrapper" onclick="window.location.href='categorii/prioritate/prioritate.php'">
         <img src="prioritate.jpeg" alt="Photo 3">
         <p class="photo-caption">De prioritate</p>
     </div>
@@ -63,15 +63,15 @@
 
 
       <div class="line1">
-        <div class="wrapper" onclick="window.location.href='categorii/Obligare/obligare.html'">
+        <div class="wrapper" onclick="window.location.href='categorii/Obligare/obligare.php'">
         <img src="obligatorie.jpeg" alt="Photo 4">
         <p class="photo-caption">De obligare</p>
     </div>
-    <div class="wrapper" onclick="window.location.href='categorii/DeInformare/informare.html'">
+    <div class="wrapper" onclick="window.location.href='categorii/DeInformare/informare.php'">
         <img src="deInformare.jpeg" alt="Photo 5">
         <p class="photo-caption">De informare</p>
     </div>
-    <div class="wrapper" onclick="window.location.href='categorii/DeOrientare/orientare.html'">
+    <div class="wrapper" onclick="window.location.href='categorii/DeOrientare/orientare.php'">
         <img src="deOrientare.jpeg" alt="Photo 6">
         <p class="photo-caption">De orientare</p>
         </div>
@@ -80,15 +80,15 @@
 
       <div class="line1">
         <div class="wrapper" 
-        onclick="window.location.href='categorii/informareturistica/informareturistica.html'">
+        onclick="window.location.href='categorii/informareturistica/informareturistica.php'">
         <img src="deInformareTuristica.jpeg" alt="Photo 7">
         <p class="photo-caption">De informare turistica</p>
     </div>
-    <div class="wrapper" onclick="window.location.href='categorii/panouriaditionale/panouriaditionale.html'">
+    <div class="wrapper" onclick="window.location.href='categorii/panouriaditionale/panouriaditionale.php'">
         <img src="panouriAditionale.jpeg" alt="Photo 8">
         <p class="photo-caption">Panouri aditionale</p>
     </div>
-    <div class="wrapper" onclick="window.location.href='categorii/semnaleluminoase/semnaleluminoase.html'">
+    <div class="wrapper" onclick="window.location.href='categorii/semnaleluminoase/semnaleluminoase.php'">
         <img  id="photo-9" src="semnaleLuminoase.png" alt="Photo 9">
         <p class="photo-caption">Semnale luminoase</p>
         </div>
@@ -96,15 +96,15 @@
 
 
       <div class="line1">
-        <div class="wrapper" onclick="window.location.href='categorii/IndicatoareCaleFerata/IndicatoareCaleFerata.html'">
+        <div class="wrapper" onclick="window.location.href='categorii/IndicatoareCaleFerata/IndicatoareCaleFerata.php'">
         <img  src="caleFerata.png" alt="Photo 10">
         <p id="text10" class="photo-caption">Indicatoare instalate la<br> trecerea cu calea ferata</p>
     </div>
-    <div class="wrapper" onclick="window.location.href='categorii/IndicatoareKilometrice/IndicatoareKilometrice.html'">
+    <div class="wrapper" onclick="window.location.href='categorii/IndicatoareKilometrice/IndicatoareKilometrice.php'">
         <img id="photo-10" src="indicatoareKm.png" alt="Photo 11">
         <p class="photo-caption">Indicatoare kilometrice</p>
     </div>
-    <div class="wrapper" onclick="window.location.href='categorii/MijloaceSemnalizareLucrari/MijloaceSemnalizareLucrari.html'">
+    <div class="wrapper" onclick="window.location.href='categorii/MijloaceSemnalizareLucrari/MijloaceSemnalizareLucrari.php'">
         <img  src="lucratori.png" alt="Photo 12">
         <p id="text12" class="photo-caption">Mijloace auxiliare de <br>semnalizare a lucratorilor</p>
         </div>
@@ -112,15 +112,15 @@
 
 
       <div class="line1" >
-        <div class="wrapper" onclick="window.location.href='categorii/BenziReversibile/BenziReversibile.html'">
+        <div class="wrapper" onclick="window.location.href='categorii/BenziReversibile/BenziReversibile.php'">
         <img id="photo-13" src="benzireversibile.png" alt="Photo 13">
         <p id="text13" class="photo-caption">Dispozitive luminoase pentru<br>dirijarea circulatiei pe<br>benzi reversibile</p>
     </div>
-    <div class="wrapper" onclick="window.location.href='categorii/MarcajeLongitudinale/MarcajeLongitudinale.html'">
+    <div class="wrapper" onclick="window.location.href='categorii/MarcajeLongitudinale/MarcajeLongitudinale.php'">
         <img id="photo-14" src="marcajeLong.png" alt="Photo 14">
         <p class="photo-caption">Marcaje Longitudinale</p>
     </div>
-    <div class="wrapper" onclick="window.location.href='categorii/MarcajeTransversale/MarcajeTransversale.html'">
+    <div class="wrapper" onclick="window.location.href='categorii/MarcajeTransversale/MarcajeTransversale.php'">
         <img id="photo-15" src="marcajeTrans.png" alt="Photo 15">
         <p class="photo-caption">Marcaje Transversale</p>
         </div>
@@ -128,15 +128,15 @@
 
 
       <div class="line1">
-        <div class="wrapper" onclick="window.location.href='categorii/marcajediverse/marcajediverse.html'">
+        <div class="wrapper" onclick="window.location.href='categorii/marcajediverse/marcajediverse.php'">
         <img  src="marcajeDiv.jpeg" alt="Photo 16">
         <p class="photo-caption">Marcaje Diverse</p>
     </div>
-    <div class="wrapper" onclick="window.location.href='categorii/marcajelaterale/marcajelaterale.html'">
+    <div class="wrapper" onclick="window.location.href='categorii/marcajelaterale/marcajelaterale.php'">
         <img id="photo-17" src="marcajeLat.jpeg" alt="Photo 17">
         <p class="photo-caption">Marcaje Laterale</p>
     </div>
-    <div class="wrapper" onclick="window.location.href='categorii/indicatoaretemporare/temporare.html'">
+    <div class="wrapper" onclick="window.location.href='categorii/indicatoaretemporare/temporare.php'">
         <img src="indicatoaretemp.jpeg" alt="Photo 19">
         <p id="text19" class="photo-caption">Indicatoare rutiere<br>temporare</p>
     </div>

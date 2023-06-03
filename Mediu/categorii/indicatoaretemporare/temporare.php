@@ -1,3 +1,16 @@
+<?php 
+    include("../../../php/verifyConnection.php");
+
+    if($conectat == 1){
+        $link = "'../../../login/changePassOrLogout.php'";
+        $profileImg = '"../../../images/profile_green.png"';
+    }
+    else {
+        $link = "'../../../login/login.php'";
+        $profileImg = '"../../../images/profile_red.png"';
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -22,7 +35,9 @@
             <a class = "navigation__link" onclick="window.location.href='../../../about/about.php'">About</a>
             <a class = "navigation__link" onclick="window.location.href='../../../help/help.php'">Help</a>
         </div>
-        <img src="../../../images/profile.png" onclick="window.location.href='../../../login/login.php'" class="profile navigation__link" alt="Profil">
+        <img src=<?php echo $profileImg;?>
+        class="profile navigation__link" alt="Profil"
+        onclick="window.location.href=<?php echo $link;?>">    
     </div>
 
     <div class="content">
@@ -707,6 +722,33 @@
 
 
     <script src="../slider.js">
+    </script>
+
+<script>
+        document.querySelector('.next').addEventListener('click', function(){
+            if(index == slideList.length && <?php echo $conectat?> == 1)
+            {
+                const puncte = 8;
+                const categorie = 'Temporare';
+                const headers = new Headers();
+                headers.append('Puncte', puncte);
+                headers.append('Category', categorie);
+
+                fetch('/api/mediu',
+                {
+                    method: 'POST',
+                    headers: headers
+                })
+
+                .then(response => response.json())
+                .then(data=>{
+                    console.log('Data:', data);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            }
+        })
     </script>
 
 </body>

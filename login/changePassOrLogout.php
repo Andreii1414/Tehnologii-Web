@@ -1,3 +1,6 @@
+<?php 
+    include("../php/verifyConnection.php");
+?>
 <!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -6,15 +9,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Sign up</title>
+    <title>Contul tau</title>
 </head>
 <body>
     <div class="split left-div">
         <div class="centered-content"> 
-            <b><span class="textStyle left-div__change"></span></b>
-            <p class="textStyle left-div__toLearn"><b>pentru a invata semnele rutiere<br> in cel mai simplu mod</b></p>
-
-            <img src="roadsigns.png" alt="ROT" class="left-div__image">
+            <i class="fa fa-user-circle user-icon"></i>
+            <p><b>Detaliile contului tau</b></p>
+            <hr>   
+            <p id="numeCont"></p>
+            <p id="emailCont"></p>
+            <p id="puncteCont"></p>
+            <p id="dataCont"></p>
         </div>
             <p class="textStyle left-div__rot"><b>Romanian Traffic Signs Tutor</b></p>
     </div>
@@ -99,6 +105,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     var logoutButton = document.getElementById('logoutBtn');
     logoutButton.addEventListener('click', function(){
+        if(<?php echo $conectat?> == 1)
         fetch('/api/logout',
         {
             method: 'GET'
@@ -115,8 +122,36 @@ document.addEventListener('DOMContentLoaded', function(){
         .catch(function(error){
             console.log('Logout failed: ', error);
         })
+        })
     })
-})
+
+    window.onload = function(){
+        const numeCont = document.getElementById('numeCont');
+        const emailCont = document.getElementById('emailCont');
+        const puncteCont = document.getElementById('puncteCont');
+        const dataCont = document.getElementById('dataCont');
+
+        if(<?php echo $conectat?> == 1){
+            fetch("/api/cont")
+                .then(response => response.json())
+                .then(data =>{
+                    console.log(data);
+                    numeCont.innerHTML = "Nume: " + data.nume;
+                    emailCont.innerHTML = "Email: " + data.email;
+                    puncteCont.innerHTML = "Puncte: " + data.punctaj;
+                    dataCont.innerHTML = "Data crearii contului: " + data.created_at;
+                })
+                .catch(error => {
+                console.error('Error: ', error);
+                })
+        }
+        else{
+            numeCont.innerHTML = "Nume: Nu esti conectat"
+            emailCont.innerHTML = "Email: Nu esti conectat";
+            puncteCont.innerHTML = "Puncte: Nu esti conectat";
+            dataCont.innerHTML = "Data crearii contului: Nu esti conectat";
+        }
+    }
 
 </script>
 </body>

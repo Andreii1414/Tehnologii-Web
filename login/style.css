@@ -2,6 +2,7 @@ body {
   margin: 0px;
   background-color: white;
   height: 100%;
+  font-family: "Comic Sans MS";
 }
 
 .split {
@@ -217,6 +218,33 @@ body {
   height: 1em;
 }
 
+.user-icon{
+  font-size: 10vw;
+}
+
+.centered-content p{
+  font-size: 1.2vw;
+}
+
+
+.user-icon{
+  transform-style: preserve-3d;
+  animation: flip-anim 4s infinite;
+}
+
+@keyframes flip-anim {
+  0%{
+    transform: rotateY(0deg);
+  }
+  50%{
+    transform: rotateY(180deg);
+  }
+  100%{
+    transform: rotateY(360deg);
+  }
+}
+
+
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .left-div {
     height: 40%;
@@ -275,6 +303,10 @@ body {
   }
   #erori {
     font-size: 1.5vw;
+  }
+  
+  .centered-content p{
+    font-size: 1.3vw;
   }
 }
 @media screen and (max-width: 767px) {
@@ -338,6 +370,9 @@ body {
     width: 52%;
   }
   #erori {
+    font-size: 2vw;
+  }
+  .centered-content p{
     font-size: 2vw;
   }
 }/*# sourceMappingURL=style.css.map */
