@@ -74,78 +74,27 @@ function registerHandler()
                 mysqli_query($conn, $sql);
                 $lastId = mysqli_insert_id($conn);
 
-                $sql = "INSERT INTO punctaje (id_user, categorie, punctaj_quiz, punctaj_categorie)
-                 VALUES ('$lastId', 'Avertizare', '0', '0');";
+                $sql = "INSERT INTO punctaje (id_user, categorie, punctaj_quiz, punctaj_categorie) VALUES
+                 ('$lastId', 'Avertizare', '0', '0'),
+                 ('$lastId', 'Interzicere', '0', '0'),
+                 ('$lastId', 'Prioritate', '0', '0'),
+                 ('$lastId', 'Obligare', '0', '0'),
+                 ('$lastId', 'Informare', '0', '0'),
+                 ('$lastId', 'Orientare', '0', '0'),
+                 ('$lastId', 'InformareTuristica', '0', '0'),
+                 ('$lastId', 'Aditionale', '0', '0'),
+                 ('$lastId', 'SemnaleLuminoase', '0', '0'),
+                 ('$lastId', 'CaleFerata', '0', '0'),
+                 ('$lastId', 'Kilometrice', '0', '0'),
+                 ('$lastId', 'Auxiliare', '0', '0'),
+                 ('$lastId', 'BenziReversibile', '0', '0'),
+                 ('$lastId', 'MarcajeLongitudinale', '0', '0'),
+                 ('$lastId', 'MarcajeTransversale', '0', '0'),
+                 ('$lastId', 'MarcajeDiverse', '0', '0'),
+                 ('$lastId', 'MarcajeLaterale', '0', '0'),
+                 ('$lastId', 'Temporare', '0', '0');";
                 mysqli_query($conn, $sql);
 
-                $sql = "INSERT INTO punctaje (id_user, categorie, punctaj_quiz, punctaj_categorie)
-                VALUES ('$lastId', 'Interzicere', '0', '0');";
-                mysqli_query($conn, $sql);
-                
-                $sql = "INSERT INTO punctaje (id_user, categorie, punctaj_quiz, punctaj_categorie)
-                VALUES ('$lastId', 'Prioritate', '0', '0');";
-                mysqli_query($conn, $sql);
-
-                $sql = "INSERT INTO punctaje (id_user, categorie, punctaj_quiz, punctaj_categorie)
-                VALUES ('$lastId', 'Obligare', '0', '0');";
-                mysqli_query($conn, $sql);
-
-                $sql = "INSERT INTO punctaje (id_user, categorie, punctaj_quiz, punctaj_categorie)
-                VALUES ('$lastId', 'Informare', '0', '0');";
-                mysqli_query($conn, $sql);
-
-                $sql = "INSERT INTO punctaje (id_user, categorie, punctaj_quiz, punctaj_categorie)
-                VALUES ('$lastId', 'Orientare', '0', '0');";
-                mysqli_query($conn, $sql);
-
-                $sql = "INSERT INTO punctaje (id_user, categorie, punctaj_quiz, punctaj_categorie)
-                VALUES ('$lastId', 'InformareTuristica', '0', '0');";
-                mysqli_query($conn, $sql);
-
-                $sql = "INSERT INTO punctaje (id_user, categorie, punctaj_quiz, punctaj_categorie)
-                VALUES ('$lastId', 'Aditionale', '0', '0');";
-                mysqli_query($conn, $sql);
-
-                $sql = "INSERT INTO punctaje (id_user, categorie, punctaj_quiz, punctaj_categorie)
-                VALUES ('$lastId', 'SemnaleLuminoase', '0', '0');";
-                mysqli_query($conn, $sql);
-
-                $sql = "INSERT INTO punctaje (id_user, categorie, punctaj_quiz, punctaj_categorie)
-                VALUES ('$lastId', 'CaleFerata', '0', '0');";
-                mysqli_query($conn, $sql);
-
-                $sql = "INSERT INTO punctaje (id_user, categorie, punctaj_quiz, punctaj_categorie)
-                VALUES ('$lastId', 'Kilometrice', '0', '0');";
-                mysqli_query($conn, $sql);
-
-                $sql = "INSERT INTO punctaje (id_user, categorie, punctaj_quiz, punctaj_categorie)
-                VALUES ('$lastId', 'Auxiliare', '0', '0');";
-                mysqli_query($conn, $sql);
-
-                $sql = "INSERT INTO punctaje (id_user, categorie, punctaj_quiz, punctaj_categorie)
-                VALUES ('$lastId', 'BenziReversibile', '0', '0');";
-                mysqli_query($conn, $sql);
-
-                $sql = "INSERT INTO punctaje (id_user, categorie, punctaj_quiz, punctaj_categorie)
-                VALUES ('$lastId', 'MarcajeLongitudinale', '0', '0');";
-                mysqli_query($conn, $sql);
-
-                $sql = "INSERT INTO punctaje (id_user, categorie, punctaj_quiz, punctaj_categorie)
-                VALUES ('$lastId', 'MarcajeTransversale', '0', '0');";
-                mysqli_query($conn, $sql);
-
-                $sql = "INSERT INTO punctaje (id_user, categorie, punctaj_quiz, punctaj_categorie)
-                VALUES ('$lastId', 'MarcajeDiverse', '0', '0');";
-                mysqli_query($conn, $sql);
-
-                $sql = "INSERT INTO punctaje (id_user, categorie, punctaj_quiz, punctaj_categorie)
-                VALUES ('$lastId', 'MarcajeLaterale', '0', '0');";
-                mysqli_query($conn, $sql);
-
-                $sql = "INSERT INTO punctaje (id_user, categorie, punctaj_quiz, punctaj_categorie)
-                VALUES ('$lastId', 'Temporare', '0', '0');";
-                mysqli_query($conn, $sql);
-                
                 header("Location: ../Tehnologii-web/login/success.html");
             }
             exit();
