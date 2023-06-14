@@ -32,6 +32,7 @@
             <a class = "navigation__link" onclick="window.location.href='../../../home/home.php'">Pagina principala</a>
             <a class = "navigation__link" onclick="window.location.href='../../mediu.php'">Mediu de invatare</a>
             <a class = "navigation__link" onclick="window.location.href='../../../quiz/quiz.php'">Quiz</a>
+            <a class = "navigation__link" onclick="window.location.href='../../../Mini-Game/mini-game.php'">Mini-Game</a>
             <a class = "navigation__link" onclick="window.location.href='../../../about/about.php'">About</a>
             <a class = "navigation__link" onclick="window.location.href='../../../help/help.php'">Help</a>
         </div>
