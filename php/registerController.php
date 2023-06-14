@@ -92,7 +92,19 @@ function registerHandler()
                  ('$lastId', 'MarcajeTransversale', '0', '0'),
                  ('$lastId', 'MarcajeDiverse', '0', '0'),
                  ('$lastId', 'MarcajeLaterale', '0', '0'),
-                 ('$lastId', 'Temporare', '0', '0');";
+                 ('$lastId', 'Temporare', '0', '0'),
+                 ('$lastId', 'Level1', '0', '0'),
+                 ('$lastId', 'Level2', '0', '0'),
+                 ('$lastId', 'Level3', '0', '0'),
+                 ('$lastId', 'Level4', '0', '0'),
+                 ('$lastId', 'Level5', '0', '0'),
+                 ('$lastId', 'Level6', '0', '0'),
+                 ('$lastId', 'Level7', '0', '0'),
+                 ('$lastId', 'Level8', '0', '0'),
+                 ('$lastId', 'Level9', '0', '0'),
+                 ('$lastId', 'Level10', '0', '0'),
+                 ('$lastId', 'Level11', '0', '0'),
+                 ('$lastId', 'Level12', '0', '0');";
                 mysqli_query($conn, $sql);
 
                 header("Location: ../Tehnologii-web/login/success.html");

@@ -62,9 +62,8 @@ function getSquare(element) {
 
 const vButton = document.querySelector('.btn');
 vButton.addEventListener('click', verifyImage);
-
+let correct = 0;
 function verifyImage(){
-    let correct = 0;
 
     const im = squares[0].firstChild;
     if(im && im.getAttribute("valid") === "valid1"){
@@ -75,8 +74,68 @@ function verifyImage(){
     if(im2 && im2.getAttribute("valid") === "valid2"){
         correct = correct + 1;
     }
+    (async () => {
+        try {
+            const punctaj = await getDataFromDb();
 
-    alert("Ai ales corect " + correct + "/" + squares.length + " indicatoare")
-    
+            console.log('Returned punctajQuiz:', punctaj);
 
+            //daca are 0 inseamna ca nu a facut inca level-ul
+            if (punctaj == 0)
+                postRequestToDb();
+
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    })();
+
+    alert("Ai ales corect " + correct + "/" + squares.length + " indicatoare");
+    window.location.href = '../mini-game.php';
+}
+
+async function getDataFromDb() {
+    const categorie = 'Level12'
+    const headers = new Headers();
+    headers.append('Category', categorie);
+
+    try {
+        const response = await fetch('/api/getPoints',
+            {
+                method: 'GET',
+                headers: headers
+            });
+
+        const data = await response.json();
+
+        const punctajQuiz = data.punctaj;
+        console.log('Punctaj Quiz:', punctajQuiz);
+
+        return punctajQuiz;
+    }
+    catch (error) {
+        console.error('Error:', error);
+        throw error;
+    };
+}
+
+function postRequestToDb() {
+    const puncte = correct * 5 + 1;
+    const categorie = 'Level12'
+    const headers = new Headers();
+    headers.append('Puncte', puncte);
+    headers.append('Category', categorie);
+
+    fetch('/api/addPoints',
+        {
+            method: 'POST',
+            headers: headers
+        })
+
+        .then(response => response.json())
+        .then(data => {
+            console.log('Data:', data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
 }
