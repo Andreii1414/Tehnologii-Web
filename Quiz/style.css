@@ -327,6 +327,19 @@ a1:hover{
   .photo-caption{
     font-size: 2.5vw;
   }
+  .pct{
+    font-size: 1.5vw;
+    margin: 0 0;
+    text-shadow: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
+  .pct:hover {
+    margin: 0 0;
+    text-shadow: none;
+}
   p {
    
     display: block;
@@ -439,13 +452,14 @@ p:hover {
         font-size: 1.7vw;
     }
     
-    .intrebari p, .content p{
-        font-size: 4vw;
-    }
     
     .drepturi, .email{
         font-size: 3vw;
+    }    
+    .pct{
+      font-size: 2vw;
     }
+
 
 }
 
@@ -474,6 +488,10 @@ p:hover {
 
     .rot{
         font-size: 1.7vw;
+    }
+
+    .pct{
+      font-size: 2vw;
     }
 
 }

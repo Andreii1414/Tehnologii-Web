@@ -166,7 +166,20 @@ h7{
     -webkit-text-stroke: 0.5px  #0d07ac;
 }
 
-
+.pct{
+    font-size: 1.5vw;
+    margin: 0 0;
+    text-shadow: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
+  .pct:hover {
+    margin: 0 0;
+    text-shadow: none;
+}
+  p
 
 .incepe {
     font-size: 3vw;
@@ -256,29 +269,23 @@ a1:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    justify-content: center;
     width: 33%;
   }
   .wrapper img {
     width: 70%;
     height: auto;
   }
-    #nivel
-    {
-        margin-top:-6cm;
-        margin-right:2cm;
-    }
+
   .photo-caption {
-    
-    /* color: #fff; */
+    position: absolute;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-  
-    text-align: center;
+
     font-family: "Comic Sans MS";
     font-size: 2vw;
-    background-color: rgba(255, 255, 255, 0.614); 
-    /* border: 4px solid #140987;
-    border-radius: 10px; */
-    padding: 2%;
+
+    justify-content: center;
     text-align: center;
   }
   .photo-caption:hover{
@@ -323,6 +330,7 @@ p:hover {
     justify-content: space-between;
     align-items: center;
     margin-bottom:0.5cm;
+    margin-top: 0.5cm;
   }
   
   .line1 img {
@@ -333,7 +341,6 @@ p:hover {
   max-width: 100%;
   height: auto;
   margin: 0 auto;
-  margin-top:2.5cm;
   margin-bottom:0.5cm;
   }
 
@@ -383,9 +390,9 @@ p:hover {
         font-size: 1.7vw;
     }
     
-    .intrebari p, .content p{
-        font-size: 4vw;
-    }
+    .pct{
+        font-size: 2vw;
+      }
     
     .drepturi, .email{
         font-size: 3vw;
@@ -418,6 +425,9 @@ p:hover {
 
     .rot{
         font-size: 1.7vw;
+    }
+        .pct{
+      font-size: 2vw;
     }
 
 }

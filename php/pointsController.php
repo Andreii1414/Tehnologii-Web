@@ -66,4 +66,37 @@ function addPoints(){
     $conn->close();
 }
 
+
+function getAllCategories(){
+    
+    $db = new Database();
+    $conn = $db->connect();
+
+    session_start();
+    $sessionId = $_SESSION['id'];
+
+    $categorie = null;
+    $punctaj = null;
+    $query = "SELECT categorie, punctaj_quiz FROM punctaje WHERE id_user = ?";
+    
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('s', $sessionId);
+    $stmt->execute();
+    $stmt->bind_result($categorie, $punctaj);
+
+    $response = array();
+    while($stmt->fetch()){
+        $res = array(
+            'categorie' => $categorie,
+            'punctaj' => $punctaj
+        );
+        $response[] = $res;
+    }
+
+    echo json_encode($response);
+
+    $stmt->close();
+    $conn->close();
+}
+
 ?>

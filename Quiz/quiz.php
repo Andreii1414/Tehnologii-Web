@@ -53,17 +53,20 @@
         <div class="line1">
             <div class="wrapper"
              <?php if($conectat == 1) echo 'onclick="window.location.href=\'avertizare/start.html\'"' ?>>
+             <p class="pct" id="Avertizare">Punctaj la acest quiz: 0</p>
             <img src="avertizare.jpeg" alt="Photo 1">
             <p class="photo-caption">De avertizare</p>
         </div>
         <div class="wrapper" 
         <?php if($conectat == 1) echo 'onclick="window.location.href=\'interzicereRestrictie/start.html\'"' ?>>
+        <p class="pct" id="Interzicere">Punctaj la acest quiz: 0</p>
             <img src="interzicere.jpeg" alt="Photo 2">
             <p id="text2" class="photo-caption">
             De interzicere sau restrictie</p>
         </div>
         <div class="wrapper" 
         <?php if($conectat == 1) echo 'onclick="window.location.href=\'prioritate/start.html\'"' ?>>
+        <p class="pct" id="Prioritate">Punctaj la acest quiz: 0</p>
             <img src="prioritate.jpeg" alt="Photo 3">
             <p class="photo-caption">De prioritate</p>
         </div>
@@ -73,16 +76,19 @@
           <div class="line1">
             <div class="wrapper"
             <?php if($conectat == 1) echo 'onclick="window.location.href=\'obligare/start.html\'"' ?>>
+            <p class="pct" id="Obligare">Punctaj la acest quiz: 0</p>
             <img src="obligatorie.jpeg" alt="Photo 4">
             <p class="photo-caption">De obligare</p>
         </div>
         <div class="wrapper"
         <?php if($conectat == 1) echo 'onclick="window.location.href=\'informare/start.html\'"' ?>>
+        <p class="pct" id="Informare">Punctaj la acest quiz: 0</p>
             <img src="deInformare.jpeg" alt="Photo 5">
             <p class="photo-caption">De informare</p>
         </div>
         <div class="wrapper"
         <?php if($conectat == 1) echo 'onclick="window.location.href=\'orientare/start.html\'"' ?>>
+        <p class="pct" id="Orientare">Punctaj la acest quiz: 0</p>
             <img src="deOrientare.jpeg" alt="Photo 6">
             <p class="photo-caption">De orientare</p>
             </div>
@@ -92,16 +98,19 @@
           <div class="line1">
             <div class="wrapper"
             <?php if($conectat == 1) echo 'onclick="window.location.href=\'informareTuristica/start.html\'"' ?>>
+            <p class="pct" id="InformareTuristica">Punctaj la acest quiz: 0</p>
             <img src="deInformareTuristica.jpeg" alt="Photo 7">
             <p class="photo-caption">De informare turistica</p>
         </div>
         <div class="wrapper" 
         <?php if($conectat == 1) echo 'onclick="window.location.href=\'panouriAditionale/start.html\'"' ?>>
+        <p class="pct" id="Aditionale">Punctaj la acest quiz: 0</p>
             <img src="panouriAditionale.jpeg" alt="Photo 8">
             <p class="photo-caption">Panouri aditionale</p>
         </div>
         <div class="wrapper"
         <?php if($conectat == 1) echo 'onclick="window.location.href=\'semnaleLuminoase/start.html\'"' ?>>
+        <p class="pct" id="SemnaleLuminoase">Punctaj la acest quiz: 0</p>
             <img  id="photo-9" src="semnaleLuminoase.png" alt="Photo 9">
             <p class="photo-caption">Semnale luminoase</p>
             </div>
@@ -111,16 +120,19 @@
           <div class="line1">
             <div class="wrapper"
             <?php if($conectat == 1) echo 'onclick="window.location.href=\'caleFerata/start.html\'"' ?>>
+            <p class="pct" id="CaleFerata">Punctaj la acest quiz: 0</p>
             <img  src="caleFerata.png" alt="Photo 10">
             <p id="text10" class="photo-caption">Indicatoare instalate la<br> trecerea cu calea ferata</p>
         </div>
         <div class="wrapper"
         <?php if($conectat == 1) echo 'onclick="window.location.href=\'indicatoareKilometrice/start.html\'"' ?>>
+        <p class="pct" id="Kilometrice">Punctaj la acest quiz: 0</p>
             <img id="photo-10" src="indicatoareKm.png" alt="Photo 11">
             <p class="photo-caption">Indicatoare kilometrice</p>
         </div>
         <div class="wrapper" 
         <?php if($conectat == 1) echo 'onclick="window.location.href=\'mijloaceAuxiliare/start.html\'"' ?>>
+        <p class="pct" id="Auxiliare">Punctaj la acest quiz: 0</p>
             <img  src="lucratori.png" alt="Photo 12">
             <p id="text12" class="photo-caption">Mijloace auxiliare de <br>semnalizare a lucratorilor</p>
             </div>
@@ -130,16 +142,19 @@
           <div class="line1" >
             <div class="wrapper"
             <?php if($conectat == 1) echo 'onclick="window.location.href=\'benziReversibile/start.html\'"' ?>>
+            <p class="pct" id="BenziReversibile">Punctaj la acest quiz: 0</p>
             <img id="photo-13" src="benzireversibile.png" alt="Photo 13">
             <p id="text13" class="photo-caption">Dispozitive luminoase pentru<br>dirijarea circulatiei pe<br>benzi reversibile</p>
         </div>
         <div class="wrapper"
         <?php if($conectat == 1) echo 'onclick="window.location.href=\'marcajeLongitudinale/start.html\'"' ?>>
+        <p class="pct" id="MarcajeLongitudinale">Punctaj la acest quiz: 0</p>
             <img id="photo-14" src="marcajeLong.png" alt="Photo 14">
             <p class="photo-caption">Marcaje Longitudinale</p>
         </div>
         <div class="wrapper" 
         <?php if($conectat == 1) echo 'onclick="window.location.href=\'marcajeTransversale/start.html\'"' ?>>
+        <p class="pct" id="MarcajeTransversale">Punctaj la acest quiz: 0</p>
             <img id="photo-15" src="marcajeTrans.png" alt="Photo 15">
             <p class="photo-caption">Marcaje Transversale</p>
             </div>
@@ -149,16 +164,19 @@
           <div class="line1">
             <div class="wrapper" 
             <?php if($conectat == 1) echo 'onclick="window.location.href=\'marcajeDiverse/start.html\'"' ?>>
+            <p class="pct" id="MarcajeDiverse">Punctaj la acest quiz: 0</p>
             <img  src="marcajeDiv.jpeg" alt="Photo 16">
             <p class="photo-caption">Marcaje Diverse</p>
         </div>
         <div class="wrapper" 
         <?php if($conectat == 1) echo 'onclick="window.location.href=\'marcajeLaterale/start.html\'"' ?>>
+        <p class="pct" id="MarcajeLaterale">Punctaj la acest quiz: 0</p>
             <img id="photo-17" src="marcajeLat.jpeg" alt="Photo 17">
             <p class="photo-caption">Marcaje Laterale</p>
         </div>
         <div class="wrapper"
         <?php if($conectat == 1) echo 'onclick="window.location.href=\'indicatoareTemporare/start.html\'"' ?>>
+        <p class="pct" id="Temporare">Punctaj la acest quiz: 0</p>
             <img src="indicatoaretemp.jpeg" alt="Photo 19">
             <p id="text19" class="photo-caption">Indicatoare rutiere<br>temporare</p>
         </div>
@@ -188,7 +206,25 @@
       <p class="rot">@RoT</p>
   
       </div>
-      <script src="../slider.js">
+      <script>
+             window.onload = function(){
+                fetch("/api/getAllCategories")
+                .then(response => response.json())
+                .then(data =>{
+                    console.log(data);
+                    
+                    data.forEach(element => {
+                        if(document.getElementById(element.categorie) != null)   
+                            document.getElementById(element.categorie).textContent = "Punctaj la acest quiz: " + element.punctaj;    
+                   
+                        });
+                  
+                })
+                .catch(error => {
+                console.error('Error: ', error);
+                })
+
+             }
     </script>
 </body>
 </html>
