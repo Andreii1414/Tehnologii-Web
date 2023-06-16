@@ -56,7 +56,15 @@ function registerHandler()
             {
                 $errors[] = '  Email-ul a fost deja folosit de un alt utilizator';
             }
+            $numeQuery = "select * from users where nume = '$nume';";
+            $numeResult = mysqli_query($conn, $numeQuery);
+            if(mysqli_num_rows($numeResult) > 0)
+            {
+                $errors[] = '  Numele a fost deja folosit de un alt utilizator';
+            }
         }
+
+
 
         if(!empty($errors)) {
             $erori = json_encode($errors);
