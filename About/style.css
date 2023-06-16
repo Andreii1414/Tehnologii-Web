@@ -47,6 +47,7 @@ body{
 }
 
 .content{
+    text-align: center;
     background-color: #edfbfc;
     width: 100%;
     height: auto;
@@ -185,6 +186,92 @@ body{
     cursor: pointer;
 }
 
+.form_button {
+    width: 10em;
+    height: 2.5em;
+    font-size: 1.3vw;
+    border-radius: 1em;
+    background-color: white;
+    font-family: "Comic Sans MS";
+    font-weight: 700;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  .form_button:hover {
+    filter: brightness(70%);
+    cursor: pointer;
+  }
+
+  .form_input{
+    width: 50%;
+    font-size: 1.2vw;
+    font-family: 'Comic Sans MS';
+    text-align: start;
+  }
+
+  .feedbackMsg{
+    border: 1px solid black;
+    width: 40%;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 3%;
+    text-align: start;
+    border-radius: 10px;
+    word-wrap: break-word;
+    padding: 1%;
+  }
+
+  .numeMsg{
+    font-size: 1.5vw;
+  }
+
+  .rating{
+    flex-direction: row-reverse;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rating input{
+    display: none;
+  }
+
+  .rating label{
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    background-color:lightgray;
+    margin: 0 2px;
+    border-radius: 50%;
+  }
+
+  .rating label:before{
+    content: '\2605';
+    font-size: 40px;
+    color: white;
+    display: block;
+    text-align: center;
+    line-height: 50px;
+  }
+
+  .rating input:checked ~ label{
+    background-color: #ffcc00;
+  }
+
+  .rating:not(:checked) > label:hover, 
+  .rating:not(:checked) > label:hover ~ label{
+    background-color:   #ffcc00 ;
+  }
+
+  .fTitle{
+    font-size: 3vw;
+  }
+
+  .star{
+    font-size: 3vw;
+  }
+
+
 @media screen and (min-width: 768px) and (max-width: 1023px){
     .logo {
         height: 40%;
@@ -220,6 +307,28 @@ body{
         font-size: 3vw;
     }
 
+    .numeMsg{
+        font-size: 2.5vw;
+      }
+
+      .star{
+        font-size: 4vw;
+      }
+      .form_button {
+        font-size: 2vw;
+      }
+
+      .form_input{
+        font-size: 2vw;
+        width: 70%;
+      }
+      
+  .fTitle{
+    font-size: 4vw;
+  }
+  .feedbackMsg{
+    width: 60%;
+  }
 }
 
 @media screen and (max-width: 767px){
@@ -255,4 +364,27 @@ body{
     .drepturi, .email{
         font-size: 3vw;
     }
+
+    .numeMsg{
+        font-size: 3.5vw;
+      }
+
+      .form_button {
+        font-size: 3vw;
+      }
+  .star{
+    font-size: 5vw;
+  }
+
+  .form_input{
+    font-size: 3vw;
+    width: 70%;
+  }
+  
+  .fTitle{
+    font-size: 5vw;
+  }
+  .feedbackMsg{
+    width: 60%;
+  }
 }

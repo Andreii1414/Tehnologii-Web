@@ -18,6 +18,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/30c0cebaef.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <title>About</title>
 </head>
@@ -121,6 +122,31 @@
     <div class="email">
         &#128231; contact@rot.com
     </div>
+
+    <div class="content">
+        <p>Adauga feedback</p>
+        <form action="/api/addFeedback" method="POST">
+            <textarea oninput="countChars()" rows="7" cols="4" type="text" id="text" name="text" placeholder="Mesaj (maxim 500 de caractere)" class="form_input"></textarea><br>
+            <div class="rating">
+                <input type="radio" id="5star" name="rating" value = "5">
+                <label for="5star"></label>
+                <input type="radio" id="4star" name="rating" value = "4">
+                <label for="4star"></label>
+                <input type="radio" id="3star" name="rating" value = "3">
+                <label for="3star"></label>
+                <input type="radio" id="2star" name="rating" value = "2">
+                <label for="2star"></label>
+                <input type="radio" id="1star" name="rating" value = "1">
+                <label for="1star"></label>
+            </div>
+            <p id="charCounter">0 caractere</p>
+            <input type="submit" name="submit" id="submit" value="Trimite feedback" class="form_button">
+        </form>
+    </div>
+
+    <div class="drepturi" id="feedback">
+        <p class="fTitle">Feedback-ul vostru:</p> <br>
+    </div>
     <div class="footer">
         <div class="footer__nav">
           <a class = "nav_link" href="#">Confidentialitate</a>
@@ -140,6 +166,70 @@
       <p class="rot">@RoT</p>
   
       </div>
-    
+
+    <script>
+        function countChars(){
+            var text = document.getElementById("text");
+            var charCount = document.getElementById("charCounter");
+            var input = text.value;
+            var count = input.length;
+
+            charCount.innerText = count + " caractere";
+
+            if(count > 500)
+            {
+                text.setCustomValidity("Mesajul a depasit 500 de caractere");
+            }
+            else text.setCustomValidity("");
+        }
+
+        window.onload = function(){
+                fetch("/api/getAllFeedback")
+                .then(response => response.json())
+                .then(data =>{
+                    console.log(data);
+                    var div = document.getElementById("feedback");
+                    data.forEach(element => {
+                            var nume = document.createElement('p');
+                            var text = document.createElement('p');
+                            text.classList.add("feedbackMsg");
+                            nume.classList.add("numeMsg")
+
+                            var rating = document.createElement('div');
+                            rating.classList.add("rating");
+
+                            for(let i = element.rating; i < 5; i++)
+                            {
+                                var star = document.createElement('span');
+                                star.innerHTML = '\u2605';
+                                star.classList.add("star");
+                                rating.appendChild(star);
+                            }
+
+                            for(let i = 0; i < element.rating; i++)
+                            {
+                                var star = document.createElement('span');
+                                star.innerHTML = '\u2605';
+                                star.style.color = "#ffcc00";
+                                star.classList.add("star");
+                                rating.appendChild(star);
+                            }
+                            
+                            nume.innerHTML = "("+ element.data + ")<br>" + element.nume + " a oferit:";
+                            text.innerHTML = element.mesaj;
+
+                            rating.style.marginTop = "-2%";
+
+                            div.appendChild(nume);
+                            div.appendChild(rating);
+                            div.appendChild(text);
+                        });
+                })
+                .catch(error => {
+                console.error('Error: ', error);
+                })
+
+             }
+    </script>
 </body>
 </html>

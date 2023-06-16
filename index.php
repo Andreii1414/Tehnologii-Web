@@ -8,6 +8,8 @@ require 'Tehnologii-web/php/pointsController.php';
 require 'Tehnologii-web/php/clasamentController.php';
 require 'Tehnologii-web/php/mediuController.php';
 require 'Tehnologii-web/php/accountController.php';
+require 'Tehnologii-web/php/feedbackController.php';
+
 
 $requestUrl = $_SERVER['REQUEST_URI'];
 $requestMethod = $_SERVER['REQUEST_METHOD'];
@@ -54,6 +56,14 @@ if ($requestMethod === 'GET' && $requestUrl === '/api/cont') {
 
 if ($requestMethod === 'GET' && $requestUrl === '/api/getAllCategories') {
     getAllCategories();
+}
+
+if ($requestMethod === 'POST' && $requestUrl === '/api/addFeedback') {
+    addFeedback();
+}
+
+if ($requestMethod === 'GET' && $requestUrl === '/api/getAllFeedback') {
+    getAllFeedback();
 }
 
 
