@@ -1,12 +1,16 @@
+<?php 
+    include("../../php/verifyConnection.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Level 8</title>
+    <title>Level 7</title>
 </head>
 <body>
+    <?php if($conectat == 1): ?>
     <div class="content">
         <div class="left-content">
             <p class="text">Trage semnul/semnele aici</p>
@@ -15,12 +19,10 @@
             <button class="btn">Finish</button>
         </div>
         <div class="middle-content">
-            <img src="level8.png" alt="lvl8" class="image">
+            <img src="level7.png" alt="lvl7" class="image">
         </div>
         <div class="right-content">
-            <p class="text">Alege semnele care trebuie montate in locul patratelor, astfel incat: 
-                masina rosie este obligata sa vireze la dreapta, iar masina verde este obligata sa circule inainte
-            </p>
+            <p class="text">Alege semnele care trebuie montate in locul patratelor 1 si 2</p>
             <div class="image-list">
                 <img src="../../mediu/categorii/avertizare/semne/accident.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/avertizare/semne/acostament-periculos.png" alt="1" class="draggable">
@@ -106,10 +108,10 @@
                 <img src="../../mediu/categorii/Obligare/semne/deobligare/Direcție-obligatorie-pentru-autovehiculele-care-transportă-mărfuri-periculoase.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/Obligare/semne/deobligare/drum-obligatoriu-pentru-categ-de-vehicule.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/Obligare/semne/deobligare/drum-pentru-pietoni.png" alt="1" class="draggable">
-                <img src="../../mediu/categorii/Obligare/semne/deobligare/inainte.jpeg" alt="1" class="draggable" valid="valid1">
+                <img src="../../mediu/categorii/Obligare/semne/deobligare/inainte.jpeg" alt="1" class="draggable">
                 <img src="../../mediu/categorii/Obligare/semne/deobligare/inante-sau-la-dreapta.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/Obligare/semne/deobligare/intersectie-cu-sens-giratoriu.png" alt="1" class="draggable">
-                <img src="../../mediu/categorii/Obligare/semne/deobligare/la-dreapta2.png" alt="1" class="draggable" valid="valid2">
+                <img src="../../mediu/categorii/Obligare/semne/deobligare/la-dreapta2.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/Obligare/semne/deobligare/pista-pentru-biciclete.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/Obligare/semne/deobligare/ocolire.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/Obligare/semne/deobligare/ocolire2.png" alt="1" class="draggable">
@@ -124,11 +126,11 @@
                 <img src="../../mediu/categorii/DeInformare/semne/deinformare/Drum-pentru-autovehicule.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/DeInformare/semne/deinformare/inchirieri-auto.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/DeInformare/semne/deinformare/Parcare-subterană-sau-în-clădire.png" alt="1" class="draggable">
-                <img src="../../mediu/categorii/DeInformare/semne/deinformare/parcare.png" alt="1" class="draggable">
+                <img src="../../mediu/categorii/DeInformare/semne/deinformare/parcare.png" alt="1" class="draggable" valid="valid2">
                 <img src="../../mediu/categorii/DeInformare/semne/deinformare/parcare2.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/DeInformare/semne/deinformare/politia.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/DeInformare/semne/deinformare/service-auto.png" alt="1" class="draggable">
-                <img src="../../mediu/categorii/DeInformare/semne/deinformare/spital.png" alt="1" class="draggable" >
+                <img src="../../mediu/categorii/DeInformare/semne/deinformare/spital.png" alt="1" class="draggable"  valid="valid1">
                 <img src="../../mediu/categorii/DeInformare/semne/deinformare/Stație-de-autobuz.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/DeInformare/semne/deinformare/Sens-unic.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/DeInformare/semne/deinformare/stadion.png" alt="1" class="draggable">
@@ -141,6 +143,9 @@
             </div>
         </div>
     </div>
+    <?php else: ?>
+        <p style="font-size: 5vw; color: red;">Nu esti conectat</p>
+    <?php endif;?>
     <script src="script.js"></script>
 </body>
 </html>

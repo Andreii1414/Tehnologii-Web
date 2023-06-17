@@ -1,27 +1,27 @@
+<?php 
+    include("../../php/verifyConnection.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Level 5</title>
+    <title>Level 4</title>
 </head>
 <body>
+    <?php if($conectat == 1): ?>
     <div class="content">
         <div class="left-content">
             <p class="text">Trage semnul/semnele aici</p>
             <div class="patrat droppable">1</div>
-            <div class="patrat droppable">2</div>
-            <div class="patrat droppable">3</div>
             <button class="btn">Finish</button>
         </div>
         <div class="middle-content">
-            <img src="level5.png" alt="lvl5" class="image">
+            <img src="level4.png" alt="lvl4" class="image">
         </div>
         <div class="right-content">
-            <p class="text">Alege semnele care trebuie montate in locul patratelor, astfel incat:
-                masina verde este obligata sa opreasca, masina rosie este obligata sa acorde prioritate, iar taxiului i se asigura prioritatea
-            </p>
+            <p class="text">Alege semnul care trebuie montat in locul patratului 1 pentru a interzice DOAR vehiculului din imagine sa vireze la dreapta</p>
             <div class="image-list">
                 <img src="../../mediu/categorii/avertizare/semne/accident.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/avertizare/semne/acostament-periculos.png" alt="1" class="draggable">
@@ -80,7 +80,7 @@
                 <img src="../../mediu/categorii/interzicererestrictie/semne/interzis-marfuri-periculoase.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/interzicererestrictie/semne/interzis-marfuri.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/interzicererestrictie/semne/interzis-masa.png" alt="1" class="draggable">
-                <img src="../../mediu/categorii/interzicererestrictie/semne/interzis-mopede.png" alt="1" class="draggable">
+                <img src="../../mediu/categorii/interzicererestrictie/semne/interzis-mopede.png" alt="1" class="draggable" valid="valid1">
                 <img src="../../mediu/categorii/interzicererestrictie/semne/interzis-motociclete.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/interzicererestrictie/semne/interzis-pietoni.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/interzicererestrictie/semne/interzis-poluare.png" alt="1" class="draggable">
@@ -96,12 +96,12 @@
                 <img src="../../mediu/categorii/interzicererestrictie/semne/stationare-interzisa.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/interzicererestrictie/semne/oprire-interzisa.png" alt="1" class="draggable">
 
-                <img src="../../mediu/categorii/prioritate/semne/cedeaza.png" alt="1" class="draggable" valid="valid2">
+                <img src="../../mediu/categorii/prioritate/semne/cedeaza.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/prioritate/semne/prioritate-fata-de-sens-opus.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/prioritate/semne/prioritate-sens-opus.png" alt="1" class="draggable">
-                <img src="../../mediu/categorii/prioritate/semne/prioritate.png" alt="1" class="draggable" valid="valid1">
+                <img src="../../mediu/categorii/prioritate/semne/prioritate.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/prioritate/semne/sfarsit-prioritate.png" alt="1" class="draggable">
-                <img src="../../mediu/categorii/prioritate/semne/stop.png" alt="1" class="draggable" valid="valid3">
+                <img src="../../mediu/categorii/prioritate/semne/stop.png" alt="1" class="draggable">
 
                 <img src="../../mediu/categorii/Obligare/semne/deobligare/Delimitare-piste-pentru-pietoni-și-biciclete.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/Obligare/semne/deobligare/Direcție-obligatorie-pentru-autovehiculele-care-transportă-mărfuri-periculoase.png" alt="1" class="draggable">
@@ -142,6 +142,9 @@
             </div>
         </div>
     </div>
+    <?php else: ?>
+        <p style="font-size: 5vw; color: red;">Nu esti conectat</p>
+    <?php endif;?>
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,3 +1,6 @@
+<?php 
+    include("../../php/verifyConnection.php");
+?>
 <!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -8,7 +11,7 @@
     <title>Quiz</title>
 </head>
 <body>
-    
+    <?php if($conectat == 1): ?>
     <div class="box">
         <div class="header">
             <span>Raspunsuri corecte: <span id="scor">0</span></span>
@@ -17,104 +20,114 @@
         <hr>
         <div class="body">
             <div class="question active">
-                <h3>Ce reprezinta indicatorul din imagine?  <br>
-                    <img src="../../Mediu/categorii/marcajediverse/semne/statie.png" alt="img"
+                <h3>Care imagini reprezintă marcaje pe ziduri de sprijin și pe infrastructurile pasajelor inferioare?<br>
+                    <img src="../../Mediu/categorii/marcajelaterale/semne/marca-ziduri.png" alt="img"
+                    class="imagine">
+                    <img src="../../Mediu/categorii/marcajelaterale/semne/marcaj-ziduri2.png" alt="img"
                     class="imagine">
                 </h3>
                 <div class="answer">
                     <input type="radio" name="a1">
                     <span>
-                     Locuri de parcare destinate taxiurilor
-
+                        Niciuna
+                    </span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a1">
+                    <span>
+                        Doar a doua imagine                    
                     </span>
                 </div>
                 <div class="answer">
                     <input type="radio" name="a1"  valid = "valid">
                     <span>
-                        Stație autovehicule de transport în comun                    
+                        Ambele imagini                    
                     </span>
                 </div>
                 <div class="answer">
                     <input type="radio" name="a1">
                     <span>
-                        Locuri de parcare in zig-zag                    
+                       Doar prima imagine                    
                     </span>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>Care imagini reprezintă marcaje pe ziduri de sprijin și pe infrastructurile pasajelor inferioare?   <br>
+                    <img src="../../Mediu/categorii/marcajelaterale/semne/marcaj-inaltime.png" alt="img"
+                    class="imagine">
+                    <img src="../../Mediu/categorii/marcajelaterale/semne/marcaj-ziduri2.png" alt="img"
+                    class="imagine">
+                </h3>
+                <div class="answer">
+                    <input type="radio" name="a2">
+                    <span>
+                        Doar prima imagine 
+                    </span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a2">
+                    <span>
+                        Ambele imagini 
+                    </span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a2">
+                    <span>
+                        Niciuna
+                </div>
+                <div class="answer">
+                   <input type="radio" name="a2" valid = "valid">
+                   <span>
+                      Doar a doua imagine  
                 </div>
             </div>
 
             <div class="question">
                 <h3>Ce reprezinta indicatorul din imagine?  <br>
-                    <img src="../../Mediu/categorii/marcajediverse/semne/marcaj-ghidare.png" alt="img"
+                    <img src="../../Mediu/categorii/marcajelaterale/semne/marcaj-coronamente.png" alt="img"
                     class="imagine">
                 </h3>
                 <div class="answer">
-                    <input type="radio" name="a2">
+                    <input type="radio" name="a3">
                     <span>
-                        Marcaj pentru spații înguste 
-                    </span>
+                        Marcaje pe borduri
+                   </span>
                 </div>
-                <div class="answer">
-                    <input type="radio" name="a2">
-                    <span>
-                        Marcaj de ghidare la traversarea unei intersecții 
-                    </span>
-                </div>
-                <div class="answer">
-                    <input type="radio" name="a2" valid="valid">
-                    <span>
-                        Marcaj de ghidare în intersecție
-                    </div>
-            </div>
-
-            <div class="question">
-                <h3>Care dintre urmatoarele imagini reprezinta indicatoare pentru locuri de parcare?  <br>
-                    <img src="../../Mediu/categorii/marcajediverse/semne/parcare.png" alt="img"
-                    class="imagine">
-                    <img src="../../Mediu/categorii/marcajediverse/semne/parcare2.png" alt="img"
-                    class="imagine">
-                    <img src="../../Mediu/categorii/marcajediverse/semne/interzis-stationare.png" alt="img"
-                    class="imagine">
-                </h3>
                 <div class="answer">
                     <input type="radio" name="a3"  valid = "valid">
                     <span>
-                        1 si 2
+                        Marcaje pe coronamentele podețelor  
                    </span>
                 </div>
                 <div class="answer">
                     <input type="radio" name="a3">
                     <span>
-                        Toate 3 
-                   </span>
-                </div>
-                <div class="answer">
-                    <input type="radio" name="a3">
-                    <span>
-                        1 si 3 
+                        Marcaje pe parapete
                     </div>
             </div>
 
             <div class="question">
                 <h3>Ce reprezinta indicatorul din imagine?  <br>
-                    <img src="../../Mediu/categorii/marcajediverse/semne/interzis-stationare.png" alt="img"
+                    <img src="../../Mediu/categorii/marcajelaterale/semne/marcaje-borduri.png" alt="img"
                     class="imagine">
                 </h3>
                 <div class="answer">
                     <input type="radio" name="a4"  >
                     <span>
-                        Locuri de parcare in zig-zag
+                        Marcaje pe parapete
                     </span>
                 </div>
                 <div class="answer">
-                    <input type="radio" name="a4" valid = "valid"> 
+                    <input type="radio" name="a4"> 
                     <span>
-                        Interzicerea staționării
+                        Marcaje pe coronamentele podețelor
                    </span>
                 </div>
                 <div class="answer">
-                    <input type="radio" name="a4">
+                    <input type="radio" name="a4" valid = "valid">
                     <span>
-                        Locuri de parcare paralele cu acostamentul 
+                        Marcaje pe borduri  
                     </div>
             </div>
 
@@ -122,148 +135,173 @@
 
             <div class="question">
                 <h3>Ce reprezinta indicatorul din imagine?  <br>
-                    <img src="../../Mediu/categorii/marcajediverse/semne/marcaj-o-banda.png" alt="img"
+                    <img src="../../Mediu/categorii/marcajelaterale/semne/sageti-schimbare.png" alt="img"
                     class="imagine">
                 </h3>
+                <div class="answer">
+                    <input type="radio" name="a5" >
+                    <span>
+                        Marcaje inscripționate pe partea carosabilă  
+                   </span>
+                </div>
                 <div class="answer">
                     <input type="radio" name="a5" valid = "valid">
                     <span>
-                        Marcaj la îngustarea drumului cu o bandă de sens  
+                        Săgeți de schimbare a benzii de circulație 
                    </span>
                 </div>
                 <div class="answer">
                     <input type="radio" name="a5">
                     <span>
-                        Marcaj pe drum cu trei benzi pentru alocarea alternativă a două benzi pentru unul sau celălat sens de circulație
-                   </span>
-                </div>
-                <div class="answer">
-                    <input type="radio" name="a5">
-                    <span>
-                        Spații închise circulației                    
+                        Săgeți de revenire pe banda aferentă sensului de mers                   
                     </div>
             </div>
 
             <div class="question">
                 <h3>Ce reprezinta indicatorul din imagine?  <br>
-                    <img src="../../Mediu/categorii/marcajediverse/semne/marcaj-ghidare-traversare.png" alt="img"
+                    <img src="../../Mediu/categorii/marcajelaterale/semne/marcaje-depasire.png" alt="img"
                     class="imagine">
                 </h3>
                 <div class="answer">
                     <input type="radio" name="a6">
                     <span>
-                        Marcaj de ghidare în intersecție
-                   </span>
-                </div>
-                <div class="answer">
-                    <input type="radio" name="a6"valid = "valid">
-                    <span>
-                        Marcaj de ghidare la traversarea unei intersecții 
+                        Curba deosebit de periculoasă
                    </span>
                 </div>
                 <div class="answer">
                     <input type="radio" name="a6">
                     <span>
-                        Marcaj la apropierea unei intersecții 
+                        Marcaj de reducere a vitezei înaintea unor curbe deosebit de periculoase
+                   </span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a6" valid = "valid">
+                    <span>
+                        Marcaje de interzicere a depășirii în unele curbe deosebit de periculoase  
                     </div>
             </div>
 
             <div class="question">
                 <h3>Ce reprezinta indicatorul din imagine?  <br>
-                    <img src="../../Mediu/categorii/marcajediverse/semne/marcaj-rezervata.png" alt="img"
+                    <img src="../../Mediu/categorii/marcajelaterale/semne/sageti-revenire.png" alt="img"
                     class="imagine">
                 </h3>
                 <div class="answer">
-                    <input type="radio" name="a7"  valid = "valid"> 
+                    <input type="radio" name="a7"> 
                     <span>
-                        Marcajul benzii rezervate circulației autovehiculelor de transport persoane 
+                        Săgeți de schimbare a benzii de circulație
                    </span>
                 </div>
                 <div class="answer">
-                    <input type="radio" name="a7">
+                    <input type="radio" name="a7"  valid = "valid">
                     <span>
-                        Stație autovehicule de transport în comun                   
+                        Săgeți de revenire pe banda aferentă sensului de mers                    
                     </span>
                 </div>
                 <div class="answer">
                     <input type="radio" name="a7">
                     <span>
-                        Interzicerea staționării
+                        Marcaje inscripționate pe partea carosabilă
                     </div>
             </div>
 
             <div class="question">
                 <h3>Ce reprezinta indicatorul din imagine?  <br>
-                    <img src="../../Mediu/categorii/marcajediverse/semne/marcaj-trei-benzi.png" alt="img"
+                    <img src="../../Mediu/categorii/marcajelaterale/semne/marcaj-inaltime.png" alt="img"
                     class="imagine">
                 </h3>
                 <div class="answer">
                     <input type="radio" name="a8"  >
                     <span>
-                        Spații închise circulației
+                        Marcaje pe infrastructurile pasajelor inferioare
+
                    </span>
                 </div>
                 <div class="answer">
                     <input type="radio" name="a8">
                     <span>
-                        Marcaj la îngustarea drumului cu o bandă de sens 
+                        Marcaje pe ziduri de sprijin și pe infrastructurile pasajelor inferioare 
                     </span>
                 </div>
                 <div class="answer">
                     <input type="radio" name="a8" valid = "valid">
                     <span>
-                        Marcaj pe drum cu trei benzi pentru alocarea alternativă a două benzi pentru unul sau celălat sens de circulație 
+                        Marcaje la pasaje care nu au asigurat gabaritul de înălțime                     
                     </div>
             </div>
 
             <div class="question">
                 <h3>Ce reprezinta indicatorul din imagine?  <br>
-                    <img src="../../Mediu/categorii/marcajediverse/semne/marcaj-inguste.png" alt="img"
+                    <img src="../../Mediu/categorii/marcajelaterale/semne/marcaj-parapet.png" alt="img"
                     class="imagine">
                 </h3>
-                <div class="answer">
-                    <input type="radio" name="a9">
-                    <span>
-                        Marcaj de ghidare în intersecție                    
-                    </span>
-                </div>
                 <div class="answer">
                     <input type="radio" name="a9" valid = "valid">
                     <span>
-                        Marcaj pentru spații înguste                    
+                        Marcaje pe parapete                     
                     </span>
                 </div>
                 <div class="answer">
                     <input type="radio" name="a9">
                     <span>
-                        Marcaj de ghidare la traversarea unei intersecții
+                        Marcaje pe borduri                    
+                    </span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a9">
+                    <span>
+                        Marcaje pe coronamentele podețelor
                     </div>
             </div>
 
             <div class="question">
                 <h3>Ce reprezinta indicatorul din imagine?  <br>
-                    <img src="../../Mediu/categorii/marcajediverse/semne/spatii-inchise.png" alt="img"
+                    <img src="../../Mediu/categorii/marcajelaterale/semne/marcaje-reducere.png" alt="img"
                     class="imagine">
                 </h3>
                 <div class="answer">
-                    <input type="radio" name="a10" valid = "valid">
+                    <input type="radio" name="a10">
                     <span>
-                        Spații închise circulației                     
+                        Marcaje de interzicere a depășirii în unele curbe deosebit de periculoase                     
                     </span>
                 </div>
                 <div class="answer">
                     <input type="radio" name="a10">
                     <span>
-                        Marcaj la îngustarea drumului cu o bandă de sens 
+                        Curba deosebit de periculoasă 
                    </span>
                 </div>
                 <div class="answer">
-                    <input type="radio" name="a10">
+                    <input type="radio" name="a10"  valid = "valid">
                     <span>
-                        Marcaj pe drum cu trei benzi pentru alocarea alternativă a două benzi pentru unul sau celălat sens de circulație 
+                        Marcaj de reducere a vitezei înaintea unor curbe deosebit de periculoase 
                     </div>
             </div>
 
+            <div class="question">
+                <h3>Ce reprezinta indicatorul din imagine?  <br>
+                    <img src="../../Mediu/categorii/marcajelaterale/semne/marcaje-inscrp.png" alt="img"
+                    class="imagine">
+                </h3>
+                <div class="answer">
+                    <input type="radio" name="a11" valid = "valid">
+                    <span>
+                        Marcaje inscripționate pe partea carosabilă                      
+                    </span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a11">
+                    <span>
+                        Săgeți de schimbare a benzii de circulație 
+                   </span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a11" >
+                    <span>
+                        Săgeți de revenire pe banda aferentă sensului de mers 
+                    </div>
+            </div>
+            
             <div class="question">
                 <h3>La acest quiz ai obtinut: <span id="totalScore">1</span> puncte</h3>
                 <a href="../quiz.php">Apasa aici pentru a merge la lista cu quiz-uri</a>
@@ -276,6 +314,10 @@
         </div>
 
     </div>
+
+    <?php else: ?>
+         <p style="font-size: 5vw; color: red;">Nu esti conectat</p>
+    <?php endif;?>
 
    <script src="script.js"></script>
 </body>

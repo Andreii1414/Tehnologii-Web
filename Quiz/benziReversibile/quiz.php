@@ -1,3 +1,7 @@
+<?php 
+    include("../../php/verifyConnection.php");
+?>
+
 <!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -8,7 +12,7 @@
     <title>Quiz</title>
 </head>
 <body>
-    
+    <?php if($conectat == 1): ?>
     <div class="box">
         <div class="header">
             <span>Raspunsuri corecte: <span id="scor">0</span></span>
@@ -17,126 +21,101 @@
         <hr>
         <div class="body">
             <div class="question active">
-                <h3>Ce semnifica urmatorul indicator?  <br>
-                    <img src="../../Mediu/categorii/informareturistica/semne/vestigii-istorice.png  " alt="img"
+                <h3>Ce reprezinta indicatorul din imagine?  <br>
+                    <img src="../../Mediu/categorii/BenziReversibile/semne/benzi_reversibile_luminoase.png" alt="img"
                     class="imagine">
                 </h3>
                 <div class="answer">
                     <input type="radio" name="a1">
                     <span>
-                        Castel
+                        Dispoziții pentru circularea corecta pe benzi.
                     </span>
                 </div>
                 <div class="answer">
-                    <input type="radio" name="a1" valid = "valid">
+                    <input type="radio" name="a1"  valid = "valid">
                     <span>
-                        Vestigii istorice
+                        Dispoziții luminoase pentru dirijarea circulația pe benzi reversibile.  
                     </span>
                 </div>
                 <div class="answer">
                     <input type="radio" name="a1">
                     <span>
-                        Monument                   
+                        Dispoziții pentru benzi deschise / inchise circulatiei pe autostradă.                     
                     </span>
                 </div>
             </div>
 
             <div class="question">
-                <h3>Ce semnifica urmatorul indicator?  <br>
-                    <img src="../../Mediu/categorii/informareturistica/semne/biserica.png" alt="img"
-                    class="imagine">
+                <h3>Ce indica semnalul galben cu sageata in diagonala prezent pe dispozitiile luminoase pentru dirijarea circulatiei pe benzi
+                    reversibile?  <br>
                 </h3>
                 <div class="answer">
-                    <input type="radio" name="a2" valid="valid">
+                    <input type="radio" name="a2">
                     <span>
-                       Biserica         
+                        Permite intrarea si circularea pe banda respectiva
                     </span>
                 </div>
                 <div class="answer">
                     <input type="radio" name="a2">
                     <span>
-                        Manastire                    
+                        Avertizeaza conducatorul auto ca trebuie sa circule cu viteza redusa 
                     </span>
                 </div>
                 <div class="answer">
-                    <input type="radio" name="a2" >
+                    <input type="radio" name="a2" valid = "valid">
                     <span>
-                       Pestera
-                    </div>
+                        Banda este inchisa circulatiei si esti obligat sa te deplasezi pe banda/benzile indicate                     
+                    </span>
+                </div>
             </div>
 
             <div class="question">
-                <h3>Ce semnifica urmatorul indicator?  <br>
-                    <img src="../../Mediu/categorii/informareturistica/semne/monument.png" alt="img"
-                    class="imagine">
+                <h3>Ce indica semnalul galben cu sageata in diagonala prezent pe dispozitiile luminoase pentru dirijarea circulatiei pe benzi
+                    reversibile?  <br>
                 </h3>
-                <div class="answer">
-                    <input type="radio" name="a3">
-                    <span>
-                        Vestigii istorice
-                    </span>
-                </div>
                 <div class="answer">
                     <input type="radio" name="a3"  valid = "valid">
                     <span>
-                        Monument
-                   </span>
+                        Puteți circula pe banda reversibilă, respectând regulile normale de circulație
+                    </span>
                 </div>
                 <div class="answer">
                     <input type="radio" name="a3">
                     <span>
-                        Castel
-                    </div>
+                        Traficul este interzis pe banda reversibilă, indiferent de starea semnalului luminos 
+                    </span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a3">
+                    <span>
+                        Puteți utiliza banda reversibilă numai în situații de urgență                     
+                    </span>
+                </div>
             </div>
 
             <div class="question">
-                <h3>Ce semnifica urmatorul indicator?  <br>
-                    <img src="../../Mediu/categorii/informareturistica/semne/partie.png" alt="img"
-                    class="imagine">
+                <h3>Ce indică un semnal luminos intermitent pe banda reversibilă?  <br>
                 </h3>
                 <div class="answer">
                     <input type="radio" name="a4">
                     <span>
-                        Pensiune
-                   </span>
-                </div>
-                <div class="answer">
-                    <input type="radio" name="a4">
-                    <span>
-                        Teleschi
-                   </span>
+                        Traficul este interzis pe banda respectivă
+                    </span>
                 </div>
                 <div class="answer">
                     <input type="radio" name="a4" valid = "valid">
                     <span>
-                       Partie schi
-                    </div>
+                        Traficul este permis pe banda respectivă, dar cu precauție
+                    </span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a4">
+                    <span>
+                        Traficul este încetinit pe banda respectivă                     
+                    </span>
+                </div>
             </div>
 
-            <div class="question">
-                <h3>Ce semnifica urmatorul indicator?  <br>
-                    <img src="../../Mediu/categorii/informareturistica/semne/telecabina.png" alt="img"
-                    class="imagine">
-                </h3>
-                <div class="answer">
-                    <input type="radio" name="a5" valid = "valid">
-                    <span>
-                      Telecabina
-                   </span>
-                </div>
-                <div class="answer">
-                    <input type="radio" name="a5"> 
-                    <span>
-                        Teleschi
-                   </span>
-                </div>
-                <div class="answer">
-                    <input type="radio" name="a5">
-                    <span>
-                        Castel
-                    </div>
-            </div>
-            
             <div class="question">
                 <h3>La acest quiz ai obtinut: <span id="totalScore">1</span> puncte</h3>
                 <a href="../quiz.php">Apasa aici pentru a merge la lista cu quiz-uri</a>
@@ -149,6 +128,10 @@
         </div>
 
     </div>
+
+    <?php else: ?>
+        <p style="font-size: 5vw; color: red;">Nu esti conectat</p>
+    <?php endif;?>
 
    <script src="script.js"></script>
 </body>

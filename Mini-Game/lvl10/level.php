@@ -1,3 +1,6 @@
+<?php 
+    include("../../php/verifyConnection.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +10,7 @@
     <title>Level 10</title>
 </head>
 <body>
+    <?php if($conectat == 1): ?>
     <div class="content">
         <div class="left-content">
             <p class="text">Trage semnul/semnele aici</p>
@@ -139,6 +143,9 @@
             </div>
         </div>
     </div>
+    <?php else: ?>
+        <p style="font-size: 5vw; color: red;">Nu esti conectat</p>
+    <?php endif;?>
     <script src="script.js"></script>
 </body>
 </html>

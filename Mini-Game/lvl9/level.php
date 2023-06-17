@@ -1,26 +1,27 @@
+<?php 
+    include("../../php/verifyConnection.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Level 12</title>
+    <title>Level 9</title>
 </head>
 <body>
+    <?php if($conectat == 1): ?>
     <div class="content">
         <div class="left-content">
             <p class="text">Trage semnul/semnele aici</p>
             <div class="patrat droppable">1</div>
-            <div class="patrat droppable">2</div>
             <button class="btn">Finish</button>
         </div>
         <div class="middle-content">
-            <img src="level12.png" alt="lvl12" class="image">
+            <img src="level9.png" alt="lvl9" class="image">
         </div>
         <div class="right-content">
-            <p class="text">Alege semnele care trebuie montate in locul patratelor, astfel incat, pe strada din dreapta sa fie interzis doar accesul 
-                autovehiculelor de tipul celui din imagine, iar pe strada din stanga sa fie interzis accesul tuturor autovehiculelor
-            </p>
+            <p class="text">Alege semnul care trebuie montat in locul patratului 1</p>
             <div class="image-list">
                 <img src="../../mediu/categorii/avertizare/semne/accident.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/avertizare/semne/acostament-periculos.png" alt="1" class="draggable">
@@ -42,7 +43,7 @@
                 <img src="../../mediu/categorii/avertizare/semne/curba-dubla.jpg" alt="1" class="draggable">
                 <img src="../../mediu/categorii/avertizare/semne/curba-la-dreapta.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/avertizare/semne/curba-la-stanga.jpg" alt="1" class="draggable">
-                <img src="../../mediu/categorii/avertizare/semne/denivelare-limitarea-vitezei.png" alt="1" class="draggable">
+                <img src="../../mediu/categorii/avertizare/semne/denivelare-limitarea-vitezei.png" alt="1" class="draggable"  valid="valid1">
                 <img src="../../mediu/categorii/avertizare/semne/drum-aglomerat.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/avertizare/semne/drum-alunecos.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/avertizare/semne/drum-denivelari.png" alt="1" class="draggable">
@@ -63,11 +64,11 @@
                 <img src="../../mediu/categorii/avertizare/semne/vant-lateral.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/avertizare/semne/zona-accident.jpg" alt="1" class="draggable">
 
-                <img src="../../mediu/categorii/interzicererestrictie/semne/acces-interzis.png" alt="1" class="draggable" valid="valid2">
+                <img src="../../mediu/categorii/interzicererestrictie/semne/acces-interzis.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/interzicererestrictie/semne/claxonarea-interzisa.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/interzicererestrictie/semne/interzis-ambele-sensuri.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/interzicererestrictie/semne/interzis-ansambluri.png" alt="1" class="draggable">
-                <img src="../../mediu/categorii/interzicererestrictie/semne/interzis-autobuze.png" alt="1" class="draggable" valid="valid1">
+                <img src="../../mediu/categorii/interzicererestrictie/semne/interzis-autobuze.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/interzicererestrictie/semne/interzis-autovehicule.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/interzicererestrictie/semne/interzis-bicicleta.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/interzicererestrictie/semne/interzis-depasire.png" alt="1" class="draggable">
@@ -128,7 +129,7 @@
                 <img src="../../mediu/categorii/DeInformare/semne/deinformare/parcare2.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/DeInformare/semne/deinformare/politia.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/DeInformare/semne/deinformare/service-auto.png" alt="1" class="draggable">
-                <img src="../../mediu/categorii/DeInformare/semne/deinformare/spital.png" alt="1" class="draggable" >
+                <img src="../../mediu/categorii/DeInformare/semne/deinformare/spital.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/DeInformare/semne/deinformare/Stație-de-autobuz.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/DeInformare/semne/deinformare/Sens-unic.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/DeInformare/semne/deinformare/stadion.png" alt="1" class="draggable">
@@ -141,6 +142,9 @@
             </div>
         </div>
     </div>
+    <?php else: ?>
+        <p style="font-size: 5vw; color: red;">Nu esti conectat</p>
+    <?php endif;?>
     <script src="script.js"></script>
 </body>
 </html>

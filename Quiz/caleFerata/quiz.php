@@ -1,3 +1,6 @@
+<?php 
+    include("../../php/verifyConnection.php");
+?>
 <!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -8,7 +11,7 @@
     <title>Quiz</title>
 </head>
 <body>
-    
+    <?php if($conectat == 1): ?>
     <div class="box">
         <div class="header">
             <span>Raspunsuri corecte: <span id="scor">0</span></span>
@@ -171,6 +174,10 @@
         </div>
 
     </div>
+
+    <?php else: ?>
+        <p style="font-size: 5vw; color: red;">Nu esti conectat</p>
+    <?php endif;?>
 
    <script src="script.js"></script>
 </body>

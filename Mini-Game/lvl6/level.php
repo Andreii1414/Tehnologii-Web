@@ -1,12 +1,16 @@
+<?php 
+    include("../../php/verifyConnection.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Level 1</title>
+    <title>Level 6</title>
 </head>
 <body>
+    <?php if($conectat == 1): ?>
     <div class="content">
         <div class="left-content">
             <p class="text">Trage semnul/semnele aici</p>
@@ -14,7 +18,7 @@
             <button class="btn">Finish</button>
         </div>
         <div class="middle-content">
-            <img src="lvl1.png" alt="lvl1" class="image">
+            <img src="level6.png" alt="lvl6" class="image">
         </div>
         <div class="right-content">
             <p class="text">Alege semnul care trebuie montat in locul patratului 1</p>
@@ -33,9 +37,9 @@
                 <img src="../../mediu/categorii/avertizare/semne/circulatie-ambele-sensuri.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/avertizare/semne/cale-ferata-fara-bariere1.jpg" alt="1" class="draggable">
                 <img src="../../mediu/categorii/avertizare/semne/coborare-periculoasa.png" alt="1" class="draggable">
-                <img src="../../mediu/categorii/avertizare/semne/copii.png" alt="1" class="draggable" valid="valid">
+                <img src="../../mediu/categorii/avertizare/semne/copii.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/avertizare/semne/curba-deosebit-de-periculoasa.png" alt="1" class="draggable">
-                <img src="../../mediu/categorii/avertizare/semne/curba-dubla-dreapta.webp" alt="1" class="draggable">
+                <img src="../../mediu/categorii/avertizare/semne/curba-dubla-dreapta.webp" alt="1" class="draggable" valid="valid1">
                 <img src="../../mediu/categorii/avertizare/semne/curba-dubla.jpg" alt="1" class="draggable">
                 <img src="../../mediu/categorii/avertizare/semne/curba-la-dreapta.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/avertizare/semne/curba-la-stanga.jpg" alt="1" class="draggable">
@@ -134,9 +138,13 @@
                 <img src="../../mediu/categorii/DeInformare/semne/deinformare/Îmbarcare-pe-ferry-boat.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/DeInformare/semne/deinformare/Zonă-cu-viteză-recomandată-de-30-km-h.png" alt="1" class="draggable">
 
+
             </div>
         </div>
     </div>
+    <?php else: ?>
+        <p style="font-size: 5vw; color: red;">Nu esti conectat</p>
+    <?php endif;?>
     <script src="script.js"></script>
 </body>
 </html>

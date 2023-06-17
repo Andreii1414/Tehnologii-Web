@@ -1,30 +1,33 @@
+<?php 
+    include("../../php/verifyConnection.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Level 2</title>
+    <title>Level 11</title>
 </head>
 <body>
+    <?php if($conectat == 1): ?>
     <div class="content">
         <div class="left-content">
             <p class="text">Trage semnul/semnele aici</p>
             <div class="patrat droppable">1</div>
-            <div class="patrat droppable">2</div>
             <button class="btn">Finish</button>
         </div>
         <div class="middle-content">
-            <img src="level2.png" alt="lvl2" class="image">
+            <img src="level11.png" alt="lvl11" class="image">
         </div>
         <div class="right-content">
-            <p class="text">Alege semnele care trebuie montate in locul patratelor 1 si 2</p>
+            <p class="text">Alege semnul care trebuie montat in locul patratului 1</p>
             <div class="image-list">
                 <img src="../../mediu/categorii/avertizare/semne/accident.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/avertizare/semne/acostament-periculos.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/avertizare/semne/aeroport.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/avertizare/semne/alte-pericole.png" alt="1" class="draggable">
-                <img src="../../mediu/categorii/avertizare/semne/animale.png" alt="1" class="draggable" valid="valid1">
+                <img src="../../mediu/categorii/avertizare/semne/animale.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/avertizare/semne/baliza-dreapta.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/avertizare/semne/baliza-stanga.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/avertizare/semne/biciclisti.png" alt="1" class="draggable">
@@ -35,7 +38,7 @@
                 <img src="../../mediu/categorii/avertizare/semne/cale-ferata-fara-bariere1.jpg" alt="1" class="draggable">
                 <img src="../../mediu/categorii/avertizare/semne/coborare-periculoasa.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/avertizare/semne/copii.png" alt="1" class="draggable">
-                <img src="../../mediu/categorii/avertizare/semne/curba-deosebit-de-periculoasa.png" alt="1" class="draggable" valid="valid2">
+                <img src="../../mediu/categorii/avertizare/semne/curba-deosebit-de-periculoasa.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/avertizare/semne/curba-dubla-dreapta.webp" alt="1" class="draggable">
                 <img src="../../mediu/categorii/avertizare/semne/curba-dubla.jpg" alt="1" class="draggable">
                 <img src="../../mediu/categorii/avertizare/semne/curba-la-dreapta.png" alt="1" class="draggable">
@@ -51,7 +54,7 @@
                 <img src="../../mediu/categorii/avertizare/semne/intersectie-drumuri.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/avertizare/semne/intersectie-fara-prioritate.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/avertizare/semne/intersectie-fara-prioritate4.png" alt="1" class="draggable">
-                <img src="../../mediu/categorii/avertizare/semne/lucrari.png" alt="1" class="draggable">
+                <img src="../../mediu/categorii/avertizare/semne/lucrari.png" alt="1" class="draggable" valid="valid1">
                 <img src="../../mediu/categorii/avertizare/semne/masini-agricole.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/avertizare/semne/panour-succesive.png" alt="1" class="draggable">
                 <img src="../../mediu/categorii/avertizare/semne/presemnalizare-amenajare-rutiera.png" alt="1" class="draggable">
@@ -139,6 +142,9 @@
             </div>
         </div>
     </div>
+    <?php else: ?>
+        <p style="font-size: 5vw; color: red;">Nu esti conectat</p>
+    <?php endif;?>
     <script src="script.js"></script>
 </body>
 </html>

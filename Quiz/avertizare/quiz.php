@@ -1,3 +1,7 @@
+<?php 
+    include("../../php/verifyConnection.php");
+?>
+
 <!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -8,7 +12,7 @@
     <title>Quiz</title>
 </head>
 <body>
-    
+    <?php if($conectat == 1): ?>
     <div class="box">
         <div class="header">
             <span>Raspunsuri corecte: <span id="scor">0</span></span>
@@ -17,351 +21,363 @@
         <hr>
         <div class="body">
             <div class="question active">
-                <h3>Ce manevra este interzisa la intalnirea acestui indicator?  <br>
-                    <img src="../../Mediu/categorii/DeInformare/semne/deinformare/Sens-unic.png" alt="img"
+                <h3>Ce este obligat conducatorul auto sa faca la intalnirea acestui indicator?  <br>
+                    <img src="../../Mediu/categorii/avertizare/semne/curba-deosebit-de-periculoasa.png" alt="img"
                     class="imagine">
                 </h3>
                 <div class="answer">
                     <input type="radio" name="a1">
                     <span>
-                        Mersul inapoi
-                    </span>
-                </div>
-                <div class="answer">
-                    <input type="radio" name="a1">
-                    <span>
-                        Depasirea
+                        Nu are nicio obligatie
                     </span>
                 </div>
                 <div class="answer">
                     <input type="radio" name="a1"  valid = "valid">
                     <span>
-                        Intoarcerea
+                        Este obligat sa reduca viteza
+                    </span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a1">
+                    <span>
+                        Nu poate efectua depasiri, dar poate efectua celelalte manevre (intoarcere, oprire, etc)                    
                     </span>
                 </div>
             </div>
 
             <div class="question">
-                <h3>Care este viteza minima cu care trebuie sa circule conducatorii auto la intalnirea acestui indicator?  <br>
-                    <img src="../../Mediu/categorii/DeInformare/semne/deinformare/Autostrada.png" alt="img"
+                <h3>Indicatorul din imagine, se instaleaza pe sectorul de drum unde panta depaseste:  <br>
+                    <img src="../../Mediu/categorii/avertizare/semne/coborare-periculoasa.png" alt="img"
                     class="imagine">
                 </h3>
                 <div class="answer">
-                    <input type="radio" name="a2" >
+                    <input type="radio" name="a2"  valid="valid">
                     <span>
-                        70km/h         
+                        7%                    
                     </span>
                 </div>
                 <div class="answer">
                     <input type="radio" name="a2">
                     <span>
-                        30km/h                  
+                        10%                     
                     </span>
                 </div>
                 <div class="answer">
-                    <input type="radio" name="a2" valid="valid">
+                    <input type="radio" name="a2">
                     <span>
-                       50km/h
+                       3%
                     </div>
             </div>
 
             <div class="question">
-                <h3>Ce semnifica urmatorul indicator? <br>
-                    <img src="../../Mediu/categorii/DeInformare/semne/deinformare/Pasaj-subteran-pentru-pietoni.png" alt="img"
+                <h3>Din ce motiv este interzisa intoarcerea la intalnirea acestui indicator?  <br>
+                    <img src="../../Mediu/categorii/avertizare/semne/acostament-periculos.png" alt="img"
                     class="imagine">
                 </h3>
                 <div class="answer">
-                    <input type="radio" name="a3" valid = "valid">
+                    <input type="radio" name="a3"  >
                     <span>
-                        Pasaj subteran pentru pietoni
+                        Drumul este ingust
                     </span>
                 </div>
                 <div class="answer">
-                    <input type="radio" name="a3" >
+                    <input type="radio" name="a3" valid = "valid">
                     <span>
-                        Pasarela pentru pietoni
+                        Soliditatea drumului nu permite efectuarea manevrei
                    </span>
                 </div>
                 <div class="answer">
                     <input type="radio" name="a3">
                     <span>
-                        Coborare catre o statie de metrou
+                        Intoarcerea este permisa
                     </div>
             </div>
 
             <div class="question">
-                <h3>Ce semnifica urmatorul indicator?  <br>
-                    <img src="../../Mediu/categorii/DeInformare/semne/deinformare/Loc-pentru-popas.png" alt="img"
+                <h3>Ce ii este recomandat conducatorului auto sa faca la intalnirea urmatorului indicator?  <br>
+                    <img src="../../Mediu/categorii/avertizare/semne/drum-alunecos.png" alt="img"
                     class="imagine">
                 </h3>
                 <div class="answer">
                     <input type="radio" name="a4">
                     <span>
-                        Teren pentru camping
-                   </span>
-                </div>
-                <div class="answer">
-                    <input type="radio" name="a4" valid = "valid">
-                    <span>
-                        Loc pentru popas
+                        Sa emita semnale sonore cand intalneste un vehicul din sens opus
                    </span>
                 </div>
                 <div class="answer">
                     <input type="radio" name="a4">
                     <span>
-                      Loc de joaca pentru copii
+                        Sa mareasca viteza pentru a parasi cat mai repede acest sector de drum
+                   </span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a4"  valid = "valid">
+                    <span>
+                       Sa nu bruscheze volanul
                     </div>
             </div>
 
             <div class="question">
-                <h3>Ce semnifica urmatorul indicator?  <br>
-                    <img src="../../Mediu/categorii/DeInformare/semne/deinformare/Zonă-de-pescuit.png" alt="img"
+                <h3>Ce obligatii are conducatorul auto la intalnirea acestui indicator?  <br>
+                    <img src="../../Mediu/categorii/avertizare/semne/copii.png" alt="img"
                     class="imagine">
                 </h3>
                 <div class="answer">
                     <input type="radio" name="a5" valid = "valid">
                     <span>
-                       Zona de pescuit
+                       Sa reduca viteza sub 30km/h in localitate si sub 50km/h in afara ei, intre orele 07:00-22:00.
                    </span>
                 </div>
                 <div class="answer">
                     <input type="radio" name="a5">
                     <span>
-                        Zona in apropierea careia se afla un restaurant cu specificul aratat pe indicator
+                        Nu are nicio obligatie, dar ii este recomandat sa sporeasca atentia
                    </span>
                 </div>
                 <div class="answer">
                     <input type="radio" name="a5">
                     <span>
-                        Zona in care pescuitul este interzis
+                        Nu are nicio obligatie, deoarece indicatorul se adreseaza pietonilor
                     </div>
             </div>
 
             <div class="question">
-                <h3>La intalnirea acestui indicator:  <br>
-                    <img src="../../Mediu/categorii/DeInformare/semne/deinformare/viteza-recomandata.png" alt="img"
+                <h3>La intalnirea acestui indicator, in ce conditii sunt interzise toate manevrele?  <br>
+                    <img src="../../Mediu/categorii/avertizare/semne/curba-la-stanga.jpg" alt="img"
                     class="imagine">
                 </h3>
                 <div class="answer">
                     <input type="radio" name="a6">
                     <span>
-                       Viteza minima este de 60km/h
+                       Intotdeauna
                    </span>
                 </div>
                 <div class="answer">
-                    <input type="radio" name="a6" >
+                    <input type="radio" name="a6"valid = "valid">
                     <span>
-                        Viteza maxima este de 60km/h
+                        Doar daca vizibilitatea este sub 50m
                    </span>
                 </div>
                 <div class="answer">
-                    <input type="radio" name="a6" valid = "valid">
+                    <input type="radio" name="a6">
                     <span>
-                        Viteza recomandata este de 60km/h
+                        Sunt permise toate manevrele deoarece curba nu este una periculoasa
                     </div>
             </div>
 
             <div class="question">
-                <h3>Adevarat sau fals: Pe autostrada, este interzisa imobilizarea voluntara pe banda de urgenta  <br>
+                <h3>Care este numarul minim de astfel de panouri care se instaleaza inaintea unei curbe deosebit de periculoase?  <br>
+                    <img src="../../Mediu/categorii/avertizare/semne/panour-succesive.png" alt="img"
+                    class="imagine">
                 </h3>
                 <div class="answer">
-                    <input type="radio" name="a7" valid="valid"> 
+                    <input type="radio" name="a7" > 
                     <span>
-                        Adevarat
+                        1
                    </span>
                 </div>
                 <div class="answer">
                     <input type="radio" name="a7">
                     <span>
-                        Fals                
+                        6                  
                     </span>
                 </div>
+                <div class="answer">
+                    <input type="radio" name="a7" valid = "valid">
+                    <span>
+                        3
+                    </div>
             </div>
 
             <div class="question">
-                <h3>Urmatorul indicator se instaleaza:  <br>
-                    <img src="../../Mediu/categorii/DeInformare/semne/deinformare/Stație-de-autobuz.png" alt="img"
+                <h3>Care manevra este permisa in contextul acestui indicator?  <br>
+                    <img src="../../Mediu/categorii/avertizare/semne/drum-ingustat-ambele-parti.png" alt="img"
                     class="imagine">
                 </h3>
                 <div class="answer">
                     <input type="radio" name="a8"  >
                     <span>
-                        Pe un sector de drum unde circula autobuze
+                        Intoarcere
                    </span>
                 </div>
                 <div class="answer">
-                    <input type="radio" name="a8" >
+                    <input type="radio" name="a8"  valid = "valid">
                     <span>
-                       Pe un sector de drum unde este interzisa circulatia autobuzelor
+                       Depasirea
                    </span>
                 </div>
                 <div class="answer">
-                    <input type="radio" name="a8" valid = "valid">
+                    <input type="radio" name="a8">
                     <span>
-                       In statiile de autobuz
+                       Mersul inapoi
                     </div>
             </div>
 
             <div class="question">
                 <h3>Ce semnifica urmatorul indicator?  <br>
-                    <img src="../../Mediu/categorii/DeInformare/semne/deinformare/Teren-pentru-camping-(tabără-turistică).png" alt="img"
+                    <img src="../../Mediu/categorii/avertizare/semne/drum-aglomerat.png" alt="img"
                     class="imagine">
                 </h3>
                 <div class="answer">
-                    <input type="radio" name="a9">
+                    <input type="radio" name="a9" valid = "valid">
                     <span>
-                        Teren pentru caravane si camping
+                        Traficul din zona este intens
                    </span>
                 </div>
                 <div class="answer">
-                    <input type="radio" name="a9"  valid = "valid">
+                    <input type="radio" name="a9">
                     <span>
-                        Teren pentru camping
+                        O zona unde vehiculele pot fi parcate 
                    </span>
                 </div>
                 <div class="answer">
                     <input type="radio" name="a9" >
                     <span>
-                       Cabana pentru turisti
+                       Depasirea este interzisa
                     </div>
             </div>
 
             <div class="question">
-                <h3>Care este semnificatia urmatorului indicator? <br>
-                    <img src="../../Mediu/categorii/DeInformare/semne/deinformare/service-auto.png" alt="img"
+                <h3>La ce distanta, inaintea unui tunel este amplasat acest indicator? <br>
+                    <img src="../../Mediu/categorii/avertizare/semne/tunel.png" alt="img"
                     class="imagine">
                 </h3>
+                <div class="answer">
+                    <input type="radio" name="a10">
+                    <span>
+                       200-300m                
+                    </span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a10">
+                    <span>
+                        100-200m
+                   </span>
+                </div>
                 <div class="answer">
                     <input type="radio" name="a10" valid="valid">
                     <span>
-                       Service Auto              
-                    </span>
-                </div>
-                <div class="answer">
-                    <input type="radio" name="a10">
-                    <span>
-                        Vulcanizare
-                   </span>
-                </div>
-                <div class="answer">
-                    <input type="radio" name="a10">
-                    <span>
-                        Lucrari pe partea carosabila
-                    </div>
-            </div>
-
-            <div class="question">
-                <h3>Adevarat sau fals: La intalnirea acestui indicator, este interzis accesul tuturor autovehiculelor  <br>
-                    <img src="../../Mediu/categorii/DeInformare/semne/deinformare/zona-pietonala.png" alt="img"
-                    class="imagine">
-                </h3>
-                <div class="answer">
-                    <input type="radio" name="a11">
-                    <span>
-                        Adevarat
-                   </span>
-                </div>
-                <div class="answer">
-                    <input type="radio" name="a11" valid = "valid">
-                    <span>
-                        Fals
-                   </span>
-                </div>
-            </div>
-
-            <div class="question">
-                <h3>Care este viteza maxima admisa pentru autovehicule la intrarea in zona mentionata de acest indicator?  <br>
-                    <img src="../../Mediu/categorii/DeInformare/semne/deinformare/zona-pietonala.png" alt="img"
-                    class="imagine">
-                </h3>
-                <div class="answer">
-                    <input type="radio" name="a12" valid = "valid">
-                    <span>
-                        5km/h                  
-                    </span>
-                </div>
-                <div class="answer">
-                    <input type="radio" name="a12" >
-                    <span>
-                       10km/h
-                   </span>
-                </div>
-                <div class="answer">
-                    <input type="radio" name="a12">
-                    <span>
-                        20km/h              
-                    </div>
-            </div>
-
-            <div class="question">
-                <h3>Ce este obligat sa faca conducatorul auto la intalnirea acestui indicator? <br>
-                    <img src="../../Mediu/categorii/DeInformare/semne/deinformare/Tunel.png" alt="img"
-                    class="imagine">
-                </h3>
-                <div class="answer">
-                    <input type="radio" name="a13">
-                    <span>
-                       Sa circule cu o viteza de cel mult 30km/h
-                   </span>
-                </div>
-                <div class="answer">
-                    <input type="radio" name="a13" valid = "valid">
-                    <span>
-                        Sa aprinda luminile de intalnire         
-                    </span>
-                </div>
-                <div class="answer">
-                    <input type="radio" name="a13" >
-                    <span>
-                        Sa isi anunte prezenta folosind mijloacele de avertizare sonora 
-                    </div>
-            </div>
-
-            <div class="question">
-                <h3>Ce semnifica urmatorul indicator?  <br>
-                    <img src="../../Mediu/categorii/DeInformare/semne/deinformare/Îmbarcare-pe-vagoane-platformă-de-cale-ferată.png" alt="img"
-                    class="imagine">
-                </h3>
-                <div class="answer">
-                    <input type="radio" name="a14">
-                    <span>
-                       Imbarcare pe un ferry-boat              
-                    </span>
-                </div>
-                <div class="answer">
-                    <input type="radio" name="a14" valid = "valid">
-                    <span>
-                        Imbarcare pe vagoane platforma de cale ferata
-                   </span>
-                </div>
-                <div class="answer">
-                    <input type="radio" name="a14">
-                    <span>
-                        Port                
+                        50-100m
                     </div>
             </div>
 
             <div class="question">
                 <h3>Ce reprezinta indicatorul din imagine?  <br>
-                    <img src="../../Mediu/categorii/DeInformare/semne/deinformare/Acces-internet.png" alt="img"
+                    <img src="../../Mediu/categorii/avertizare/semne/iesire-chei.png" alt="img"
+                    class="imagine">
+                </h3>
+                <div class="answer">
+                    <input type="radio" name="a11" valid = "valid">
+                    <span>
+                        Iesire spre un chei sau mal abrupt
+                   </span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a11">
+                    <span>
+                        Un pod mobil
+                   </span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a11">
+                    <span>
+                        Un acostament periculos
+                    </div>
+            </div>
+
+            <div class="question">
+                <h3>Care sunt riscurile prezente la intalnirea acestui indicator?  <br>
+                    <img src="../../Mediu/categorii/avertizare/semne/improscare-piatra.png" alt="img"
+                    class="imagine">
+                </h3>
+                <div class="answer">
+                    <input type="radio" name="a12">
+                    <span>
+                        Nu exista riscuri, indicatorul semnalizeaza o lucrare in desfasurare                   
+                    </span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a12"  valid = "valid">
+                    <span>
+                       Pietrisul de pe partea carosabila poate fi aruncat de rotile vehiculului catre ceilalti participanti la trafic
+                   </span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a12">
+                    <span>
+                        Caderi de pietre                
+                    </div>
+            </div>
+
+            <div class="question">
+                <h3>Unde se intalneste, cel mai des, acest indicator? <br>
+                    <img src="../../Mediu/categorii/avertizare/semne/caderi-pietre.png" alt="img"
+                    class="imagine">
+                </h3>
+                <div class="answer">
+                    <input type="radio" name="a13">
+                    <span>
+                        Pe orice sector de drum unde exista risc de improscare cu pietris
+                   </span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a13">
+                    <span>
+                        In zonele cu multa vegetatie          
+                    </span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a13"  valid = "valid">
+                    <span>
+                       In zonele montane
+                    </div>
+            </div>
+
+            <div class="question">
+                <h3>Care sunt recomandarile pentru conducatorul auto la intalnirea acestui indicator?  <br>
+                    <img src="../../Mediu/categorii/avertizare/semne/biciclisti.png" alt="img"
+                    class="imagine">
+                </h3>
+                <div class="answer">
+                    <input type="radio" name="a14" valid = "valid">
+                    <span>
+                       Sa reduca preventiv viteza si sa sporeasca atentia                  
+                    </span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a14" >
+                    <span>
+                        Nu exista recomandari, indicatorul se adreseaza biciclistilor
+                   </span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a14">
+                    <span>
+                        Sa opreasca si sa acorde prioritate ori de cate ori intalneste un biciclist                 
+                    </div>
+            </div>
+
+            <div class="question">
+                <h3>Ce reprezinta indicatorul din imagine?  <br>
+                    <img src="../../Mediu/categorii/avertizare/semne/circulatie-ambele-sensuri.png" alt="img"
                     class="imagine">
                 </h3>
                 <div class="answer">
                     <input type="radio" name="a15">
                     <span>
-                        Supermarket            
+                        Sfarsitul drumului cu sens unic               
                     </span>
                 </div>
                 <div class="answer">
                     <input type="radio" name="a15">
                     <span>
-                        Loc de joaca pentru copii
+                        Circulatie interzisa in ambele sensuri 
                    </span>
                 </div>
                 <div class="answer">
                     <input type="radio" name="a15" valid = "valid">
                     <span>
-                        Access internet                 
+                        Circulatie in ambele sensuri                 
                     </div>
             </div>
 
@@ -377,6 +393,10 @@
         </div>
 
     </div>
+
+    <?php else: ?>
+        <p style="font-size: 5vw; color: red;">Nu esti conectat</p>
+    <?php endif;?>
 
    <script src="script.js"></script>
 </body>

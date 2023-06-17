@@ -1,3 +1,6 @@
+<?php 
+    include("../../php/verifyConnection.php");
+?>
 <!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -8,7 +11,7 @@
     <title>Quiz</title>
 </head>
 <body>
-    
+    <?php if($conectat == 1): ?>
     <div class="box">
         <div class="header">
             <span>Raspunsuri corecte: <span id="scor">0</span></span>
@@ -18,123 +21,146 @@
         <div class="body">
             <div class="question active">
                 <h3>Ce reprezinta indicatorul din imagine?  <br>
-                    <img src="../../Mediu/categorii/IndicatoareKilometrice/semne/drum_national.png" alt="img"
+                    <img src="../../Mediu/categorii/MarcajeTransversale/semne/marcaj_cedeaza_trecerea.png" alt="img"
                     class="imagine">
                 </h3>
                 <div class="answer">
                     <input type="radio" name="a1">
                     <span>
-                        Indicator hectometric
-                    </span>
-                </div>
-                <div class="answer">
-                    <input type="radio" name="a1">
-                    <span>
-                        Drum județean
+                        Marcaj de oprire                   
                     </span>
                 </div>
                 <div class="answer">
                     <input type="radio" name="a1" valid = "valid">
                     <span>
-                        Drum național                     
+                        Marcaj de cedarea trecerii                     
+                    </span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a1">
+                    <span>
+                        Marcaj de drum cu prioritate                    
                     </span>
                 </div>
             </div>
 
             <div class="question">
-                <h3>Ce reprezinta indicatorul din imagine?  <br>
-                    <img src="../../Mediu/categorii/IndicatoareKilometrice/semne/drum_judetean.png" alt="img"
-                    class="imagine">
+                <h3>Care dintre următoarele indicatoare obligă șoferul să oprească sau să cedeze trecerea la întâlnirea indicatorului? 
                 </h3>
                 <div class="answer">
                     <input type="radio" name="a2">
                     <span>
-                      Drum național 
+                        Marcaj de drum cu prioritate                    
                     </span>
                 </div>
                 <div class="answer">
-                    <input type="radio" name="a2">
+                    <input type="radio" name="a2" valid="valid">
                     <span>
-                        Drum comunal 
+                        Marcaj de oprire                       
                     </span>
                 </div>
                 <div class="answer">
-                    <input type="radio" name="a2" valid = "valid">
+                    <input type="radio" name="a2" valid="valid">
                     <span>
-                        Drum județean 
+                        Marcaj de cedarea trecerii                    
+                     </div>
+            </div>
+
+            <div class="question">
+                <h3>Ce reprezinta indicatorul din imagine?  <br>
+                    <img src="../../Mediu/categorii/MarcajeTransversale/semne/benzi_rezonatoare.png" alt="img"
+                    class="imagine">
+                </h3>
+                <div class="answer">
+                    <input type="radio" name="a3"  >
+                    <span>
+                        Viteza maximă admisa este de 50 de km/h
+                    </span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a3">
+                    <span>
+                        Depășirea interzisă
+                   </span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a3"valid = "valid">
+                    <span>
+                        Benzi rezonatoare din marcaj rutier  
                     </div>
             </div>
 
             <div class="question">
                 <h3>Ce reprezinta indicatorul din imagine?  <br>
-                    <img src="../../Mediu/categorii/IndicatoareKilometrice/semne/drum_comunal.png" alt="img"
+                    <img src="../../Mediu/categorii/MarcajeTransversale/semne/marcaj_oprire.png" alt="img"
                     class="imagine">
                 </h3>
                 <div class="answer">
-                    <input type="radio" name="a3" valid = "valid">
+                    <input type="radio" name="a4" valid = "valid">
                     <span>
-                        Drum comunal 
+                          Marcaj de oprire 
                    </span>
                 </div>
                 <div class="answer">
-                    <input type="radio" name="a3">
+                    <input type="radio" name="a4">
                     <span>
-                        Drum național 
+                        Marcaj de traversare pentru biciclete 
                    </span>
                 </div>
                 <div class="answer">
-                    <input type="radio" name="a3">
+                    <input type="radio" name="a4">
                     <span>
-                        Drum județean
+                        Marcaj de drum cu prioritate
                     </div>
             </div>
 
             <div class="question">
                 <h3>Ce reprezinta indicatorul din imagine?  <br>
-                    <img src="../../Mediu/categorii/IndicatoareKilometrice/semne/indicator_hectometric.png" alt="img"
+                    <img src="../../Mediu/categorii/MarcajeTransversale/semne/marcaj_traversare_pietoni.png" alt="img"
                     class="imagine">
                 </h3>
-                <div class="answer">
-                    <input type="radio" name="a4">
-                    <span>
-                        Drum european 
-                   </span>
-                </div>
-                <div class="answer">
-                    <input type="radio" name="a4"  valid = "valid">
-                    <span>
-                        Indicator Hectometric
-                   </span>
-                </div>
-                <div class="answer">
-                    <input type="radio" name="a4">
-                    <span>
-                        Drum județean
-                    </div>
-            </div>
-
-            <div class="question">
-                <h3>Ce semnificație are un indicator kilometric cu numărul "0"?  <br>
-
-                </h3>
-                <div class="answer">
-                    <input type="radio" name="a5" valid = "valid">
-                    <span>
-                        Indică că se află la începutul drumului sau la începutul unei autostrăzi
-                   </span>
-                </div>
                 <div class="answer">
                     <input type="radio" name="a5" >
                     <span>
-                        Indică că se află la o distanță de 0,1 km de un punct de referință
+                        Marcaj de traversare pentru biciclete
+                   </span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a5" valid = "valid">
+                    <span>
+                        Marcaje de traversare pentru pietoni  
                    </span>
                 </div>
                 <div class="answer">
                     <input type="radio" name="a5">
                     <span>
-                        Indică că se află la sfârșitul drumului sau la sfârșitul unei autostrăzi
+                        Marcaj de traversare pentru pietoni și biciclete
                     </div>
             </div>
+            
+            <div class="question">
+                <h3>Ce semnificație are marcajul transversal de tip "linie stop"?  <br>
+
+                </h3>
+                <div class="answer">
+                    <input type="radio" name="a6" valid = "valid">
+                    <span>
+                        Obligă conducătorii auto să oprească înaintea marcajului
+                   </span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a6">
+                    <span>
+                        Indică o trecere de pietoni în apropiere  
+                   </span>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="a6">
+                    <span>
+                        Indică o zonă de oprire interzisă
+                    </div>
+            </div>
+
 
             <div class="question">
                 <h3>La acest quiz ai obtinut: <span id="totalScore">1</span> puncte</h3>
@@ -148,7 +174,9 @@
         </div>
 
     </div>
-
+    <?php else: ?>
+         <p style="font-size: 5vw; color: red;">Nu esti conectat</p>
+    <?php endif;?>
    <script src="script.js"></script>
 </body>
 </html>
