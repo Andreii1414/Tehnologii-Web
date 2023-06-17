@@ -39,7 +39,7 @@ if ($conectat == 1) {
             <a class="navigation__link" onclick="window.location.href='../quiz/quiz.php'">Quiz</a>
             <a class="navigation__link" onclick="window.location.href='../Mini-Game/mini-game.php'">Mini-Game</a>
             <a class="navigation__link" onclick="window.location.href='../about/about.php'">About</a>
-            <a class="navigation__link" onclick="window.location.href='../help/help.pph'">Help</a>
+            <a class="navigation__link" onclick="window.location.href='../help/help.php'">Help</a>
         </div>
         <img src=<?php echo $profileImg; ?> class="profile navigation__link" alt="Profil"
             onclick="window.location.href=<?php echo $link; ?>">
