@@ -9,6 +9,7 @@ require 'Tehnologii-web/php/clasamentController.php';
 require 'Tehnologii-web/php/mediuController.php';
 require 'Tehnologii-web/php/accountController.php';
 require 'Tehnologii-web/php/feedbackController.php';
+require 'Tehnologii-web/php/rss.php';
 
 
 $requestUrl = $_SERVER['REQUEST_URI'];
@@ -66,5 +67,6 @@ if ($requestMethod === 'GET' && $requestUrl === '/api/getAllFeedback') {
     getAllFeedback();
 }
 
-
-
+if ($requestMethod === 'GET' && $requestUrl === '/api/clasamentRss') {
+    createRss();
+}

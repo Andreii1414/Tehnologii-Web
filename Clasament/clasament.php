@@ -42,7 +42,10 @@
     </div>
 
     <div class="content">
-        <i class="fa-sharp fa-solid fa-car-side"></i><h3 class="clasament">Clasamentul utilizatorilor</h3>
+
+        <h3 class="clasament">Clasamentul utilizatorilor 
+            <br><a href="/api/clasamentRss"> - flux de date RSS</a>
+       </h3>
         <div class="top3">
             <div class="first">
                 <img src="gold.png" alt="First" class="cup">
