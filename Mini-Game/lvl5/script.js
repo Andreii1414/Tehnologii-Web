@@ -104,7 +104,7 @@ async function getDataFromDb() {
     headers.append('Category', categorie);
 
     try {
-        const response = await fetch('/api/getPoints',
+        const response = await fetch('/api/Points',
             {
                 method: 'GET',
                 headers: headers
@@ -130,7 +130,7 @@ function postRequestToDb() {
     headers.append('Puncte', puncte);
     headers.append('Category', categorie);
 
-    fetch('/api/addPoints',
+    fetch('/api/Points',
         {
             method: 'POST',
             headers: headers

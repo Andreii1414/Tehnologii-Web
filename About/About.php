@@ -125,7 +125,7 @@
 
     <div class="content">
         <p>Adauga feedback</p>
-        <form action="/api/addFeedback" method="POST">
+        <form action="/api/Feedback" method="POST">
             <textarea oninput="countChars()" rows="7" cols="4" type="text" id="text" name="text" placeholder="Mesaj (maxim 500 de caractere)" class="form_input"></textarea><br>
             <div class="rating">
                 <input type="radio" id="5star" name="rating" value = "5">
@@ -183,9 +183,12 @@
             else text.setCustomValidity("");
         }
 
-        window.onload = function(){
+        window.onload = function(){ 
                 //request care returneaza tot feedback-ul
-                fetch("/api/getAllFeedback")
+                fetch("/api/Feedback",
+                {
+                method: 'GET'
+                })
                 .then(response => response.json())
                 .then(data =>{
                     console.log(data);

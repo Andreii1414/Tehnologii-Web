@@ -101,7 +101,7 @@
 
     <script>
       window.onload = function(){
-        //request care returneaza primii 20 de utilizatori in functie de punctaj
+         //request care returneaza primii 20 de utilizatori in functie de punctaj
         fetch("/api/clasament")
         .then(response => response.json())
         .then(data =>{
@@ -125,7 +125,7 @@
           
           const tabel = document.getElementById('tabel');
           const body = tabel.querySelector('tbody');
-
+          
           //afisarea celorlalti utilizatori (locul 3 - locul 20)
           for(let i = 3; i < 20; i++)
           {

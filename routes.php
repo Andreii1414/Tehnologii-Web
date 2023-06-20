@@ -31,11 +31,11 @@ if ($requestMethod === 'GET' && $requestUrl === '/api/logout') {
     logout();
 }
 
-if ($requestMethod === 'GET' && $requestUrl === '/api/getPoints') {
+if ($requestMethod === 'GET' && $requestUrl === '/api/Points') {
     getPoints();
 }
 
-if ($requestMethod === 'POST' && $requestUrl === '/api/addPoints') {
+if ($requestMethod === 'POST' && $requestUrl === '/api/Points') {
     addPoints();
 }
 
@@ -55,18 +55,19 @@ if ($requestMethod === 'GET' && $requestUrl === '/api/cont') {
     accountInfo();
 }
 
-if ($requestMethod === 'GET' && $requestUrl === '/api/getAllCategories') {
+if ($requestMethod === 'GET' && $requestUrl === '/api/CategoryPoints') {
     getAllCategories();
 }
 
-if ($requestMethod === 'POST' && $requestUrl === '/api/addFeedback') {
+if ($requestMethod === 'POST' && $requestUrl === '/api/Feedback') {
     addFeedback();
 }
 
-if ($requestMethod === 'GET' && $requestUrl === '/api/getAllFeedback') {
+if ($requestMethod === 'GET' && $requestUrl === '/api/Feedback') {
     getAllFeedback();
 }
 
 if ($requestMethod === 'GET' && $requestUrl === '/api/clasamentRss') {
     createRss();
 }
+

@@ -162,7 +162,7 @@ if ($conectat == 1) {
             </div>
             <script>
                 window.onload = function () {
-                    fetch("/api/getAllCategories")
+                    fetch("/api/CategoryPoints")
                         .then(response => response.json())
                         .then(data => {
                             console.log(data);
