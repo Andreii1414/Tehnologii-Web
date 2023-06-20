@@ -78,7 +78,7 @@
         </div>
     </div>
     <script>
-
+//stocarea datelor (email ,parola, etc) in sesiunea curenta
 document.addEventListener('DOMContentLoaded', function(){
     var inputEmail = document.getElementById('adresa');
     var inputParola = document.getElementById('oldPass');
@@ -103,9 +103,10 @@ document.addEventListener('DOMContentLoaded', function(){
         sessionStorage.setItem('newPass', inputNewPass.value);
     })
 
+    //apasarea butonului pentru logout
     var logoutButton = document.getElementById('logoutBtn');
     logoutButton.addEventListener('click', function(){
-        if(<?php echo $conectat?> == 1)
+        if(<?php echo $conectat?> == 1) //request pentru logout
         fetch('/api/logout',
         {
             method: 'GET'
@@ -132,6 +133,7 @@ document.addEventListener('DOMContentLoaded', function(){
         const dataCont = document.getElementById('dataCont');
 
         if(<?php echo $conectat?> == 1){
+            //request pentru a afisa datele contului (email, puncte, etc);
             fetch("/api/cont")
                 .then(response => response.json())
                 .then(data =>{

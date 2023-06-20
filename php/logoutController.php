@@ -1,6 +1,6 @@
 <?php
 
-function logout(){
+function logout(){//este sters cookie-ul atunci cand utilizatorul doreste sa se deconecteze
     session_start();
 
     session_destroy();

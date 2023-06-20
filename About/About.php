@@ -184,11 +184,13 @@
         }
 
         window.onload = function(){
+                //request care returneaza tot feedback-ul
                 fetch("/api/getAllFeedback")
                 .then(response => response.json())
                 .then(data =>{
                     console.log(data);
                     var div = document.getElementById("feedback");
+                    //afisarea fiecarui feedback
                     data.forEach(element => {
                             var nume = document.createElement('p');
                             var text = document.createElement('p');

@@ -101,7 +101,7 @@
 
     <script>
       window.onload = function(){
-
+        //request care returneaza primii 20 de utilizatori in functie de punctaj
         fetch("/api/clasament")
         .then(response => response.json())
         .then(data =>{
@@ -109,6 +109,7 @@
           const users = data.map(item => item.nume);
           const punctaj = data.map(item => item.punctaj);
 
+          //afisarea primilor 3 utilizatori
           const firstName = document.getElementById('firstName');
           const firstPoints = document.getElementById('firstPoints');
           firstName.innerHTML = "Nume: " + users[0];
@@ -125,6 +126,7 @@
           const tabel = document.getElementById('tabel');
           const body = tabel.querySelector('tbody');
 
+          //afisarea celorlalti utilizatori (locul 3 - locul 20)
           for(let i = 3; i < 20; i++)
           {
             const j = i + 1;
@@ -147,7 +149,7 @@
             const puncteleTale = document.getElementById('puncteleTale');
             puncteleTale.innerHTML = "Punctele tale: Nu esti conectat <br> Locul tau in clasament: Nu esti conectat";  
         }
-        else{
+        else{ //request pt a putea afisa punctele utilizatorului conectat si locul lui in clasament
             fetch("/api/clasament/puncteleTale")
             .then(response => response.json())
             .then(data =>{

@@ -4,6 +4,7 @@ function first20()
 {
     $db = new Database();
     $conn = $db->connect();
+    //query care returneaza numele si punctajul primilor 20 de useri
     $query = "select nume, sum(p.punctaj_quiz + p.punctaj_categorie) as punctaj 
               from users u join punctaje p on u.id = p.id_user
               group by nume, u.id order by punctaj desc
@@ -39,7 +40,7 @@ function puncteleTale(){
     $sessionId = $_SESSION['id'];
 
 
-    //extrag punctajul si pozitia lui in clasament
+    //extrag punctajul si pozitia user-ului conectat in clasament
     $query = "SELECT (SELECT sum(p.punctaj_quiz + p.punctaj_categorie) from punctaje p
               WHERE p.id_user = ?) as punctaj,
              (SELECT COUNT(*) + 1
@@ -59,11 +60,12 @@ function puncteleTale(){
     $stmt->bind_result($punctaj, $loc);
     $stmt->fetch();
 
+    //formarea raspunsului
     $response = [
         'punctaj' => $punctaj,
         'loc' => $loc
     ];
-
+    //returnarea unui json ce contine raspunsul
     echo json_encode($response);
 
     $stmt->close();

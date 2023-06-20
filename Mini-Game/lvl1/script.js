@@ -8,27 +8,31 @@ images.forEach((image) => {
 let draggedImage = null;
 let corecte = 0;
 
+//sunt create event-uri pentru patratele in care vor fi trase imaginile
 square.addEventListener('dragover', dragOver);
 square.addEventListener('drop', drop);
 
+//event care incepe atunci cand o imagine incepe sa fie trasa
 function dragStart(event) {
-    draggedImage = this;
+    draggedImage = this; //este retinuta imaginea
     const imageData = {
         src: event.target.src,
         valid: event.target.getAttribute('valid')
     };
-    event.dataTransfer.setData('application/json', JSON.stringify(imageData));
+    event.dataTransfer.setData('application/json', JSON.stringify(imageData)); //sunt transferate datele relevante (sursa, validitate)
 }
 
 function dragOver(event) {
     event.preventDefault();
 }
 
+//imaginea a primit drop pe un patrat
 function drop(event) {
     event.preventDefault();
-    const draggedImageData = event.dataTransfer.getData('application/json');
+    const draggedImageData = event.dataTransfer.getData('application/json'); //sunt primite datele de mai sus
     if (draggedImageData) {
         const { src, valid } = JSON.parse(draggedImageData);
+        //este copiata imaginea in patratul corespunzator
         const copy = document.createElement('img');
         copy.src = src;
         square.innerHTML = '';
@@ -65,6 +69,7 @@ function verifyImage() {
     window.location.href = '../mini-game.php';
 }
 
+//request pentru a returna numarul de puncte pentru nivelul curent
 async function getDataFromDb() {
     const categorie = 'Level1'
     const headers = new Headers();
@@ -90,6 +95,7 @@ async function getDataFromDb() {
     };
 }
 
+//request care scrie in baza de date numarul de puncte primit la nivelul curent
 function postRequestToDb() {
     const puncte = corecte * 5 + 1;
     const categorie = 'Level1'

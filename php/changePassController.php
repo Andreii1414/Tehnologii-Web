@@ -11,6 +11,7 @@ function changePassword()
         $resPass = $_POST['resPass'];
         $errors = array();
         
+        //validari: adresa, parola veche, parola noua
         if(empty($adresa))
         {
             $errors[] = "  Trebuie sa introduci un email";
@@ -37,7 +38,8 @@ function changePassword()
             $mare = preg_match('@[A-Z]@', $newPass);
             $mica = preg_match('@[a-z]@', $newPass);
             $numar = preg_match('@[0-9]@', $newPass);
-        
+            
+            //verificarea parolei(nr caractere, litera mica, mare, cifra)
             if(!$mare || !$mica || !$numar || strlen($newPass) < 8)
             {
                 $errors[] = '  Parola trebuie sa aiba o lungime de cel putin 8 caractere si sa <br> contina cel putin: o litera mica, o litera mare si o cifra';
@@ -46,6 +48,7 @@ function changePassword()
 
         if(!empty($adresa))
         {
+            //conexiunea la baza de date, plus verificarea daca emailul exista
             $db = new Database();
             $conn = $db->connect();
             $email = mysqli_real_escape_string($conn, $adresa);
@@ -59,12 +62,13 @@ function changePassword()
         }
 
         if(empty($errors)){
-
+            //verificarea faptului ca parola introdusa corespunde cu cea din baza de date
             if($conn){
                 $storedPass = $user['parola'];
                 if(password_verify($oldPass, $storedPass)){
                     $parolaHash = password_hash($newPass, PASSWORD_DEFAULT);
                     $userId = $user['id'];
+                    //query care updateaza parola
                     $sql = "UPDATE users SET parola = '$parolaHash' where id = '$userId'";
                     if (mysqli_query($conn, $sql)) {
                         $successMessage = 'Registration successful!';
@@ -77,7 +81,7 @@ function changePassword()
             
                 }
         } 
-
+        //returnarea eventualelor erori
         if(!empty($errors)) {
             $erori = json_encode($errors);
             $erori = urlencode($erori);
