@@ -8,6 +8,21 @@ var time = 0;
 var questions = document.querySelectorAll('.question');
 var answer = document.querySelectorAll('.question .answer input');
 
+function shuffle(quest){
+    var shuffledArray = quest.slice();
+
+    for(var i = shuffledArray.length - 2; i > 1; i--){
+        var j = Math.floor(Math.random() * i) + 1;
+        var temp = shuffledArray[i];
+        shuffledArray[i] = shuffledArray[j];
+        shuffledArray[j] = temp;
+    }
+    return shuffledArray;
+}
+
+var shuffledQuestions = shuffle(Array.from(questions));
+questions = shuffledQuestions;
+
 skip.addEventListener('click', function(){
     nextQuestion();
     time = 20;
