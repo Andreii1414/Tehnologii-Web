@@ -47,22 +47,22 @@
                     <i class="fa fa-user icon"></i>
                     <input type="text" id="nume" name="nume" placeholder="Nume" 
                     class="form_input"
-                    ><br>
+                    > <i class="fa fa-user icon"></i><br>
                 </div>
                 <div>
                     <i class="fa fa-envelope icon"></i>
                     <input type="email" id="adresa" name="adresa" placeholder="Email"
-                    class="form_input"><br>
+                    class="form_input"><i class="fa fa-envelope icon"></i><br>
                 </div>
                 <div>
                     <i class="fa fa-key icon"></i>
                     <input type="password" id="parola" name="parola" placeholder="Parola"
-                    class="form_input"><br>
+                    class="form_input">  <i class="fa fa-eye icon" id="showPassword" onclick="passwordVisibility(1)"></i><br>
                 </div>
                 <div>
                     <i class="fa fa-key icon"></i>
                     <input type="password" id="resparola" name="resparola" placeholder="Rescrie parola"
-                    class="form_input"><br>
+                    class="form_input"> <i class="fa fa-eye icon" id="showPassword" onclick="passwordVisibility(2)"></i><br>
                 </div>
                 </label>
                     <input type="submit" name="submit" id="submit" value="Creaza cont" class="form_button">
@@ -70,6 +70,22 @@
         </div>
     </div>
     <script>
+
+                    
+    function passwordVisibility(pas){
+        if(pas == 1)
+            var passwordInput = document.getElementById("parola");
+        else var passwordInput = document.getElementById("resparola");
+        var toggle = document.getElementById("showPassword");
+
+        if(passwordInput.type == "password")
+        {
+            passwordInput.type = "text";
+        }
+        else {
+            passwordInput.type = "password";
+        }
+     }
 
     document.addEventListener('DOMContentLoaded', function(){
         var inputNume = document.getElementById('nume');

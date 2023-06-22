@@ -45,11 +45,13 @@
                 </div>
                 <div>
                     <i class="fa fa-envelope icon"></i>
-                    <input type="email" id="adresa" name="adresa" placeholder="Email" class="form_input"><br>
+                    <input type="email" id="adresa" name="adresa" placeholder="Email" class="form_input">
+                     <i class="fa fa-envelope icon"></i><br>
                 </div>
                 <div>
                     <i class="fa fa-key icon"></i>
-                    <input type="password" id="parola" name="parola" placeholder="Parola" class="form_input"><br>
+                    <input type="password" id="parola" name="parola" placeholder="Parola" class="form_input">
+                    <i class="fa fa-eye icon" id="showPassword" onclick="passwordVisibility()"></i><br>
                 </div>
                 <label for="connected" class="form_checkbox">
                     <input type="checkbox" name="connected" id="connected" value="Ramai conectat" class="textStyle form_cb_input">Ramai conectat
@@ -61,6 +63,19 @@
     </div>
     <script>
 
+    function passwordVisibility(){
+        var passwordInput = document.getElementById("parola");
+        var toggle = document.getElementById("showPassword");
+
+        if(passwordInput.type == "password")
+        {
+            passwordInput.type = "text";
+        }
+        else {
+            passwordInput.type = "password";
+        }
+     }
+    
     document.addEventListener('DOMContentLoaded', function(){
         var inputEmail = document.getElementById('adresa');
         var inputParola = document.getElementById('parola');
