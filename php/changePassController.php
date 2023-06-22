@@ -30,7 +30,7 @@ function changePassword()
             $errors[] = "  Trebuie sa rescrii parola noua";
         }
 
-        else if(!empty($ressPass) && $resPass !== $newPass){
+        if(!empty($resPass) && $resPass !== $newPass){
             $errors[] = "  Parolele nu corespund";
         }
 
