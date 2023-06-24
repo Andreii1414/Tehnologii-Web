@@ -22,8 +22,10 @@ class Database
     function insertRegister($nume, $adresa, $parolaHash, $conn)
     {
         if ($conn) {
-            $sql = "INSERT INTO users (nume, email, parola) VALUES ('$nume', '$adresa', '$parolaHash');";
-            mysqli_query($conn, $sql);
+            $sql = "INSERT INTO users (nume, email, parola) VALUES (?, ?, ?);";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bind_param("sss", $nume, $adresa, $parolaHash);
+            $stmt->execute();
             $lastId = mysqli_insert_id($conn);
 
             $sql = "INSERT INTO punctaje (id_user, categorie, punctaj_quiz, punctaj_categorie) VALUES
@@ -65,8 +67,11 @@ class Database
     function updatePassword($parolaHash, $userId)
     {
         //query care updateaza parola
-        $sql = "UPDATE users SET parola = '$parolaHash' where id = '$userId'";
-        if (mysqli_query($this->conn, $sql)) {
+        $sql = "UPDATE users SET parola = ? where id = ?";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("si", $parolaHash, $userId);
+        $stmt->execute();
+        if ($stmt->affected_rows > 0) {
             $successMessage = 'Registration successful!';
             header("Location: ../Tehnologii-web/home/home.php");
         }

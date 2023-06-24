@@ -15,7 +15,7 @@ class Validari
         $errors = array();
         //validari
         if (empty($adresa)) {
-            $errors[] = "  Trebuie sa introduci adresa de email";
+            $errors[] = "  Trebuie sa introduci adresa de email";   
         }
 
         if (empty($parola)) {
@@ -23,8 +23,11 @@ class Validari
         }
 
         $email = mysqli_real_escape_string($this->conn, $adresa);
-        $sql = "select * from users where email = '$email';";
-        $queryRes = mysqli_query($this->conn, $sql);
+        $sql = "select * from users where email = ?;";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $queryRes = $stmt->get_result();
 
         //email-ul exista in baza de date
         if (mysqli_num_rows($queryRes) > 0) {
@@ -93,14 +96,22 @@ class Validari
         if (!empty($adresa)) {
             //conexiunea la baza de date si verificarea faptului ca adresa de email nu a fost deja folosita
             $email = mysqli_real_escape_string($this->conn, $adresa);
-            $sql = "select * from users where email = '$email';";
-            $queryRes = mysqli_query($this->conn, $sql);
+            $sql = "select * from users where email = ?;";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bind_param("s", $email);
+            $stmt->execute();
+            $queryRes = $stmt->get_result();
+
             if (mysqli_num_rows($queryRes) > 0) {
                 $errors[] = '  Email-ul a fost deja folosit de un alt utilizator';
             }
             //se verifica daca numele este deja folosit de un alt utilizator
-            $numeQuery = "select * from users where nume = '$nume';";
-            $numeResult = mysqli_query($this->conn, $numeQuery);
+            $numeQuery = "select * from users where nume = ?;";
+            
+            $stmt2 = $this->conn->prepare($numeQuery);
+            $stmt2->bind_param("s", $nume);
+            $stmt2->execute();
+            $numeResult = $stmt2->get_result();
             if (mysqli_num_rows($numeResult) > 0) {
                 $errors[] = '  Numele a fost deja folosit de un alt utilizator';
             }
@@ -143,8 +154,11 @@ class Validari
         if (!empty($adresa)) {
             //conexiunea la baza de date, plus verificarea daca emailul exista
             $email = mysqli_real_escape_string($this->conn, $adresa);
-            $sql = "select * from users where email = '$email';";
-            $queryRes = mysqli_query($this->conn, $sql);
+            $sql = "select * from users where email = ?;";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bind_param("s", $email);
+            $stmt->execute();
+            $queryRes = $stmt->get_result();
             $user = mysqli_fetch_assoc($queryRes);
             if (mysqli_num_rows($queryRes) <= 0) {
                 $errors[] = '  Email-ul nu a fost gasit in baza de date';

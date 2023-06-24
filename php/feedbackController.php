@@ -27,10 +27,14 @@ class Feedback
         $sessionId = $_SESSION['id'];
 
         //query care adauga feedback-ul utilizatorului in baza de date
-        $query = "INSERT INTO feedback (id_user, mesaj, rating) VALUES ('$sessionId', '$mesaj', '$rating');";
+        $query = "INSERT INTO feedback (id_user, mesaj, rating) VALUES (?, ?, ?);";
 
         if (!empty($mesaj))
-            mysqli_query($this->conn, $query);
+            {
+                $stmt = $this->conn->prepare($query);
+                $stmt->bind_param("isi", $sessionId, $mesaj, $rating);
+                $stmt->execute();
+            }
 
         header("Location: ../Tehnologii-web/about/about.php");
     }
