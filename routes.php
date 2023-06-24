@@ -31,15 +31,18 @@ if ($requestMethod === 'POST' && $requestUrl === '/api/changePass') {
 }
 
 if ($requestMethod === 'GET' && $requestUrl === '/api/logout') {
-    logout();
+    $log = new Logout();
+    $log->logout();
 }
 
 if ($requestMethod === 'GET' && $requestUrl === '/api/Points') {
-    getPoints();
+    $point = new Points();
+    $point->getPoints();
 }
 
 if ($requestMethod === 'POST' && $requestUrl === '/api/Points') {
-    addPoints();
+    $point = new Points();
+    $point->addPoints();
 }
 
 if ($requestMethod === 'GET' && $requestUrl === '/api/clasament') {
@@ -59,7 +62,8 @@ if ($requestMethod === 'GET' && $requestUrl === '/api/cont') {
 }
 
 if ($requestMethod === 'GET' && $requestUrl === '/api/CategoryPoints') {
-    getAllCategories();
+    $point = new Points();
+    $point->getAllCategories();
 }
 
 if ($requestMethod === 'POST' && $requestUrl === '/api/Feedback') {
