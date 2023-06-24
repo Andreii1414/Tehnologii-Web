@@ -1,19 +1,75 @@
 <?php
-    class Database{
+class Database
+{
 
     private $servername = "localhost";
     private $username = "admin";
     private $password = "rotDatabase";
     private $dbname = "rotDB";
-    
+    private $conn;
+
     //conexiunea la baza de date
-    public function connect (){
-        $conn = mysqli_connect($this->servername, $this->username, $this->password, $this->dbname);
-        
-        if (!$conn) {
+    public function connect()
+    {
+        $this->conn = mysqli_connect($this->servername, $this->username, $this->password, $this->dbname);
+
+        if (!$this->conn) {
             die("Connection failed: " . mysqli_connect_error());
+        } else
+            return $this->conn;
+    }
+
+    function insertRegister($nume, $adresa, $parolaHash, $conn)
+    {
+        if ($conn) {
+            $sql = "INSERT INTO users (nume, email, parola) VALUES ('$nume', '$adresa', '$parolaHash');";
+            mysqli_query($conn, $sql);
+            $lastId = mysqli_insert_id($conn);
+
+            $sql = "INSERT INTO punctaje (id_user, categorie, punctaj_quiz, punctaj_categorie) VALUES
+             ('$lastId', 'Avertizare', '0', '0'),
+             ('$lastId', 'Interzicere', '0', '0'),
+             ('$lastId', 'Prioritate', '0', '0'),
+             ('$lastId', 'Obligare', '0', '0'),
+             ('$lastId', 'Informare', '0', '0'),
+             ('$lastId', 'Orientare', '0', '0'),
+             ('$lastId', 'InformareTuristica', '0', '0'),
+             ('$lastId', 'Aditionale', '0', '0'),
+             ('$lastId', 'SemnaleLuminoase', '0', '0'),
+             ('$lastId', 'CaleFerata', '0', '0'),
+             ('$lastId', 'Kilometrice', '0', '0'),
+             ('$lastId', 'Auxiliare', '0', '0'),
+             ('$lastId', 'BenziReversibile', '0', '0'),
+             ('$lastId', 'MarcajeLongitudinale', '0', '0'),
+             ('$lastId', 'MarcajeTransversale', '0', '0'),
+             ('$lastId', 'MarcajeDiverse', '0', '0'),
+             ('$lastId', 'MarcajeLaterale', '0', '0'),
+             ('$lastId', 'Temporare', '0', '0'),
+             ('$lastId', 'Level1', '0', '0'),
+             ('$lastId', 'Level2', '0', '0'),
+             ('$lastId', 'Level3', '0', '0'),
+             ('$lastId', 'Level4', '0', '0'),
+             ('$lastId', 'Level5', '0', '0'),
+             ('$lastId', 'Level6', '0', '0'),
+             ('$lastId', 'Level7', '0', '0'),
+             ('$lastId', 'Level8', '0', '0'),
+             ('$lastId', 'Level9', '0', '0'),
+             ('$lastId', 'Level10', '0', '0'),
+             ('$lastId', 'Level11', '0', '0'),
+             ('$lastId', 'Level12', '0', '0');";
+            mysqli_query($conn, $sql);
+
         }
-        else return $conn;
+    }
+
+    function updatePassword($parolaHash, $userId)
+    {
+        //query care updateaza parola
+        $sql = "UPDATE users SET parola = '$parolaHash' where id = '$userId'";
+        if (mysqli_query($this->conn, $sql)) {
+            $successMessage = 'Registration successful!';
+            header("Location: ../Tehnologii-web/home/home.php");
+        }
     }
 }
 ?>
