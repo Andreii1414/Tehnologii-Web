@@ -72,6 +72,7 @@
             <p>Aici se gasesc principalele informatii despre aplicatie, precum si o scurta descriere a aplicatiei, a tuturor paginilor, 
                 detalii despre cum poti face parte din Clasament, etc.
             </p>
+            <img src="paginaPrincipala.PNG" alt="img" class="imagine">
             <h2><span>3.2</span> Mediu de invatare</h2>
             <p>Aici se gasesc toate categoriile de semne de circulatie. Fiecare categorie contine un anumit numar de semne rutiere.
                 Utilizatorul poate vedea progresul sau in acea categorie prin intermediul progress bar-ului.
@@ -82,13 +83,13 @@
                 In aceasta sectiune se vor putea gasi informatii care sa ajute utilizatorul in cazul in care intampina o problema si nu numai.
                 In sectiunea Help poate fi gasita subsectiunea Intrebaru Frecvente unde sunt raspunsuri la unele intrebari care ar putea aparea mai des.
             </p>
-
+            <img src="help.PNG" alt="img" class="imagine">
             <h2><span>3.4</span> About</h2>
             <p>
                 In aceasta sectiune se vor putea gasi informatii legate de tehnologiile utilizate in realizarea aplicatiei. De asemenea, aici vor fi 
                 adaugate si update-urile si, de asemenea, aici sunt si informatiile de contact.
             </p>
-
+            <img src="about.PNG" alt="img" class="imagine">
             <h2><span>3.5</span> Clasament</h2>
             <p>
                 Pe aceasta sectiune se gaseste clasamentul celor mai sarguinciosi utilizatori (bazat pe progres si punctaje la chestionare). Un 
@@ -101,13 +102,24 @@
                 Paginile destinate autentificarii sau inregistrarii. Autentificarea sau inregistrarea este necesara pentru a putea face 
                 parte din clasament.
             </p>
+            <img src="login.PNG" alt="img" class="imagine">
 
-            <h2><span>3.7</span> Diagrama use-case</h2>
+            <h2><span>3.7</span> Quiz(ex)</h2>
+            <p>
+                Pentru efectuarea de quiz-uri si obtinerea de puncte necesare intrarii in clasament (mai multe quiz-uri, pentru fiecare categorie)
+            </p>
+            <img src="quizuri.PNG" alt="img" class="imagine">
+            <h2><span>3.7</span> Mini-Game(ex)</h2>
+            <p>
+                Pentru efectuarea de mini-game-uri si obtinerea de puncte necesare intrarii in clasament (mai multe mini-game-uri)
+            </p>
+            <img src="minigame.PNG" alt="img" class="imagine">
+            <h2><span>3.8</span> Diagrama use-case</h2>
             <p>
                 <img src="usecase.jpg" alt="usecase" class="imagine">
             </p>
 
-            <h2><span>3.8</span> Diagrama C4</h2>
+            <h2><span>3.9</span> Diagrama C4</h2>
             <p>
                 <p>C1:</p>
                 <img src="../DiagramaC4/Nivelul 1.png" alt="c1" class="imagine">
@@ -140,6 +152,11 @@
             Este utilizat pentru interactivitate. JavaScript permite crearea de functionalitati interactive, animatii, validari, etc. 
             Mai multe detalii de implementare mai jos.
         </p>
+        <h2><span>4.4</span> PHP</h2>
+        <p>
+            Este utilizat pentru partea de interactiune cu serverul, cu baza de date (pentru a scrie, citi, etc intr-o baza de date), pentru a crea
+            API-ul aplicatiei
+        </p>
     </section>
 
     <section>
@@ -161,10 +178,74 @@
             Codul folosit pentru a anima textul care intampina utilizatorul pe pagina princiapala.
         </p>
         <img src="anim.PNG" alt= "anim" class="imagine">
+
+        <h2><span>5.4</span> Query-uri(ex)</h2>
+        <p>
+            Codul folosit pentru a efectua query-uri (folosind bind_param -> prevenire sql injection) - valabil pt toate query-urile
+        </p>
+        <img src="code3.PNG" alt= "code3" class="imagine">
+
+        <h2><span>5.5</span> JSON(ex)</h2>
+        <p>
+            Transmiterea raspunsurilor sub forma de JSON-uri
+        </p>
+        <img src="code4.PNG" alt= "code4" class="imagine">
+
+        <h2><span>5.6</span> Validari(ex)</h2>
+        <p>
+            Validari pentru fiecare actiune (login, signup si changepassword) - validari pentru nume, email, parola, putere parola, etc
+        </p>
+        <img src="code5.PNG" alt= "code5" class="imagine">
+
+        <h2><span>5.7</span> Setarea rutelor</h2>
+        <p>
+            Setarea rutelor pentru REST API - folosind clase
+        </p>
+        <img src="code6.PNG" alt= "code6" class="imagine">
+
+        <h2><span>5.8</span> Fetch-uri</h2>
+        <p>
+            Crearea unor request-uri folosind fetch-uri (valabil pentru toate request-urile - adaugare puncte, creare clasament, etc)
+        </p>
+        <img src="code7.PNG" alt= "code7" class="imagine">
+        <img src="code8.PNG" alt= "code8" class="imagine">
     </section>
 
     <section>
-        <h1><span>6. </span>Bibliografie</h1>
+        <h1><span>6. </span>Performanta fiecarei pagini</h1>
+
+        <h2><span>6.1</span> Pagina principala</h2>
+        <img src="performantaPaginaPrincipala.PNG" alt= "home" class="imagine">
+
+        <h2><span>6.2</span> Help</h2>
+        <img src="performantahelp.PNG" alt= "help" class="imagine">
+
+        <h2><span>6.3</span> About</h2>
+        <img src="performantaabout.PNG" alt= "about" class="imagine">
+        
+        <h2><span>6.4</span> Quiz</h2>
+        <img src="performantaquiz.PNG" alt= "quiz" class="imagine">
+        
+        <h2><span>6.5</span> Quiz(2)</h2>
+        <img src="performantaquiz2.PNG" alt= "quiz2" class="imagine">
+        
+        <h2><span>6.6</span> Mini-Game</h2>
+        <img src="performantaminigame2.PNG" alt= "minigame" class="imagine">
+
+        <h2><span>6.7</span> Clasament</h2>
+        <img src="performantaclasament.PNG" alt= "clasament" class="imagine">
+
+        <h2><span>6.8</span> Change Password/Account</h2>
+        <img src="account.PNG" alt= "account" class="imagine">
+
+        <h2><span>6.9</span> Login</h2>
+        <img src="performantalogin.PNG" alt= "login" class="imagine">
+
+    </section>
+
+
+    <section>
+        <h1><span>7. </span>Bibliografie</h1>
         <ul>
             <li property="schema:citation" typeof="scehma:WebSite" resource="https://www.w3schools.com/">
                 <cite property="schema:name">
