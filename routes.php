@@ -46,19 +46,23 @@ if ($requestMethod === 'POST' && $requestUrl === '/api/Points') {
 }
 
 if ($requestMethod === 'GET' && $requestUrl === '/api/clasament') {
-    first20();
+    $clas = new Clasament();
+    $clas->first20();
 }
 
 if ($requestMethod === 'GET' && $requestUrl === '/api/clasament/puncteleTale') {
-    puncteleTale();
+    $clas = new Clasament();
+    $clas->puncteleTale();
 }
 
 if ($requestMethod === 'POST' && $requestUrl === '/api/mediu') {
-    addPointsCategory();
+    $mediu = new Mediu();
+    $mediu->addPointsCategory();
 }
 
 if ($requestMethod === 'GET' && $requestUrl === '/api/cont') {
-    accountInfo();
+    $account = new Account();
+    $account->accountInfo();
 }
 
 if ($requestMethod === 'GET' && $requestUrl === '/api/CategoryPoints') {
@@ -67,14 +71,16 @@ if ($requestMethod === 'GET' && $requestUrl === '/api/CategoryPoints') {
 }
 
 if ($requestMethod === 'POST' && $requestUrl === '/api/Feedback') {
-    addFeedback();
+    $feedback = new Feedback();
+    $feedback->addFeedback();
 }
 
 if ($requestMethod === 'GET' && $requestUrl === '/api/Feedback') {
-    getAllFeedback();
+    $feedback = new Feedback();
+    $feedback->getAllFeedback();
 }
 
 if ($requestMethod === 'GET' && $requestUrl === '/api/clasamentRss') {
-    createRss();
+    $rss = new Rss();
+    $rss->createRss();
 }
-
