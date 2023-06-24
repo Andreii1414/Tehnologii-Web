@@ -33,8 +33,10 @@ class Clasament
             }
 
             //returnez un json cu userii si punctajul
+            http_response_code(200);
             echo json_encode($rows);
         } else {
+            http_response_code(500);
             echo "Error: " . $query . $this->conn->error;
         }
 
@@ -65,12 +67,21 @@ class Clasament
         $stmt->bind_result($this->punctaj, $this->loc);
         $stmt->fetch();
 
+        if($this->punctaj === null || $this->punctaj === null)
+        {
+            http_response_code(500);
+            $response = "Datele contului tau nu au putut fi gasite";
+            echo json_encode($response);
+            exit;
+        }
+
         //formarea raspunsului
         $response = [
             'punctaj' => $this->punctaj,
             'loc' => $this->loc
         ];
         //returnarea unui json ce contine raspunsul
+        http_response_code(200);
         echo json_encode($response);
 
         $stmt->close();

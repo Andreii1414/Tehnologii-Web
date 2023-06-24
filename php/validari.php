@@ -52,8 +52,6 @@ class Validari
                     $sesiune->setTemporaryCookie();
                 }
 
-                header("Location: ../Tehnologii-web/home/home.php");
-
             } else
                 $errors[] = "  Parola introdusa este incorecta";
         } else {

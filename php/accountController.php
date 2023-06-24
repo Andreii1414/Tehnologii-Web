@@ -34,6 +34,15 @@ class Account
         $stmt->bind_result($this->nume, $this->email, $this->punctaj, $this->created_at);
         $stmt->fetch();
 
+
+        if($this->nume === null || $this->email === null || $this->punctaj === null || $this->created_at === null)
+        {
+            http_response_code(500);
+            $response = "Datele contului tau nu au putut fi gasite";
+            echo json_encode($response);
+            exit;
+        }
+
         //formarea raspunsului
         $response = [
             'nume' => $this->nume,
@@ -43,6 +52,7 @@ class Account
         ];
 
         //returnareea json-ului care contine informatiile
+        http_response_code(200);
         echo json_encode($response);
 
         $stmt->close();

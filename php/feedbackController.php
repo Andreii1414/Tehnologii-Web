@@ -29,12 +29,20 @@ class Feedback
         //query care adauga feedback-ul utilizatorului in baza de date
         $query = "INSERT INTO feedback (id_user, mesaj, rating) VALUES (?, ?, ?);";
 
-        if (!empty($mesaj))
+        if (!empty($mesaj) && $sessionId != null)
             {
                 $stmt = $this->conn->prepare($query);
                 $stmt->bind_param("isi", $sessionId, $mesaj, $rating);
                 $stmt->execute();
+                http_response_code(200);
+                $response = "Feedback adaugat";
+                echo json_encode($response);
             }
+        else{
+            http_response_code(400);
+            $response = "Feedback-ul nu a adaugat";
+            echo json_encode($response);
+        }
 
         header("Location: ../Tehnologii-web/about/about.php");
     }
@@ -61,6 +69,7 @@ class Feedback
         }
 
         //raspunsul este returnat sub forma de json
+        http_response_code(200);
         echo json_encode($response);
 
         $stmt->close();

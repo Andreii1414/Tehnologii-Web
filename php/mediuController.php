@@ -30,11 +30,13 @@ class Mediu
                 'success' => true,
                 'message' => 'Puncte adaugate'
             ];
+            http_response_code(200);
         } else { //punctele nu au putut fi adaugate
             $response = [
                 'success' => false,
                 'message' => 'Puncte nu au putut fi adaugate'
             ];
+            http_response_code(400);
         }
         //returnarea json-ului cu mesajul de succes/esec
         echo json_encode($response);
