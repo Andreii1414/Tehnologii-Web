@@ -10,7 +10,7 @@
     <title>Level 3</title>
 </head>
 <body>
-    <?php if($conectat == 1): ?>
+<?php $userSession = UserSession::getInstance(); if($userSession->isConnected() == 1): ?>
     <div class="content">
         <div class="left-content">
             <p class="text">Trage semnul/semnele aici</p>

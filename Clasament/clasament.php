@@ -1,7 +1,9 @@
 <?php 
     include("../php/verifyConnection.php");
 
-    if($conectat == 1){
+    $userSession = UserSession::getInstance();
+
+    if($userSession->isConnected()){
         $link = "'../login/changePassOrLogout.php'";
         $profileImg = '"../images/profile_green.png"';
     }
@@ -144,7 +146,7 @@
           console.error('Error: ', error);
         });
 
-        if("<?php echo $conectat; ?>" == 0)
+        if("<?php echo $userSession->isConnected(); ?>" == 0)
         {
             const puncteleTale = document.getElementById('puncteleTale');
             puncteleTale.innerHTML = "Punctele tale: Nu esti conectat <br> Locul tau in clasament: Nu esti conectat";  

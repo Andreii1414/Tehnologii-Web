@@ -1,5 +1,6 @@
 <?php
 include("../php/verifyConnection.php");
+$userSession = UserSession::getInstance();
 ?>
 <!DOCTYPE html>
 <html lang="ro">
@@ -122,7 +123,7 @@ include("../php/verifyConnection.php");
             //apasarea butonului pentru logout
             var logoutButton = document.getElementById('logoutBtn');
             logoutButton.addEventListener('click', function () {
-                if (<?php echo $conectat ?> == 1) //request pentru logout
+                if (<?php echo $userSession->isConnected() ?> == 1) //request pentru logout
                     fetch('/api/logout',
                         {
                             method: 'GET'
@@ -147,7 +148,7 @@ include("../php/verifyConnection.php");
             const puncteCont = document.getElementById('puncteCont');
             const dataCont = document.getElementById('dataCont');
 
-            if (<?php echo $conectat ?> == 1) {
+            if (<?php echo $userSession->isConnected() ?> == 1) {
                 //request pentru a afisa datele contului (email, puncte, etc);
                 fetch("/api/cont")
                     .then(response => response.json())

@@ -1,7 +1,8 @@
 <?php 
     include("../../../php/verifyConnection.php");
+    $userSession = UserSession::getInstance();
 
-    if($conectat == 1){
+    if($userSession->isConnected()){
         $link = "'../../../login/changePassOrLogout.php'";
         $profileImg = '"../../../images/profile_green.png"';
     }
@@ -86,7 +87,7 @@
 
 <script>
         window.onload = function(){
-            if(<?php echo $conectat?> == 1)
+            if(<?php echo $userSession->isConnected()?> == 1)
             {
                 const puncte = 1;
                 const categorie = 'BenziReversibile';

@@ -1,7 +1,9 @@
 <?php 
     include("../../../php/verifyConnection.php");
 
-    if($conectat == 1){
+    $userSession = UserSession::getInstance();
+
+    if($userSession->isConnected()){
         $link = "'../../../login/changePassOrLogout.php'";
         $profileImg = '"../../../images/profile_green.png"';
     }
@@ -964,7 +966,7 @@
 
     <script>
         document.querySelector('.next').addEventListener('click', function(){
-            if(index == slideList.length && <?php echo $conectat?> == 1)
+            if(index == slideList.length && <?php echo $userSession->isConnected()?> == 1)
             {
                 const puncte = 12;
                 const categorie = 'Avertizare';

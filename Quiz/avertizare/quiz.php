@@ -12,7 +12,7 @@
     <title>Quiz</title>
 </head>
 <body>
-    <?php if($conectat == 1): ?>
+    <?php $userSession = UserSession::getInstance(); if($userSession->isConnected() == 1): ?>
     <div class="box">
         <div class="header">
             <span>Raspunsuri corecte: <span id="scor">0</span></span>

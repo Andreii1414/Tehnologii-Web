@@ -1,7 +1,9 @@
 <?php 
     include("../php/verifyConnection.php");
 
-    if($conectat == 1){
+    $userSession = UserSession::getInstance();
+
+    if($userSession->isConnected()){
         $link = "'../login/changePassOrLogout.php'";
         $profileImg = '"../images/profile_green.png"';
     }

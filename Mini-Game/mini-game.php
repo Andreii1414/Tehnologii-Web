@@ -1,7 +1,9 @@
 <?php
 include("../php/verifyConnection.php");
 
-if ($conectat == 1) {
+$userSession = UserSession::getInstance();
+
+if($userSession->isConnected()){
     $link = "'../login/changePassOrLogout.php'";
     $profileImg = '"../images/profile_green.png"';
 } else {
@@ -55,25 +57,25 @@ if ($conectat == 1) {
         <h2 class="text">•Bine ai venit la sectiunea "Mini-game". Daca nu ai trecut prin mediul de invatare, iti
             recomandam sa o faci <a1 class="text" onclick="window.location.href='../Mediu/mediu.php'">aici.</a1>
         </h2>
-        <?php if ($conectat == 1)
+        <?php if ($userSession->isConnected() == 1)
             echo "<h7>Selecteaza un nivel</h7>";
         else
             echo '<h7 style="color:red">Trebuie sa fii conectat pentru a putea selecta un nivel!</h7>' ?>
 
             <div class="line1">
-                <div class="wrapper" <?php if ($conectat == 1)
+                <div class="wrapper" <?php if ($userSession->isConnected() == 1)
             echo 'onclick="window.location.href=\'lvl1/start.html\'"' ?>>
                     <p class="pct" id="Level1">Puncte la acest nivel: 0</p>
                     <img src="interzis-ambele-sensuri.png" alt="Photo 1">
                     <p id="nivel" class="photo-caption">&nbsp Nivelul<br> &nbsp 1</p>
                 </div>
-                <div class="wrapper" <?php if ($conectat == 1)
+                <div class="wrapper" <?php if ($userSession->isConnected() == 1)
             echo 'onclick="window.location.href=\'lvl2/start.html\'"' ?>>
                     <p class="pct" id="Level2">Puncte la acest nivel: 0</p>
                     <img src="interzis-ambele-sensuri.png" alt="Photo 1">
                     <p id="nivel" class="photo-caption">&nbsp Nivelul<br>&nbsp 2</p>
                 </div>
-                <div class="wrapper" <?php if ($conectat == 1)
+                <div class="wrapper" <?php if ($userSession->isConnected() == 1)
             echo 'onclick="window.location.href=\'lvl3/start.html\'"' ?>>
                     <p class="pct" id="Level3">Puncte la acest nivel: 0</p>
                     <img src="interzis-ambele-sensuri.png" alt="Photo 1">
@@ -81,19 +83,19 @@ if ($conectat == 1) {
                 </div>
             </div>
             <div class="line1">
-                <div class="wrapper" <?php if ($conectat == 1)
+                <div class="wrapper" <?php if ($userSession->isConnected() == 1)
             echo 'onclick="window.location.href=\'lvl4/start.html\'"' ?>>
                     <p class="pct" id="Level4">Puncte la acest nivel: 0</p>
                     <img src="interzis-ambele-sensuri.png" alt="Photo 1">
                     <p id="nivel" class="photo-caption">&nbsp Nivelul<br>&nbsp 4</p>
                 </div>
-                <div class="wrapper" <?php if ($conectat == 1)
+                <div class="wrapper" <?php if ($userSession->isConnected() == 1)
             echo 'onclick="window.location.href=\'lvl5/start.html\'"' ?>>
                     <p class="pct" id="Level5">Puncte la acest nivel: 0</p>
                     <img src="interzis-ambele-sensuri.png" alt="Photo 1">
                     <p id="nivel" class="photo-caption">&nbsp Nivelul<br>&nbsp 5</p>
                 </div>
-                <div class="wrapper" <?php if ($conectat == 1)
+                <div class="wrapper" <?php if ($userSession->isConnected() == 1)
             echo 'onclick="window.location.href=\'lvl6/start.html\'"' ?>>
                     <p class="pct" id="Level6">Puncte la acest nivel: 0</p>
                     <img src="interzis-ambele-sensuri.png" alt="Photo 1">
@@ -101,19 +103,19 @@ if ($conectat == 1) {
                 </div>
             </div>
             <div class="line1">
-                <div class="wrapper" <?php if ($conectat == 1)
+                <div class="wrapper" <?php if ($userSession->isConnected() == 1)
             echo 'onclick="window.location.href=\'lvl7/start.html\'"' ?>>
                     <p class="pct" id="Level7">Puncte la acest nivel: 0</p>
                     <img src="interzis-ambele-sensuri.png" alt="Photo 1">
                     <p id="nivel" class="photo-caption">&nbsp Nivelul<br>&nbsp 7</p>
                 </div>
-                <div class="wrapper" <?php if ($conectat == 1)
+                <div class="wrapper" <?php if ($userSession->isConnected() == 1)
             echo 'onclick="window.location.href=\'lvl8/start.html\'"' ?>>
                     <p class="pct" id="Level8">Puncte la acest nivel: 0</p>
                     <img src="interzis-ambele-sensuri.png" alt="Photo 1">
                     <p id="nivel" class="photo-caption">&nbsp Nivelul<br>&nbsp 8</p>
                 </div>
-                <div class="wrapper" <?php if ($conectat == 1)
+                <div class="wrapper" <?php if ($userSession->isConnected() == 1)
             echo 'onclick="window.location.href=\'lvl9/start.html\'"' ?>>
                     <p class="pct" id="Level9">Puncte la acest nivel: 0</p>
                     <img src="interzis-ambele-sensuri.png" alt="Photo 1">
@@ -121,19 +123,19 @@ if ($conectat == 1) {
                 </div>
             </div>
             <div class="line1">
-                <div class="wrapper" <?php if ($conectat == 1)
+                <div class="wrapper" <?php if ($userSession->isConnected() == 1)
             echo 'onclick="window.location.href=\'lvl10/start.html\'"' ?>>
                     <p class="pct" id="Level10">Puncte la acest nivel: 0</p>
                     <img src="interzis-ambele-sensuri.png" alt="Photo 1">
                     <p id="nivel" class="photo-caption">&nbsp Nivelul<br>&nbsp 10</p>
                 </div>
-                <div class="wrapper" <?php if ($conectat == 1)
+                <div class="wrapper" <?php if ($userSession->isConnected() == 1)
             echo 'onclick="window.location.href=\'lvl11/start.html\'"' ?>>
                     <p class="pct" id="Level11">Puncte la acest nivel: 0</p>
                     <img src="interzis-ambele-sensuri.png" alt="Photo 1">
                     <p id="nivel" class="photo-caption">&nbsp Nivelul<br>&nbsp 11</p>
                 </div>
-                <div class="wrapper" <?php if ($conectat == 1)
+                <div class="wrapper" <?php if ($userSession->isConnected() == 1)
             echo 'onclick="window.location.href=\'lvl12/start.html\'"' ?>>
                     <p class="pct" id="Level12">Puncte la acest nivel: 0</p>
                     <img src="interzis-ambele-sensuri.png" alt="Photo 1">
