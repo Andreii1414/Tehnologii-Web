@@ -17,17 +17,17 @@ $requestMethod = $_SERVER['REQUEST_METHOD'];
 
 if ($requestMethod === 'POST' && $requestUrl === '/api/register') {
     $reg = new Register();
-    $reg->registerHandler();
+    $reg->nHandler();
 } 
 
 if ($requestMethod === 'POST' && $requestUrl === '/api/login') {
     $log = new Login();
-    $log->loginHandler();
+    $log->nHandler();
 }
 
 if ($requestMethod === 'POST' && $requestUrl === '/api/changePass') {
     $change = new ChangePassword();
-    $change->changePassword();
+    $change->nHandler();
 }
 
 if ($requestMethod === 'GET' && $requestUrl === '/api/logout') {

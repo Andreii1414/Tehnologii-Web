@@ -2,10 +2,10 @@
 
 require_once 'database.php';
 require_once 'validari.php';
-class ChangePassword
+class ChangePassword implements Handler
 {   
     private $errors;
-    function changePassword()
+    function nHandler()
     {
         if (isset($_POST['submit'])) {
             $adresa = $_POST['adresa'];

@@ -1,10 +1,10 @@
 <?php
 require_once 'database.php';
 require_once 'validari.php';
-class Login
+class Login implements Handler
 {
     private $errors;
-    function loginHandler()
+    function nHandler()
     {
         if (isset($_POST['submit'])) {
 
@@ -12,6 +12,8 @@ class Login
             $parola = $_POST['parola'];
             $connected = isset($_POST['connected']) ? 1 : 0;
             $this->errors = array();
+
+            $adresa = filter_var($adresa, FILTER_SANITIZE_EMAIL);
 
             $validari = new Validari();
 
