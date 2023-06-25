@@ -114,6 +114,10 @@ class Validari
                 $errors[] = '  Numele a fost deja folosit de un alt utilizator';
             }
         }
+        $rsp = $this->validareIp();
+        if($rsp != 1){
+            $errors[] = $rsp;
+        }
         return $errors;
     }
 
@@ -179,6 +183,25 @@ class Validari
         }
         return $errors;
     }
+
+    private function validareIp(){
+
+        $ipAddress = $_SERVER['REMOTE_ADDR'];
+
+        $stmt = $this->conn->prepare("SELECT acc_count FROM userip where ip_user = ?");
+        $stmt->bind_param('s', $ipAddress);
+        $stmt->execute();
+
+        $stmt->bind_result($count);
+        $stmt->fetch();
+        $stmt->close();
+
+        if($count >= 3){
+            return "Ai atins limita de maxim 3 conturi";
+        }
+        else return 1;
+    }   
+
 }
 
 ?>

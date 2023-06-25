@@ -61,6 +61,32 @@ class Database
              ('$lastId', 'Level12', '0', '0');";
             mysqli_query($conn, $sql);
 
+            $ipAdresss = $_SERVER['REMOTE_ADDR'];
+
+            
+            $count = 0;
+            $sql = "SELECT count(*) FROM userip where ip_user = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("s", $ipAdresss);
+            $stmt->execute();
+            $stmt->bind_result($count);
+            $stmt->fetch();
+            $stmt->close();
+
+            if($count > 0){
+                $updateIp = "UPDATE userip SET acc_count = acc_count + 1 WHERE ip_user = ?";
+                $stmt = $conn->prepare($updateIp);
+                $stmt->bind_param("s", $ipAdresss);
+                $stmt->execute();
+                $stmt->close();
+            }
+            else{
+                $insertIp = "INSERT INTO userip (ip_user, acc_count) VALUES ( ?, 1)";
+                $stmt = $conn->prepare($insertIp);
+                $stmt->bind_param("s", $ipAdresss);
+                $stmt->execute();
+                $stmt->close(); 
+            }
         }
     }
 

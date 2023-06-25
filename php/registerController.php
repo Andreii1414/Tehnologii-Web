@@ -43,7 +43,7 @@ class Register implements Handler
                 $db = new Database();
                 $conn = $db->connect();
                 $db->insertRegister($nume, $adresa, $parolaHash, $conn);
-                http_response_code(201);
+                http_response_code(200);
                 $response = "Contul a fost creat cu succes";
                 echo json_encode($response);
                 header('Location: ../Tehnologii-Web/login/success.html');

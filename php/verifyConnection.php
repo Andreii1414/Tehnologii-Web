@@ -1,7 +1,7 @@
 <?php
 
 
-class UserSession
+class UserSession //singleton
 {
 
     private static $instance;
@@ -11,7 +11,6 @@ class UserSession
 
     private function __construct()
     {
-        //verificarea faptului ca un user este conectat
         session_start();
         $this->conectat = 0;
 
