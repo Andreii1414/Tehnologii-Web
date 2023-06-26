@@ -19,12 +19,12 @@
             <p class="textStyle left-div__rot"><b>Romanian Traffic Signs Tutor</b></p>
     </div>
     <div class="split right-div">
-        <div class="switch" onclick="window.location.href='../home/home.php'"> 
+        <div class="switch" onclick="window.location.href='../home/home.php'" rel="nofollow"> 
             <p class="switch__text"> Catre Pagina Principala</p>          
         </div>
         <div class="sign_up_div">
             <p class="no_acc"><b>Nu ai inca un cont?</b></p>
-            <button class="sign_up_btn" onclick = "window.location.href='signup.php'"><b>Sign up</b></button>
+            <button class="sign_up_btn" onclick = "window.location.href='signup.php'" rel="nofollow"><b>Sign up</b></button>
         </div>
 
         <div class="centered-content">
