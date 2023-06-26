@@ -1,5 +1,5 @@
 <?php
-require_once 'Sesiune.php';
+require_once 'Jwt.php';
 class Validari
 {
     private $db;
@@ -37,19 +37,14 @@ class Validari
             //verificarea parolei (este aceeasi cu cea din baza de date)
             if (password_verify($parola, $storedPass)) {
 
-                session_start();
-
-                $_SESSION['nume'] = $user['nume'];
-                $_SESSION['email'] = $user['email'];
-                $_SESSION['id'] = $user['id'];
-                $sesiune = new Sesiune();
+                $jwt = new Jwt();
 
                 if ($connected == 1) {
-                    //este creat un cookie care are o durata de expirare mare, atunci cand utilizatorul selecteaza optiunea "Ramai conectat"
-                    $sesiune->setPermanentCookie();
+                    //este creat un token care are o durata de expirare mare, atunci cand utilizatorul selecteaza optiunea "Ramai conectat"
+                    $jwt->setPermanentToken($user);
                 } else {
                     //daca nu selecteaza optiunea, va ramane conectat pentru 3 ore
-                    $sesiune->setTemporaryCookie();
+                    $jwt->setTemporaryToken($user);
                 }
 
             } else
@@ -187,7 +182,7 @@ class Validari
     private function validareIp(){
 
         $ipAddress = $_SERVER['REMOTE_ADDR'];
-
+        $count = 0;
         $stmt = $this->conn->prepare("SELECT acc_count FROM userip where ip_user = ?");
         $stmt->bind_param('s', $ipAddress);
         $stmt->execute();

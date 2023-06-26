@@ -1,4 +1,6 @@
 <?php
+
+require_once("verifyConnection.php");
 class Account
 {
     private $db;
@@ -17,12 +19,10 @@ class Account
         $this->created_at = null;
     }
 
-
-
     function accountInfo()
     {
-        session_start();
-        $sessionId = $_SESSION['id'];
+        $user = UserSession::getInstance();
+        $sessionId = $user->getId();
 
         //query pentru a returna datele contului, pentru id-ul contului care este conectat
         $query = "SELECT nume, email, sum(punctaj_quiz + punctaj_categorie), created_at FROM users u

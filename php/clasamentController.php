@@ -1,4 +1,6 @@
 <?php
+
+require_once("verifyConnection.php");
 class Clasament
 {
     private $db;
@@ -45,8 +47,8 @@ class Clasament
     function puncteleTale()
     {
 
-        session_start();
-        $sessionId = $_SESSION['id'];
+        $user = UserSession::getInstance();
+        $sessionId = $user->getId();
 
 
         //extrag punctajul si pozitia user-ului conectat in clasament

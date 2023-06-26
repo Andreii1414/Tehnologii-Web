@@ -1,4 +1,5 @@
 <?php
+require_once("verifyConnection.php");
 class Mediu
 {
 
@@ -15,8 +16,8 @@ class Mediu
         $puncte = $_SERVER['HTTP_PUNCTE'];
         $category = $_SERVER['HTTP_CATEGORY'];
 
-        session_start();
-        $sessionId = $_SESSION['id'];
+        $user = UserSession::getInstance();
+        $sessionId = $user->getId();
 
         //query care updateaza numarul de puncte din baza de date pentru acea categorie, pentru user-ul conectat
         $query = "UPDATE punctaje set punctaj_categorie = ? where id_user = ? and categorie = ?";

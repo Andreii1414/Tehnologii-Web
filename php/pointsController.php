@@ -1,6 +1,7 @@
 <?php
 
 require_once 'database.php';
+require_once("verifyConnection.php");
 
 class Points
 {
@@ -17,8 +18,8 @@ class Points
 
         $category = $_SERVER['HTTP_CATEGORY'];
 
-        session_start();
-        $sessionId = $_SESSION['id'];
+        $user = UserSession::getInstance();
+        $sessionId = $user->getId();
 
         $punctaj = null;
         //query care returneaza punctele de la acea categorie
@@ -47,8 +48,8 @@ class Points
         $puncte = $_SERVER['HTTP_PUNCTE'];
         $category = $_SERVER['HTTP_CATEGORY'];
 
-        session_start();
-        $sessionId = $_SESSION['id'];
+        $user = UserSession::getInstance();
+        $sessionId = $user->getId();
 
         //query care updateaza numarul de puncte pentru o anumita categorie
         $query = "UPDATE punctaje set punctaj_quiz = ? where id_user = ? and categorie = ?";
@@ -78,9 +79,8 @@ class Points
 
     function getAllCategories()
     {
-
-        session_start();
-        $sessionId = $_SESSION['id'];
+        $user = UserSession::getInstance();
+        $sessionId = $user->getId();
 
         $categorie = null;
         $punctaj = null;

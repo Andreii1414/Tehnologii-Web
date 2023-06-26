@@ -8,27 +8,37 @@ class UserSession //singleton
     private $conectat;
     private $userName;
     private $email;
+    private $id;
+    private $jwtKey = "rotSecretKey";
 
     private function __construct()
     {
-        session_start();
         $this->conectat = 0;
+        
+        if (!$this->conectat && isset($_COOKIE['jwt'])) {
+            $jwt = $_COOKIE['jwt'];
+            $this->validateJwtAndSetUser($jwt);
+        }
 
-        if (isset($_SESSION['nume']) && isset($_SESSION['email'])) {
-            $this->userName = $_SESSION['nume'];
-            $this->email = $_SESSION['email'];
+    }
 
-            //verifica existenta cookie-ului
-            if (isset($_COOKIE[session_name()])) {
-                if (isset($_SESSION['expiration_time'])) {
-                    $expirationTime = $_SESSION['expiration_time'];
-                    //verifica daca nu cumva cookie-ul a expirat 
-                    if ($expirationTime < time()) {
-                        $this->logout();
-                    } else { //exista un utilizator conectat
-                        $this->conectat = 1;
-                    }
-                }
+    private function validateJwtAndSetUser($jwt){
+        $parts = explode('.', $jwt);
+        $header = base64_decode($parts[0]);
+        $payload = base64_decode($parts[1]);
+        $sign = $parts[2];
+
+        $validSign = hash_hmac('sha256', "$parts[0].$parts[1]", $this->jwtKey);
+
+        if($validSign === $sign){
+            $decodedPayload = json_decode($payload, true);
+
+            $expirationTime = $decodedPayload['expiration_time'];
+            if($expirationTime >= time()){
+                $this->userName = $decodedPayload['nume'];
+                $this->email = $decodedPayload['email'];
+                $this->id = $decodedPayload['id'];
+                $this->conectat = 1;
             }
         }
 
@@ -46,12 +56,16 @@ class UserSession //singleton
         return $this->conectat;
     }
 
+    public function getId(){
+        return $this->id;
+    }
+
     public function logout(){
-        session_unset();
-        session_destroy();
+        setcookie('jwt', '', time() - 3600, "/");
         $this->conectat = 0; 
         $this->userName = null;
         $this->email = null;
+        $this->id = null;   
     }
 }
 

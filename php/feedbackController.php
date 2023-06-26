@@ -1,5 +1,5 @@
 <?php
-
+require_once("verifyConnection.php");
 class Feedback
 {
     private $db;
@@ -23,8 +23,8 @@ class Feedback
         $mesaj = $_POST['text'];
         $rating = $_POST['rating'];
 
-        session_start();
-        $sessionId = $_SESSION['id'];
+        $user = UserSession::getInstance();
+        $sessionId = $user->getId();
 
         //query care adauga feedback-ul utilizatorului in baza de date
         $query = "INSERT INTO feedback (id_user, mesaj, rating) VALUES (?, ?, ?);";
