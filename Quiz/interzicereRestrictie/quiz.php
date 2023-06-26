@@ -382,7 +382,7 @@
 
             <div class="question">
                 <h3>La acest quiz ai obtinut: <span id="totalScore">1</span> puncte</h3>
-                <a href="../quiz.php">Apasa aici pentru a merge la lista cu quiz-uri</a>
+                <a href="../quiz.php" rel="nofollow">Apasa aici pentru a merge la lista cu quiz-uri</a>
             </div>
 
         </div>
