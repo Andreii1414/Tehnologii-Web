@@ -32,11 +32,11 @@
     <div class="navigation">
       <img src="../images/rank.png" class="ranking navigation__link" alt="Clasament" onclick="window.location.href='../clasament/clasament.php'">
       <div class="center">
-        <a class = "navigation__link" onclick="window.location.href='../home/home.php'">Pagina principala</a>
-        <a class = "navigation__link" onclick="window.location.href='../Mediu/mediu.php'">Mediu de invatare</a>
-        <a class = "navigation__link" onclick="window.location.href='../quiz/quiz.php'">Quiz</a>
-        <a class = "navigation__link" onclick="window.location.href='../Mini-Game/mini-game.php'">Mini-Game</a>
-        <a class = "navigation__link" onclick="window.location.href='../about/about.php'">About</a>
+        <a class = "navigation__link" onclick="window.location.href='../home/home.php'" rel="nofollow" >Pagina principala</a>
+        <a class = "navigation__link" onclick="window.location.href='../Mediu/mediu.php'" rel="nofollow">Mediu de invatare</a>
+        <a class = "navigation__link" onclick="window.location.href='../quiz/quiz.php'" rel="nofollow">Quiz</a>
+        <a class = "navigation__link" onclick="window.location.href='../Mini-Game/mini-game.php'" rel="nofollow">Mini-Game</a>
+        <a class = "navigation__link" onclick="window.location.href='../about/about.php'" rel="nofollow">About</a>
         <a class = "navigation__link" onclick="window.location.href='help.php'">Help</a>
       </div>
       <img src=<?php echo $profileImg;?>
