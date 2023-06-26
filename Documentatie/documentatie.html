@@ -122,13 +122,11 @@
             <h2><span>3.9</span> Diagrama C4</h2>
             <p>
                 <p>C1:</p>
-                <img src="../DiagramaC4/Nivelul 1.png" alt="c1" class="imagine">
+                <img src="../DiagramaC4/Level1.drawio.png" alt="c1" class="imagine">
                 <p>C2:</p>
-                <img src="../DiagramaC4/Nivelul 2.png" alt="c2" class="imagine">
+                <img src="../DiagramaC4/Level2.drawio.png" alt="c2" class="imagine">
                 <p>C3:</p>
-                <img src="../DiagramaC4/Nivelul 3.png" alt="c3" class="imagine">
-                <p>C4:</p>
-                <img src="../DiagramaC4/Nivelul 4.png" alt="c4" class="imagine">
+                <img src="../DiagramaC4/Level3.drawio.png" alt="c3" class="imagine">
             </p>
 
     </section>
@@ -167,10 +165,10 @@
             aceasta ruta, este creat un obiect al clasei Login si este executata functia nHandler (a interfetei Handler - Register, ChangePassword si 
             Login implementeaza aceasta interfata) in care, initial sunt facute niste validari folosind clasa Validari si metoda ei validariLogin,
             apoi, daca se gasesc erori (probleme in formular - ex: parola prea scurta), este returnat codul de raspuns 400, un json si de asemenea 
-            erorile care au aparut, daca nu se gasesc erori, se creeaza un cookie in functie de alegerea utilizatorului si se returneaza codul de 
-            raspuns 200 si un json corespunzator. In cazul rutei /api/register, va fi returnat codul 201 in cazul in care contul a fost creat cu succes.
-            Ruta /api/clasament va executa un query si va returna coduri de raspuns corespunzatoare si un json cu primii 20 de utilizatori in functie 
-            de punctaj, in caz afirmativ.
+            erorile care au aparut, daca nu se gasesc erori, se creeaza un jwt care va fi stocat intr-un cookie in functie de alegerea utilizatorului 
+            si se returneaza codul de raspuns 200 si un json corespunzator. In cazul rutei /api/register, va fi returnat codul 200 in cazul in care contul 
+            a fost creat cu succes. Ruta /api/clasament va executa un query si va returna coduri de raspuns corespunzatoare si un json cu primii 20 de 
+            utilizatori in functie de punctaj, in caz afirmativ.
         </p>
 
             <h2><span>5.1</span> Butoane next & previous</h2>
@@ -220,6 +218,22 @@
         </p>
         <img src="code7.PNG" alt= "code7" class="imagine">
         <img src="code8.PNG" alt= "code8" class="imagine">
+        <h2><span>5.9</span> JWT</h2>
+        <p>
+            Crearea unui JWT atunci cand un user se logheaza si stocarea lui intr-un cookie, in functie de expiration time. De asemenea 
+            crearea unei clase Singleton care se ocupa cu verificarea autentificarii (daca un user este conectat) si contine cateva date ale 
+            utilizatorului.
+        </p>
+        <img src="code9.PNG" alt= "code9" class="imagine">
+        <img src="code10.PNG" alt= "code10" class="imagine">
+        <h2><span>5.10</span> Maxim 3 conturi/IP</h2>
+        <p>
+            Crearea unui sistem care permite crearea de maxim 3 conturi pe o adresa IP (adresa IP nu a fost criptata din motive "didactice" - 
+            pentru a putea fi vazuta, ar putea fi criptata intr-un mod asemanator cu parolele)
+        </p>
+        <img src="code11.PNG" alt= "code11" class="imagine">
+        <img src="code12.PNG" alt= "code12" class="imagine">
+        <img src="code13.PNG" alt= "code13" class="imagine">
     </section>
 
     <section>

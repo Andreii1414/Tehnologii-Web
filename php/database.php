@@ -29,37 +29,42 @@ class Database
             $lastId = mysqli_insert_id($conn);
 
             $sql = "INSERT INTO punctaje (id_user, categorie, punctaj_quiz, punctaj_categorie) VALUES
-             ('$lastId', 'Avertizare', '0', '0'),
-             ('$lastId', 'Interzicere', '0', '0'),
-             ('$lastId', 'Prioritate', '0', '0'),
-             ('$lastId', 'Obligare', '0', '0'),
-             ('$lastId', 'Informare', '0', '0'),
-             ('$lastId', 'Orientare', '0', '0'),
-             ('$lastId', 'InformareTuristica', '0', '0'),
-             ('$lastId', 'Aditionale', '0', '0'),
-             ('$lastId', 'SemnaleLuminoase', '0', '0'),
-             ('$lastId', 'CaleFerata', '0', '0'),
-             ('$lastId', 'Kilometrice', '0', '0'),
-             ('$lastId', 'Auxiliare', '0', '0'),
-             ('$lastId', 'BenziReversibile', '0', '0'),
-             ('$lastId', 'MarcajeLongitudinale', '0', '0'),
-             ('$lastId', 'MarcajeTransversale', '0', '0'),
-             ('$lastId', 'MarcajeDiverse', '0', '0'),
-             ('$lastId', 'MarcajeLaterale', '0', '0'),
-             ('$lastId', 'Temporare', '0', '0'),
-             ('$lastId', 'Level1', '0', '0'),
-             ('$lastId', 'Level2', '0', '0'),
-             ('$lastId', 'Level3', '0', '0'),
-             ('$lastId', 'Level4', '0', '0'),
-             ('$lastId', 'Level5', '0', '0'),
-             ('$lastId', 'Level6', '0', '0'),
-             ('$lastId', 'Level7', '0', '0'),
-             ('$lastId', 'Level8', '0', '0'),
-             ('$lastId', 'Level9', '0', '0'),
-             ('$lastId', 'Level10', '0', '0'),
-             ('$lastId', 'Level11', '0', '0'),
-             ('$lastId', 'Level12', '0', '0');";
-            mysqli_query($conn, $sql);
+             (?, 'Avertizare', '0', '0'),
+             (?, 'Interzicere', '0', '0'),
+             (?, 'Prioritate', '0', '0'),
+             (?, 'Obligare', '0', '0'),
+             (?, 'Informare', '0', '0'),
+             (?, 'Orientare', '0', '0'),
+             (?, 'InformareTuristica', '0', '0'),
+             (?, 'Aditionale', '0', '0'),
+             (?, 'SemnaleLuminoase', '0', '0'),
+             (?, 'CaleFerata', '0', '0'),
+             (?, 'Kilometrice', '0', '0'),
+             (?, 'Auxiliare', '0', '0'),
+             (?, 'BenziReversibile', '0', '0'),
+             (?, 'MarcajeLongitudinale', '0', '0'),
+             (?, 'MarcajeTransversale', '0', '0'),
+             (?, 'MarcajeDiverse', '0', '0'),
+             (?, 'MarcajeLaterale', '0', '0'),
+             (?, 'Temporare', '0', '0'),
+             (?, 'Level1', '0', '0'),
+             (?, 'Level2', '0', '0'),
+             (?, 'Level3', '0', '0'),
+             (?, 'Level4', '0', '0'),
+             (?, 'Level5', '0', '0'),
+             (?, 'Level6', '0', '0'),
+             (?, 'Level7', '0', '0'),
+             (?, 'Level8', '0', '0'),
+             (?, 'Level9', '0', '0'),
+             (?, 'Level10', '0', '0'),
+             (?, 'Level11', '0', '0'),
+             (?, 'Level12', '0', '0');";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("iiiiiiiiiiiiiiiiiiiiiiiiiiiiii", $lastId, $lastId, $lastId, $lastId, $lastId, $lastId, 
+            $lastId, $lastId, $lastId, $lastId, $lastId, $lastId, $lastId, $lastId, $lastId, $lastId, $lastId, $lastId,
+            $lastId, $lastId, $lastId, $lastId, $lastId, $lastId, $lastId, $lastId, $lastId, $lastId, $lastId, $lastId);
+            $stmt->execute();
+            $stmt->close();
 
             $ipAdresss = $_SERVER['REMOTE_ADDR'];
 
