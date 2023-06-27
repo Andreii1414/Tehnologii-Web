@@ -9,7 +9,8 @@ class Feedback
     private $data;
     private $rating;
 
-    function __construct(){
+    function __construct()
+    {
         $this->db = new Database();
         $this->conn = $this->db->connect();
         $this->nume = null;
@@ -29,16 +30,14 @@ class Feedback
         //query care adauga feedback-ul utilizatorului in baza de date
         $query = "INSERT INTO feedback (id_user, mesaj, rating) VALUES (?, ?, ?);";
 
-        if (!empty($mesaj) && $sessionId != null)
-            {
-                $stmt = $this->conn->prepare($query);
-                $stmt->bind_param("isi", $sessionId, $mesaj, $rating);
-                $stmt->execute();
-                http_response_code(200);
-                $response = "Feedback adaugat";
-                echo json_encode($response);
-            }
-        else{
+        if (!empty($mesaj) && $sessionId != null) {
+            $stmt = $this->conn->prepare($query);
+            $stmt->bind_param("isi", $sessionId, $mesaj, $rating);
+            $stmt->execute();
+            http_response_code(200);
+            $response = "Feedback adaugat";
+            echo json_encode($response);
+        } else {
             http_response_code(400);
             $response = "Feedback-ul nu a adaugat";
             echo json_encode($response);
@@ -68,10 +67,15 @@ class Feedback
             $response[] = $res;
         }
 
-        //raspunsul este returnat sub forma de json
-        http_response_code(200);
-        echo json_encode($response);
-
+        if (empty($response)) {
+            http_response_code(404);
+            $response = "Nu exista feedback";
+            echo json_encode($response);
+        } else {
+            //raspunsul este returnat sub forma de json
+            http_response_code(200);
+            echo json_encode($response);
+        }
         $stmt->close();
     }
 }

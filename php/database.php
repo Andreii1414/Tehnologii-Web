@@ -25,7 +25,13 @@ class Database
             $sql = "INSERT INTO users (nume, email, parola) VALUES (?, ?, ?);";
             $stmt = $this->conn->prepare($sql);
             $stmt->bind_param("sss", $nume, $adresa, $parolaHash);
-            $stmt->execute();
+            if(!$stmt->execute())
+            {
+                http_response_code(500);
+                $response = ['message' => "Eroare la interogarea in baza de date"];
+                echo json_encode($response);
+                exit;
+            }
             $lastId = mysqli_insert_id($conn);
 
             $sql = "INSERT INTO punctaje (id_user, categorie, punctaj_quiz, punctaj_categorie) VALUES
@@ -63,7 +69,13 @@ class Database
             $stmt->bind_param("iiiiiiiiiiiiiiiiiiiiiiiiiiiiii", $lastId, $lastId, $lastId, $lastId, $lastId, $lastId, 
             $lastId, $lastId, $lastId, $lastId, $lastId, $lastId, $lastId, $lastId, $lastId, $lastId, $lastId, $lastId,
             $lastId, $lastId, $lastId, $lastId, $lastId, $lastId, $lastId, $lastId, $lastId, $lastId, $lastId, $lastId);
-            $stmt->execute();
+            if(!$stmt->execute())
+            {
+                http_response_code(500);
+                $response = ['message' => "Eroare la interogarea in baza de date"];
+                echo json_encode($response);
+                exit;
+            }
             $stmt->close();
 
             $ipAdresss = $_SERVER['REMOTE_ADDR'];
@@ -73,7 +85,13 @@ class Database
             $sql = "SELECT count(*) FROM userip where ip_user = ?";
             $stmt = $conn->prepare($sql);
             $stmt->bind_param("s", $ipAdresss);
-            $stmt->execute();
+            if(!$stmt->execute())
+            {
+                http_response_code(500);
+                $response = ['message' => "Eroare la interogarea in baza de date"];
+                echo json_encode($response);
+                exit;
+            }
             $stmt->bind_result($count);
             $stmt->fetch();
             $stmt->close();
@@ -82,14 +100,26 @@ class Database
                 $updateIp = "UPDATE userip SET acc_count = acc_count + 1 WHERE ip_user = ?";
                 $stmt = $conn->prepare($updateIp);
                 $stmt->bind_param("s", $ipAdresss);
-                $stmt->execute();
+                if(!$stmt->execute())
+                {
+                    http_response_code(500);
+                    $response = ['message' => "Eroare la interogarea in baza de date"];
+                    echo json_encode($response);
+                    exit;
+                }
                 $stmt->close();
             }
             else{
                 $insertIp = "INSERT INTO userip (ip_user, acc_count) VALUES ( ?, 1)";
                 $stmt = $conn->prepare($insertIp);
                 $stmt->bind_param("s", $ipAdresss);
-                $stmt->execute();
+                if(!$stmt->execute())
+                {
+                    http_response_code(500);
+                    $response = ['message' => "Eroare la interogarea in baza de date"];
+                    echo json_encode($response);
+                    exit;
+                }
                 $stmt->close(); 
             }
         }
@@ -101,7 +131,13 @@ class Database
         $sql = "UPDATE users SET parola = ? where id = ?";
         $stmt = $this->conn->prepare($sql);
         $stmt->bind_param("si", $parolaHash, $userId);
-        $stmt->execute();
+        if(!$stmt->execute())
+        {
+            http_response_code(500);
+            $response = ['message' => "Eroare la interogarea in baza de date"];
+            echo json_encode($response);
+            exit;
+        }
         if ($stmt->affected_rows > 0) {
             $successMessage = 'Registration successful!';
             header("Location: ../Tehnologii-web/home/home.php");

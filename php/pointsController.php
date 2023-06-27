@@ -8,7 +8,8 @@ class Points
     private $db;
     private $conn;
 
-    function __construct(){
+    function __construct()
+    {
         $this->db = new Database();
         $this->conn = $this->db->connect();
     }
@@ -31,14 +32,20 @@ class Points
         $stmt->bind_result($punctaj);
         $stmt->fetch();
 
-        //formarea raspunsului => numarul de puncte
-        $response = [
-            'punctaj' => $punctaj
-        ];
-
+        if ($punctaj === null) {
+            http_response_code(500);
+            $response = [
+                'msg' => 'Punctajul este null'
+            ];
+        } else {
+            http_response_code(200);
+            //formarea raspunsului => numarul de puncte
+            $response = [
+                'punctaj' => $punctaj
+            ];
+        }
         //returnarea raspunsului sub forma de json
         echo json_encode($response);
-
         $stmt->close();
     }
 
@@ -63,11 +70,13 @@ class Points
                 'success' => true,
                 'message' => 'Puncte adaugate'
             ];
+            http_response_code(200);
         } else {
             $response = [
                 'success' => false,
                 'message' => 'Puncte nu au putut fi adaugate'
             ];
+            http_response_code(500);
         }
         //returnarea raspunsului
         echo json_encode($response);
@@ -98,6 +107,15 @@ class Points
                 'punctaj' => $punctaj
             );
             $response[] = $res;
+        }
+
+        if (empty($response)) {
+            http_response_code(500);
+            $response = [
+                'msg' => "Nu exista categorii disponibile"
+            ];
+        } else {
+            http_response_code(200);
         }
 
         echo json_encode($response);

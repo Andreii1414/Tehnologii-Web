@@ -26,7 +26,13 @@ class Validari
         $sql = "select * from users where email = ?;";
         $stmt = $this->conn->prepare($sql);
         $stmt->bind_param("s", $email);
-        $stmt->execute();
+        if(!$stmt->execute())
+            {
+                http_response_code(500);
+                $response = ['message' => "Eroare la interogarea in baza de date"];
+                echo json_encode($response);
+                exit;
+            }
         $queryRes = $stmt->get_result();
 
         //email-ul exista in baza de date
@@ -92,7 +98,13 @@ class Validari
             $sql = "select * from users where email = ?;";
             $stmt = $this->conn->prepare($sql);
             $stmt->bind_param("s", $email);
-            $stmt->execute();
+            if(!$stmt->execute())
+            {
+                http_response_code(500);
+                $response = ['message' => "Eroare la interogarea in baza de date"];
+                echo json_encode($response);
+                exit;
+            }
             $queryRes = $stmt->get_result();
 
             if (mysqli_num_rows($queryRes) > 0) {
@@ -103,7 +115,13 @@ class Validari
             
             $stmt2 = $this->conn->prepare($numeQuery);
             $stmt2->bind_param("s", $nume);
-            $stmt2->execute();
+            if(!$stmt2->execute())
+            {
+                http_response_code(500);
+                $response = ['message' => "Eroare la interogarea in baza de date"];
+                echo json_encode($response);
+                exit;
+            }
             $numeResult = $stmt2->get_result();
             if (mysqli_num_rows($numeResult) > 0) {
                 $errors[] = '  Numele a fost deja folosit de un alt utilizator';
@@ -154,7 +172,13 @@ class Validari
             $sql = "select * from users where email = ?;";
             $stmt = $this->conn->prepare($sql);
             $stmt->bind_param("s", $email);
-            $stmt->execute();
+            if(!$stmt->execute())
+            {
+                http_response_code(500);
+                $response = ['message' => "Eroare la interogarea in baza de date"];
+                echo json_encode($response);
+                exit;
+            }
             $queryRes = $stmt->get_result();
             $user = mysqli_fetch_assoc($queryRes);
             if (mysqli_num_rows($queryRes) <= 0) {
@@ -185,7 +209,13 @@ class Validari
         $count = 0;
         $stmt = $this->conn->prepare("SELECT acc_count FROM userip where ip_user = ?");
         $stmt->bind_param('s', $ipAddress);
-        $stmt->execute();
+        if(!$stmt->execute())
+        {
+            http_response_code(500);
+            $response = ['message' => "Eroare la interogarea in baza de date"];
+            echo json_encode($response);
+            exit;
+        }
 
         $stmt->bind_result($count);
         $stmt->fetch();
