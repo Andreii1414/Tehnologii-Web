@@ -146,12 +146,7 @@
           console.error('Error: ', error);
         });
 
-        if("<?php echo $userSession->isConnected(); ?>" == 0)
-        {
-            const puncteleTale = document.getElementById('puncteleTale');
-            puncteleTale.innerHTML = "Punctele tale: Nu esti conectat <br> Locul tau in clasament: Nu esti conectat";  
-        }
-        else{ //request pt a putea afisa punctele utilizatorului conectat si locul lui in clasament
+{ //request pt a putea afisa punctele utilizatorului conectat si locul lui in clasament
             fetch("/api/clasament/puncteleTale")
             .then(response => response.json())
             .then(data =>{

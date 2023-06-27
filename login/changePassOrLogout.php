@@ -147,8 +147,6 @@ $userSession = UserSession::getInstance();
             const emailCont = document.getElementById('emailCont');
             const puncteCont = document.getElementById('puncteCont');
             const dataCont = document.getElementById('dataCont');
-
-            if (<?php echo $userSession->isConnected() ?> == 1) {
                 //request pentru a afisa datele contului (email, puncte, etc);
                 fetch("/api/cont")
                     .then(response => response.json())
@@ -162,13 +160,6 @@ $userSession = UserSession::getInstance();
                     .catch(error => {
                         console.error('Error: ', error);
                     })
-            }
-            else {
-                numeCont.innerHTML = "Nume: Nu esti conectat"
-                emailCont.innerHTML = "Email: Nu esti conectat";
-                puncteCont.innerHTML = "Puncte: Nu esti conectat";
-                dataCont.innerHTML = "Data crearii contului: Nu esti conectat";
-            }
         }
 
     </script>

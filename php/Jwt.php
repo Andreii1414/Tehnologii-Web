@@ -38,6 +38,24 @@ class Jwt
         return "$header.$payload.$sign";
     }
 
+    function verifyToken($token){
+        list($headerD, $payloadD, $sign) = explode('.', $token);
+        $header = json_decode(base64_decode($headerD), true);
+        $payload = json_decode(base64_decode($payloadD), true);
+        $valid = hash_hmac('sha256', "$headerD.$payloadD", $this->jwtKey);
+
+        if($sign !== $valid){
+            return false;
+        }
+
+        if(isset($payload['expiration_time']) && $payload['expiration_time'] < time()){
+            return false;
+        }
+
+        return true;
+
+    }
+
 }
 
 ?>
