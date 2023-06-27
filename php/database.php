@@ -140,7 +140,7 @@ class Database
         }
         if ($stmt->affected_rows > 0) {
             $successMessage = 'Registration successful!';
-            header("Location: ../Tehnologii-web/home/home.php");
+            header("Location: ../../Tehnologii-web/home/home.php");
         }
     }
 }

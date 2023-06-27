@@ -10,6 +10,7 @@ require 'Tehnologii-web/php/mediuController.php';
 require 'Tehnologii-web/php/accountController.php';
 require 'Tehnologii-web/php/feedbackController.php';
 require 'Tehnologii-web/php/rss.php';
+require 'Tehnologii-web/php/forgotController.php';
 
 $requestUrl = $_SERVER['REQUEST_URI'];
 $requestMethod = $_SERVER['REQUEST_METHOD'];
@@ -238,4 +239,21 @@ if ($requestMethod === 'GET' && $requestUrl === '/api/clasamentRss') {
     $rss = new Rss();
     $rss->createRss();
 }
+
+if ($requestMethod === 'GET' && $requestUrl === '/api/clasamentRss') {
+    $rss = new Rss();
+    $rss->createRss();
+}
+
+if ($requestMethod === 'POST' && $requestUrl === '/api/forgot') {
+    $forgot = new Forgot();
+    $forgot->nHandler();
+}
+
+
+if ($requestMethod === 'POST' && $requestUrl === '/api/forgot/code') {
+    $forgot = new Forgot();
+    $forgot->checkCode();
+}
+
 

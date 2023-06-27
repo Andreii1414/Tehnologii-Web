@@ -56,6 +56,7 @@
                 <label for="connected" class="form_checkbox">
                     <input type="checkbox" name="connected" id="connected" value="Ramai conectat" class="textStyle form_cb_input">Ramai conectat
                 </label><br>
+                <a href="forgot.php">Am uitat parola</a> <br>
                     <input type="submit" name="submit" id="submit" value="Log in" class="form_button">
 
             </form>

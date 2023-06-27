@@ -225,7 +225,35 @@ class Validari
             return "Ai atins limita de maxim 3 conturi";
         }
         else return 1;
-    }   
+    }
+    
+    function validariForgotPassword($id, $newPass, $resPass)
+    {
+        $errors = array();
+
+        if (empty($newPass)) {
+            $errors[] = "  Trebuie sa scrii parola noua";
+        }
+        if (empty($resPass)) {
+            $errors[] = "  Trebuie sa rescrii parola noua";
+        }
+
+        if (!empty($resPass) && $resPass !== $newPass) {
+            $errors[] = "  Parolele nu corespund";
+        }
+
+        if (!empty($newPass)) {
+            $mare = preg_match('@[A-Z]@', $newPass);
+            $mica = preg_match('@[a-z]@', $newPass);
+            $numar = preg_match('@[0-9]@', $newPass);
+
+            //verificarea parolei(nr caractere, litera mica, mare, cifra)
+            if (!$mare || !$mica || !$numar || strlen($newPass) < 8) {
+                $errors[] = '  Parola trebuie sa aiba o lungime de cel putin 8 caractere si sa <br> contina cel putin: o litera mica, o litera mare si o cifra';
+            }
+        }
+        return $errors;
+    }
 
 }
 
