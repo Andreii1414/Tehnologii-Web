@@ -114,12 +114,17 @@
                 Pentru efectuarea de mini-game-uri si obtinerea de puncte necesare intrarii in clasament (mai multe mini-game-uri)
             </p>
             <img src="minigame.PNG" alt="img" class="imagine">
-            <h2><span>3.8</span> Diagrama use-case</h2>
+            <h2><span>3.8</span> Forgot password</h2>
+            <p>
+                Pagina pe care utilizatorul o va vedea dupa ce introduce email-ul pentru ca a uitat parola.
+            </p>
+            <img src="forgot.PNG" alt="img" class="imagine">
+            <h2><span>3.9</span> Diagrama use-case</h2>
             <p>
                 <img src="usecase.jpg" alt="usecase" class="imagine">
             </p>
 
-            <h2><span>3.9</span> Diagrama C4</h2>
+            <h2><span>3.10</span> Diagrama C4</h2>
             <p>
                 <p>C1:</p>
                 <img src="../DiagramaC4/Level1.drawio.png" alt="c1" class="imagine">
@@ -194,46 +199,64 @@
         </p>
         <img src="code3.PNG" alt= "code3" class="imagine">
 
-        <h2><span>5.5</span> JSON(ex)</h2>
-        <p>
-            Transmiterea raspunsurilor sub forma de JSON-uri
-        </p>
-        <img src="code4.PNG" alt= "code4" class="imagine">
-
-        <h2><span>5.6</span> Validari(ex)</h2>
+        <h2><span>5.5</span> Validari(ex)</h2>
         <p>
             Validari pentru fiecare actiune (login, signup si changepassword) - validari pentru nume, email, parola, putere parola, etc
         </p>
         <img src="code5.PNG" alt= "code5" class="imagine">
 
-        <h2><span>5.7</span> Setarea rutelor</h2>
+        <h2><span>5.6</span> Setarea rutelor</h2>
         <p>
-            Setarea rutelor pentru REST API - folosind clase
+            Setarea rutelor pentru REST API - folosind clase si verificand jwt-ul pentru fiecare ruta care are nevoie de autentificare (este
+            preluat token-ul si este verificat folosind metoda verifyToken care va fi prezentata mai jos).
         </p>
         <img src="code6.PNG" alt= "code6" class="imagine">
 
-        <h2><span>5.8</span> Fetch-uri</h2>
+        <h2><span>5.7</span> Fetch-uri</h2>
         <p>
             Crearea unor request-uri folosind fetch-uri (valabil pentru toate request-urile - adaugare puncte, creare clasament, etc)
         </p>
         <img src="code7.PNG" alt= "code7" class="imagine">
         <img src="code8.PNG" alt= "code8" class="imagine">
-        <h2><span>5.9</span> JWT</h2>
+        <h2><span>5.8</span> JWT</h2>
         <p>
             Crearea unui JWT atunci cand un user se logheaza si stocarea lui intr-un cookie, in functie de expiration time. De asemenea 
             crearea unei clase Singleton care se ocupa cu verificarea autentificarii (daca un user este conectat) si contine cateva date ale 
-            utilizatorului.
+            utilizatorului. JWT-ul este generat folosind metode precum base64_encode() sau hash_hmac(). In clasa singleton este creata signatura "asteptata" (valida)
+            si este comparata cu signatura token-ului care este stocat in cookie. 
         </p>
         <img src="code9.PNG" alt= "code9" class="imagine">
         <img src="code10.PNG" alt= "code10" class="imagine">
+        <h2><span>5.9</span> Verificare JWT</h2>
+        <p>
+           Verificarea validitatii token-ului. Sunt decodate toate partile token-ului, este creata signatura valida si este verificata 
+           cu signatura token-ului, iar la final este verificata si data de expirare a token-ului. 
+        </p>
+        <img src="code16.PNG" alt= "code16" class="imagine">
         <h2><span>5.10</span> Maxim 3 conturi/IP</h2>
         <p>
             Crearea unui sistem care permite crearea de maxim 3 conturi pe o adresa IP (adresa IP nu a fost criptata din motive "didactice" - 
-            pentru a putea fi vazuta, ar putea fi criptata intr-un mod asemanator cu parolele)
+            pentru a putea fi vazuta, ar putea fi criptata intr-un mod asemanator cu parolele). Cand utilizatorul incearca sa isi creeze un cont, vor avea 
+            loc urmatoarele actiuni: O interogare in baza de date pentru a valida ip-ul (pentru a vedea de cate ori apare, daca apare), 
+            daca id-ul apare de mai putin de 3 ori, va fi creata o noua inregistrare (insert, daca count-ul este 0) sau va fi updatata 
+            inregistrarea care exista (update, daca count-ul este 1 sau 2). 
         </p>
         <img src="code11.PNG" alt= "code11" class="imagine">
         <img src="code12.PNG" alt= "code12" class="imagine">
         <img src="code13.PNG" alt= "code13" class="imagine">
+
+        <h2><span>5.11</span> Forgot password</h2>
+        <p>
+            Posibilitatea de a reseta o parola in cazul in care utilizatorul a uitat-o. Se realizeaza astfel: utilizatorul introduce email-ul, 
+            acesta este verificat, daca este valid este generat un token, care va fi stocat in baza de date pentru 10 minute si pe care utilizatorul 
+            il va primi pe email pentru a putea schimba parola. Pentru a genera token-ul au fost folosite metodele bin2hex() si random_bytes(), iar 
+            pentru a trimite email-uri a fost folosita biblioteca Swift Mailer. Daca utilizatorul reuseste sa isi schimbe parola, token-ul este sters din baza 
+            de date (acesta este sters automat dupa 10 minute daca nu a fost folosit). Pentru a verifica validitatea token-ului, este 
+            creata o interogare in baza de date pentru a verifica daca este gasit token-ul, este validata parola si updatata daca este valida si 
+            este sters token-ul din baza de date.
+        </p>
+        <img src="code14.PNG" alt= "code14" class="imagine">
+        <img src="code15.PNG" alt= "code15" class="imagine">
     </section>
 
     <section>
