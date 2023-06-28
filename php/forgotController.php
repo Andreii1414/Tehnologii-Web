@@ -41,10 +41,7 @@ class Forgot implements Handler
                 $stmt = $this->conn->prepare($sql);
                 $stmt->bind_param("s", $adresa);
                 if (!$stmt->execute()) {
-                    http_response_code(500);
-                    $response = ['message' => "Eroare la interogarea in baza de date"];
-                    echo json_encode($response);
-                    exit;
+                    $this->db->databaseError();
                 }
                 $queryRes = $stmt->get_result();
                 $id = $queryRes->fetch_assoc()['id'];
@@ -55,10 +52,7 @@ class Forgot implements Handler
                 $stmt = $this->conn->prepare($sql);
                 $stmt->bind_param("sss", $id, $adresa, $token);
                 if (!$stmt->execute()) {
-                    http_response_code(500);
-                    $response = ['message' => "Eroare la interogarea in baza de date"];
-                    echo json_encode($response);
-                    exit;
+                    $this->db->databaseError();
                 }
                 
                 try{
@@ -93,10 +87,7 @@ class Forgot implements Handler
         $stmt = $this->conn->prepare($sql);
         $stmt->bind_param("s", $adresa);
         if (!$stmt->execute()) {
-            http_response_code(500);
-            $response = ['message' => "Eroare la interogarea in baza de date"];
-            echo json_encode($response);
-            exit;
+            $this->db->databaseError();
         }
         $queryRes = $stmt->get_result();
 
@@ -116,10 +107,7 @@ class Forgot implements Handler
             $stmt = $this->conn->prepare($sql);
             $stmt->bind_param("s", $code);
             if (!$stmt->execute()) {
-                http_response_code(500);
-                $response = ['message' => "Eroare la interogarea in baza de date"];
-                echo json_encode($response);
-                exit;
+                $this->db->databaseError();
             }
             $queryRes = $stmt->get_result();
             if ($queryRes->num_rows == 0) {
@@ -139,10 +127,7 @@ class Forgot implements Handler
                     $stmt = $this->conn->prepare("DELETE FROM forgot_password WHERE token = ?");
                     $stmt->bind_param("s", $code);
                     if (!$stmt->execute()) {
-                        http_response_code(500);
-                        $response = ['message' => "Eroare la interogarea in baza de date"];
-                        echo json_encode($response);
-                        exit;
+                        $this->db->databaseError();
                     }
 
                 }

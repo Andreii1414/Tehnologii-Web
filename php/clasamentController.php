@@ -65,13 +65,16 @@ class Clasament
 
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param('ss', $sessionId, $sessionId);
-        $stmt->execute();
+        if(!$stmt->execute())
+        {
+            $this->db->databaseError();
+        }
         $stmt->bind_result($this->punctaj, $this->loc);
         $stmt->fetch();
 
         if($this->punctaj === null || $this->punctaj === null)
         {
-            http_response_code(500);
+            http_response_code(404);
             $response = "Datele contului tau nu au putut fi gasite";
             echo json_encode($response);
             exit;

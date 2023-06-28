@@ -117,10 +117,7 @@ class Validari
             $stmt2->bind_param("s", $nume);
             if(!$stmt2->execute())
             {
-                http_response_code(500);
-                $response = ['message' => "Eroare la interogarea in baza de date"];
-                echo json_encode($response);
-                exit;
+                $this->db->databaseError();
             }
             $numeResult = $stmt2->get_result();
             if (mysqli_num_rows($numeResult) > 0) {
@@ -174,10 +171,7 @@ class Validari
             $stmt->bind_param("s", $email);
             if(!$stmt->execute())
             {
-                http_response_code(500);
-                $response = ['message' => "Eroare la interogarea in baza de date"];
-                echo json_encode($response);
-                exit;
+                $this->db->databaseError();
             }
             $queryRes = $stmt->get_result();
             $user = mysqli_fetch_assoc($queryRes);
@@ -211,10 +205,7 @@ class Validari
         $stmt->bind_param('s', $ipAddress);
         if(!$stmt->execute())
         {
-            http_response_code(500);
-            $response = ['message' => "Eroare la interogarea in baza de date"];
-            echo json_encode($response);
-            exit;
+            $this->db->databaseError();
         }
 
         $stmt->bind_result($count);

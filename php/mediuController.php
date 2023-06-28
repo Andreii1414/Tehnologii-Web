@@ -23,7 +23,9 @@ class Mediu
         $query = "UPDATE punctaje set punctaj_categorie = ? where id_user = ? and categorie = ?";
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param('iss', $puncte, $sessionId, $category);
-        $stmt->execute();
+        if (!$stmt->execute()) {
+            $this->db->databaseError();
+        }
 
         //punctele au fost adaugate
         if ($stmt->affected_rows > 0) {

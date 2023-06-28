@@ -30,14 +30,17 @@ class Account
 
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param('s', $sessionId);
-        $stmt->execute();
+        if(!$stmt->execute())
+        {
+            $this->db->databaseError();
+        }
         $stmt->bind_result($this->nume, $this->email, $this->punctaj, $this->created_at);
         $stmt->fetch();
 
 
         if($this->nume === null || $this->email === null || $this->punctaj === null || $this->created_at === null)
         {
-            http_response_code(500);
+            http_response_code(404);
             $response = "Datele contului tau nu au putut fi gasite";
             echo json_encode($response);
             exit;

@@ -30,7 +30,10 @@ class Feedback
         $count = 0;
         $stmt2 = $this->conn->prepare("SELECT count(*) FROM feedback where id_user = ?");
         $stmt2->bind_param("i", $sessionId);
-        $stmt2->execute();
+        if(!$stmt2->execute())
+        {
+           $this->db->databaseError();
+        }
         $stmt2->bind_result($count);
         $stmt2->fetch();
         $stmt2->close();
@@ -42,7 +45,10 @@ class Feedback
             if (!empty($mesaj) && $sessionId != null) {
                 $stmt = $this->conn->prepare($query);
                 $stmt->bind_param("isi", $sessionId, $mesaj, $rating);
-                $stmt->execute();
+                if(!$stmt->execute())
+                {
+                    $this->db->databaseError();
+                }
                 http_response_code(200);
                 $response = "Feedback adaugat";
                 echo json_encode($response);
@@ -61,7 +67,10 @@ class Feedback
         $query = "select nume, mesaj, f.created_at, rating from feedback f join users u on u.id = f.id_user order by f.created_at;";
 
         $stmt = $this->conn->prepare($query);
-        $stmt->execute();
+        if(!$stmt->execute())
+        {
+            $this->db->databaseError();
+        }
         $stmt->bind_result($this->nume, $this->mesaj, $this->data, $this->rating);
 
         $response = array();
