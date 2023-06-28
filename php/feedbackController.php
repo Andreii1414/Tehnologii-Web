@@ -22,27 +22,36 @@ class Feedback
     {
         //preluarea mesajului si a rating-ului introdus de utilizator
         $mesaj = $_POST['text'];
-        $rating = $_POST['rating'];
+        $rating = isset($_POST['rating']) ? $_POST['rating'] : 0;
 
         $user = UserSession::getInstance();
         $sessionId = $user->getId();
 
-        //query care adauga feedback-ul utilizatorului in baza de date
-        $query = "INSERT INTO feedback (id_user, mesaj, rating) VALUES (?, ?, ?);";
+        $count = 0;
+        $stmt2 = $this->conn->prepare("SELECT count(*) FROM feedback where id_user = ?");
+        $stmt2->bind_param("i", $sessionId);
+        $stmt2->execute();
+        $stmt2->bind_result($count);
+        $stmt2->fetch();
+        $stmt2->close();
 
-        if (!empty($mesaj) && $sessionId != null) {
-            $stmt = $this->conn->prepare($query);
-            $stmt->bind_param("isi", $sessionId, $mesaj, $rating);
-            $stmt->execute();
-            http_response_code(200);
-            $response = "Feedback adaugat";
-            echo json_encode($response);
-        } else {
-            http_response_code(400);
-            $response = "Feedback-ul nu a adaugat";
-            echo json_encode($response);
+        if ($count < 3) {
+            //query care adauga feedback-ul utilizatorului in baza de date
+            $query = "INSERT INTO feedback (id_user, mesaj, rating) VALUES (?, ?, ?);";
+
+            if (!empty($mesaj) && $sessionId != null) {
+                $stmt = $this->conn->prepare($query);
+                $stmt->bind_param("isi", $sessionId, $mesaj, $rating);
+                $stmt->execute();
+                http_response_code(200);
+                $response = "Feedback adaugat";
+                echo json_encode($response);
+            } else {
+                http_response_code(400);
+                $response = "Feedback-ul nu a adaugat";
+                echo json_encode($response);
+            }
         }
-
         header("Location: ../Tehnologii-web/about/about.php");
     }
 
