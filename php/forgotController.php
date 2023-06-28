@@ -67,7 +67,8 @@ class Forgot implements Handler
                             ->setPassword('xcyoxtgmegexlycb');
                     $mailer = new Swift_Mailer($transport);
 
-                    $body = "<p>Codul tau pentru resetarea parolei este</p> <p style='color:red;'>$token</p>";
+                    $body = "<p>Codul tau pentru resetarea parolei este</p> <p style='color:red;'>$token</p> 
+                    <p>Atentie, codul este valabil pentru 10 minute.</p>";
                     $message = (new Swift_Message('Reseteaza-ti parola'))
                         ->setFrom(['rot6980@gmail.com' => 'Rot'])
                         ->setTo($adresa)
