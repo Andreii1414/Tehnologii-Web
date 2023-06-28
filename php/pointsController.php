@@ -33,7 +33,7 @@ class Points
         $stmt->fetch();
 
         if ($punctaj === null) {
-            http_response_code(500);
+            http_response_code(404);
             $response = [
                 'msg' => 'Punctajul este null'
             ];
@@ -110,7 +110,7 @@ class Points
         }
 
         if (empty($response)) {
-            http_response_code(500);
+            http_response_code(404);
             $response = [
                 'msg' => "Nu exista categorii disponibile"
             ];
