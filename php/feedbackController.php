@@ -27,6 +27,7 @@ class Feedback
         $user = UserSession::getInstance();
         $sessionId = $user->getId();
 
+        //un utilizator poate adauga maxim 3 feedback-uri, se verifica acest lucru
         $count = 0;
         $stmt2 = $this->conn->prepare("SELECT count(*) FROM feedback where id_user = ?");
         $stmt2->bind_param("i", $sessionId);
@@ -54,7 +55,7 @@ class Feedback
                 echo json_encode($response);
             } else {
                 http_response_code(400);
-                $response = "Feedback-ul nu a adaugat";
+                $response = "Feedback-ul nu a fost adaugat";
                 echo json_encode($response);
             }
         }

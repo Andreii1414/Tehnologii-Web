@@ -199,6 +199,7 @@ class Validari
 
     private function validareIp(){
 
+        //este cautat ip-ul in baza de date, daca apare de cel putin 3 ori, este returnata o eroare
         $ipAddress = $_SERVER['REMOTE_ADDR'];
         $count = 0;
         $stmt = $this->conn->prepare("SELECT acc_count FROM userip where ip_user = ?");

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Check code</title>
+    <title>Forgot password</title>
 </head>
 <body>
     <div class="split left-div">
@@ -29,7 +29,8 @@
 
         <div class="centered-content">
             <form action="/api/forgot/code" method="POST" class="form_login">
-                <h2 class="form_text textStyle">Verifica codul primit pe email</h2>
+                <h2 class="form_text textStyle">Schimba parola</h2>
+                <p>Folosind codul primit pe email</p>
                 <div id="erori">
                     <?php
 
@@ -55,7 +56,7 @@
                     <input type="password" id="resPass" name="resPass" placeholder="Rescrie parola" class="form_input">
                     <i class="fa fa-key icon"  onclick="passwordVisibility(2)"></i>
                 </div>
-                    <input type="submit" name="submit" id="submit" value="Check code" class="form_button">
+                    <input type="submit" name="submit" id="submit" value="Change password" class="form_button">
 
             </form>
         </div>

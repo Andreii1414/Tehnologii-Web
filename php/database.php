@@ -21,7 +21,7 @@ class Database
 
     function insertRegister($nume, $adresa, $parolaHash, $conn)
     {
-        if ($conn) {
+        if ($conn) { //se adauga utilizatorul in tabelul users
             $sql = "INSERT INTO users (nume, email, parola) VALUES (?, ?, ?);";
             $stmt = $this->conn->prepare($sql);
             $stmt->bind_param("sss", $nume, $adresa, $parolaHash);
@@ -30,7 +30,7 @@ class Database
                 $this->databaseError();
             }
             $lastId = mysqli_insert_id($conn);
-
+             //se adauga fiecare categorie pentru user in tabelul punctaje
             $sql = "INSERT INTO punctaje (id_user, categorie, punctaj_quiz, punctaj_categorie) VALUES
              (?, 'Avertizare', '0', '0'),
              (?, 'Interzicere', '0', '0'),
@@ -103,6 +103,7 @@ class Database
 
             $ipAdresss = $_SERVER['REMOTE_ADDR'];
 
+            //se verifica cate conturi sunt pe ip-ul user-ului care incearca sa creeze un cont
             $count = 0;
             $sql = "SELECT count(*) FROM userip where ip_user = ?";
             $stmt = $conn->prepare($sql);
@@ -114,6 +115,7 @@ class Database
             $stmt->fetch();
             $stmt->close();
 
+            //daca apare deja ip-ul, se face update, daca nu, insert
             if ($count > 0) {
                 $updateIp = "UPDATE userip SET acc_count = acc_count + 1 WHERE ip_user = ?";
                 $stmt = $conn->prepare($updateIp);

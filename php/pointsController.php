@@ -28,7 +28,9 @@ class Points
 
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param('ss', $sessionId, $category);
-        $stmt->execute();
+        if (!$stmt->execute()) {
+            $this->db->databaseError();
+        }
         $stmt->bind_result($punctaj);
         $stmt->fetch();
 
@@ -62,7 +64,9 @@ class Points
         $query = "UPDATE punctaje set punctaj_quiz = ? where id_user = ? and categorie = ?";
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param('iss', $puncte, $sessionId, $category);
-        $stmt->execute();
+        if (!$stmt->execute()) {
+            $this->db->databaseError();
+        }
 
         //mesaj de succes/esec
         if ($stmt->affected_rows > 0) {
@@ -95,11 +99,15 @@ class Points
         $punctaj = null;
         $query = "SELECT categorie, punctaj_quiz FROM punctaje WHERE id_user = ?";
 
+        //sunt selectate toate categoriile si punctele acestora
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param('s', $sessionId);
-        $stmt->execute();
+        if (!$stmt->execute()) {
+            $this->db->databaseError();
+        }
         $stmt->bind_result($categorie, $punctaj);
 
+        //este format un array care contine toate categoriile
         $response = array();
         while ($stmt->fetch()) {
             $res = array(

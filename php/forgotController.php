@@ -36,7 +36,7 @@ class Forgot implements Handler
                 echo json_encode($response);
                 header("Location: ../Tehnologii-web/login/forgot.php?errors=$erori");
                 exit;
-            } else {
+            } else { //in cazul in care nu sunt erori, se ia id-ul asociat email-ului
                 $sql = "select * from users where email = ?;";
                 $stmt = $this->conn->prepare($sql);
                 $stmt->bind_param("s", $adresa);
@@ -46,6 +46,7 @@ class Forgot implements Handler
                 $queryRes = $stmt->get_result();
                 $id = $queryRes->fetch_assoc()['id'];
 
+                //se creeaza un token care este inserat in baza de date in tabelul forgot_password
                 $token = "";
                 $token = bin2hex(random_bytes(10));
                 $sql = "INSERT INTO forgot_password (id_user, email, token) VALUES (?, ?, ?);";
@@ -55,7 +56,7 @@ class Forgot implements Handler
                     $this->db->databaseError();
                 }
                 
-                try{
+                try{ //este trimis token-ul pe email, acesta este valabil 10 minute
                     $transport = (new Swift_SmtpTransport('smtp.googlemail.com', 465, 'ssl'))
                             ->setUsername('rot6980@gmail.com')
                             ->setPassword('xcyoxtgmegexlycb');
@@ -82,7 +83,7 @@ class Forgot implements Handler
     }
 
     private function verifyEmail($adresa)
-    {
+    {   //verificarea email-ului (daca apare in baza de date)
         $sql = "select * from users where email = ?;";
         $stmt = $this->conn->prepare($sql);
         $stmt->bind_param("s", $adresa);
@@ -103,6 +104,7 @@ class Forgot implements Handler
             $code = $_POST['code'];
             $newPass = $_POST['newPass'];
             $resPass = $_POST['resPass'];
+            //se verifica daca token-ul este in baza de date 
             $sql = "select * from forgot_password where token = ?;";
             $stmt = $this->conn->prepare($sql);
             $stmt->bind_param("s", $code);
@@ -116,14 +118,17 @@ class Forgot implements Handler
             } else {
                 $id = $queryRes->fetch_assoc()['id_user'];
 
+                //se valideaza noua parola
                 $validari = new Validari();
                 $this->errors = null;
                 $this->errors = $validari->validariForgotPassword($id, $newPass, $resPass);
 
                 if (empty($this->errors)) {
+                    //se updateaza parola utilizatorului in cazul in care nu sunt erori
                     $parolaHash = password_hash($newPass, PASSWORD_DEFAULT);
                     $this->db->updatePassword($parolaHash, $id);
 
+                    //se sterge parola din baza de date
                     $stmt = $this->conn->prepare("DELETE FROM forgot_password WHERE token = ?");
                     $stmt->bind_param("s", $code);
                     if (!$stmt->execute()) {

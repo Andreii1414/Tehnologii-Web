@@ -126,8 +126,9 @@
 
     <div class="content">
         <p>Adauga feedback</p>
-        <form action="/api/Feedback" method="POST">
-            <textarea oninput="countChars()" rows="7" cols="4" type="text" id="text" name="text" placeholder="Mesaj (maxim 500 de caractere)" class="form_input"></textarea><br>
+        <form action="<?php if($userSession->isConnected()) echo "/api/Feedback" ?>" method="POST">
+            <textarea oninput="countChars()" rows="7" cols="4" type="text" id="text" name="text" placeholder="Mesaj (maxim 500 de caractere)
+            - Poti adauga maxim 3 feedback-uri/cont" class="form_input"></textarea><br>
             <div class="rating">
                 <input type="radio" id="5star" name="rating" value = "5">
                 <label for="5star"></label>

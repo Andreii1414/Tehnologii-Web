@@ -11,8 +11,8 @@ class UserSession //singleton
     private $id;
     private $jwtKey = "rotSecretKey";
 
-    private function __construct()
-    {
+    private function __construct() 
+    {   //este verificata validitatea jwt-ului
         $this->conectat = 0;
         
         if (!$this->conectat && isset($_COOKIE['jwt'])) {
@@ -22,7 +22,7 @@ class UserSession //singleton
 
     }
 
-    private function validateJwtAndSetUser($jwt){
+    private function validateJwtAndSetUser($jwt){ //este decodat jwt-ul, este creata signatura valida si comparata cu cea a token-ului  
         $parts = explode('.', $jwt);
         $header = base64_decode($parts[0]);
         $payload = base64_decode($parts[1]);
@@ -44,7 +44,7 @@ class UserSession //singleton
 
     }
 
-    public static function getInstance(){
+    public static function getInstance(){ //returnarea instantei (sau crearea ei, daca nu exista)
         if(!self::$instance)
         {
             self::$instance = new UserSession();
