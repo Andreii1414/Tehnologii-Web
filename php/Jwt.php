@@ -3,7 +3,7 @@ class Jwt
 {
     private $jwtKey = "rotSecretKey";
 
-    function setPermanentToken($user)
+    /*function setPermanentToken($user)
     { //este creat un token pentru autentificarea permanenta a utilizatorului si este stocat intr-un cookie
        $payload = array(
             'expiration_time' => time() + (30*365*24*60*60),
@@ -15,19 +15,19 @@ class Jwt
        $jwt = $this->generateJwt($payload);
        setcookie('jwt', $jwt, time() + (30*365*24*60*60), "/", "", true, true);
 
-    }
+    }*/
 
     function setTemporaryToken($user)
     {//este creat un token pentru autentificarea temporara a utilizatorului si este stocat intr-un cookie
         $payload = array(
-            'expiration_time' => time() + 10800,
+            'expiration_time' => time() + 43200,
             'nume' => $user['nume'],
             'email' => $user['email'],
             'id' => $user['id']
        );
 
        $jwt = $this->generateJwt($payload);
-       setcookie('jwt', $jwt, time() + 10800, "/", "", true, true);
+       setcookie('jwt', $jwt, time() + 43200, "/", "", true, true);
     }
     
     private function generateJwt($payload){ //este generat jwt-ul

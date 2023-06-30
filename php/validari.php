@@ -45,13 +45,13 @@ class Validari
 
                 $jwt = new Jwt();
 
-                if ($connected == 1) {
+             //   if ($connected == 1) {
                     //este creat un token care are o durata de expirare mare, atunci cand utilizatorul selecteaza optiunea "Ramai conectat"
-                    $jwt->setPermanentToken($user);
-                } else {
+            //        $jwt->setPermanentToken($user);
+             //   } else {
                     //daca nu selecteaza optiunea, va ramane conectat pentru 3 ore
                     $jwt->setTemporaryToken($user);
-                }
+                //}
 
             } else
                 $errors[] = "  Parola introdusa este incorecta";

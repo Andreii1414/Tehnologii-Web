@@ -167,8 +167,8 @@
         <p>
             Serverul este creat in PHP (REST API) si interactioneaza cu o baza de date mysql, rutele pot fi gasite in routes.php, iar 
             script-ul pentru baza de date in rotdb.sql. Exemplu de folosire a rutelor API-ului: pentru ruta /api/login, atunci cand este apelata
-            aceasta ruta, este creat un obiect al clasei Login si este executata functia nHandler (a interfetei Handler - Register, ChangePassword si 
-            Login implementeaza aceasta interfata) in care, initial sunt facute niste validari folosind clasa Validari si metoda ei validariLogin,
+            aceasta ruta, este creat un obiect al clasei Login si este executata functia nHandler (a interfetei Handler - Register, ChangePassword, 
+            Login si Forgot Password implementeaza aceasta interfata) in care, initial sunt facute niste validari folosind clasa Validari si metoda ei validariLogin,
             apoi, daca se gasesc erori (probleme in formular - ex: parola prea scurta), este returnat codul de raspuns 400, un json si de asemenea 
             erorile care au aparut, daca nu se gasesc erori, se creeaza un jwt care va fi stocat intr-un cookie in functie de alegerea utilizatorului 
             si se returneaza codul de raspuns 200 si un json corespunzator. In cazul rutei /api/register, va fi returnat codul 200 in cazul in care contul 
@@ -189,7 +189,7 @@
 
         <h2><span>5.3</span> Animatie welcome</h2>
         <p>
-            Codul folosit pentru a anima textul care intampina utilizatorul pe pagina princiapala.
+            Codul folosit pentru a anima textul care intampina utilizatorul pe pagina principala.
         </p>
         <img src="anim.PNG" alt= "anim" class="imagine">
 
