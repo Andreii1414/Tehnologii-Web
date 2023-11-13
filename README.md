@@ -1,3 +1,5 @@
 # Tehnologii-Web
 
+RoT (Romanian Traffic Signs Tutor)
+Sa se dezvolte o aplicatie Web care pe baza unui API Web REST/GraphQL ofera suport pentru invatarea semnelor rutiere si a regulilor de circulatie din tara noastra si altele europene. Pentru fiecare (categorie de) semne, se vor pune la dispozitie informatii precum semnificatia, tipul, regulamentele in vigoare, relatii cu alte semne de interes, sfaturi practice, contextul de utilizare, plus sugestii privind comportamentul soferului/pietonului. Via strategii ludice (e.g., gamification), solutia realizata va monitoriza progresul inregistrat de fiecare utilizator in procesul de invatare, eventual structurata pe niveluri de dificultate. Se va genera, de asemenea, un clasament al celor mai sarguinciosi utilizatori, disponibil si ca flux de date RSS.
 
